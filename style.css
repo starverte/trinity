@@ -25,7 +25,7 @@ Template: flint
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-@import(../flint/style.css)
+@import url(../flint/style.css);
 
 /* =Global
 ----------------------------------------------- */
@@ -55,6 +55,12 @@ img, video {
 }
 hr {
 }
+.paper {
+  padding: 0;
+  margin: 0 auto;
+  background: #fefefe;
+  box-shadow: 0 5px 5px #404040;
+}
 .label {
 }
 #page {
@@ -70,11 +76,39 @@ hr {
 .alignnone {
 }
 
+/* LifePointe only */
+a {
+  color: #0051c3;
+}
+a:hover {
+  color: #0037af!important;
+}
+
 
 /* =Header
 ----------------------------------------------- */
 
 #top-pad {
+  display: none;
+}
+#masthead {
+  padding: 0;
+}
+#masthead .container {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.site-branding {
+  line-height: 1;
+  color: #0051c3;
+  text-align: right;
+}
+.site-branding h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.site-description {
+  font-size: 24px;
 }
 
 
@@ -96,6 +130,9 @@ hr {
 .page-links {
 }
 #primary {
+  margin-top: 0;
+  background: #fefefe;
+  box-shadow: 0 5px 5px #404040;
 }
 .page-header {
 }
@@ -111,9 +148,97 @@ hr {
 /* =Navigation
 ----------------------------------------------- */
 
-.navbar-brand {
+/* Mobile Menu */
+.menu {
+  position: relative;
+  min-height: 52px;
+  border: 1px solid #c2c2c2;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+.menu-nav {
+  margin: 7.5px -15px;
+}
+.menu-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+.menu-nav {
+  float: left;
+  margin: 0;
+}
+.menu-nav > li {
+  float: left;
+  background: #fefefe;
+  border-right: 1px solid #c2c2c2;
+}
+.menu-nav > li:last-child {
+  border-right: 0;
+}
+.menu-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.menu-nav.menu-right:last-child {
+  margin-right: -15px;
 }
 
+/* All other menus */
+.navbar-trinity {
+  background-color: #fefefe;
+  border-color: #c2c2c2;
+  border-right: 0;
+  border-left: 0;
+}
+.navbar-trinity .navbar-nav > li > a:hover,
+.navbar-trinity .navbar-nav > li > a:focus {
+  background-color: #f8f8f8;
+}
+.navbar-trinity .navbar-nav > .active > a,
+.navbar-trinity .navbar-nav > .active > a:hover,
+.navbar-trinity .navbar-nav > .active > a:focus {
+  background-color: #eee;
+}
+.navbar-trinity .navbar-nav > .disabled > a,
+.navbar-trinity .navbar-nav > .disabled > a:hover,
+.navbar-trinity .navbar-nav > .disabled > a:focus {
+  background-color: transparent;
+}
+.navbar-trinity .navbar-form {
+  border-color: #c2c2c2;
+}
+.navbar-trinity .navbar-nav > .open > a,
+.navbar-trinity .navbar-nav > .open > a:hover,
+.navbar-trinity .navbar-nav > .open > a:focus {
+  color: #555;
+  background-color: #c2c2c2;
+}
+.navbar-trinity .navbar-link {
+  color: #777;
+}
+.navbar-trinity .navbar-link:hover {
+  color: #333;
+}
+
+
+/* Specific to LifePointe */
+.menu .blue,
+.navbar-trinity .blue {
+  background: #0051c3;
+  border-color: #0051c3;
+}
+.menu .blue > a,
+.navbar-trinity .blue > a {
+  color: #fff;
+}
+.menu .blue > a:hover,
+.navbar-trinity .navbar-nav > .blue > a:hover,
+.navbar-trinity .navbar-nav > .blue > a:focus {
+  color: #fff!important;
+  background-color: #0037af;
+}
 
 /* =Comments
 ----------------------------------------------- */
@@ -134,7 +259,8 @@ hr {
 
 #colophon {
 }
-.site-info {
+#colophon {
+  margin-top: -62px;
 }
 #credits {
 }
