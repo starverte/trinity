@@ -36,8 +36,8 @@ input,
 select,
 textarea {
 }
-html,
 body {
+  padding-top: 0;
 }
 article {
 }
@@ -74,14 +74,6 @@ hr {
 .aligncenter {
 }
 .alignnone {
-}
-
-/* LifePointe only */
-a {
-  color: #0051c3;
-}
-a:hover {
-  color: #0037af!important;
 }
 
 
@@ -138,6 +130,9 @@ a:hover {
 }
 .pw {
 }
+#carousel_splash {
+  margin-top: 0;
+}
 
 
 /* =Media
@@ -191,6 +186,11 @@ a:hover {
   border-color: #c2c2c2;
   border-right: 0;
   border-left: 0;
+  border-radius: 0;
+  margin-bottom: 0;
+}
+.navbar-trinity .navbar-nav > li {
+  border-right: 1px solid #c2c2c2;
 }
 .navbar-trinity .navbar-nav > li > a:hover,
 .navbar-trinity .navbar-nav > li > a:focus {
