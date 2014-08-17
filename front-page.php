@@ -18,7 +18,7 @@ get_header(); ?>
     <?php echo do_shortcode("[steel_slideshow name=\"splash\"]"); ?>
   </div>
 
-  <div id="primary" class="content-area container hidden-xs hidden-sm hidden-md hidden-kg">
+  <div id="primary" class="content-area container">
 
     <?php flint_get_widgets('left'); ?>
 
