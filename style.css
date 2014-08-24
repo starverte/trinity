@@ -55,12 +55,6 @@ img, video {
 }
 hr {
 }
-.paper {
-  padding: 0;
-  margin: 0 auto;
-  background: #fefefe;
-  box-shadow: 0 5px 5px #404040;
-}
 .label {
 }
 #page {
@@ -109,7 +103,9 @@ hr {
 
 .bypostauthor {
 }
-.entry-title {
+.page .entry-title,
+.single .entry-title {
+  margin-top: 0;
 }
 .btn-edit {
 }
@@ -122,9 +118,11 @@ hr {
 .page-links {
 }
 #primary {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.home #primary {
   margin-top: 0;
-  background: #fefefe;
-  box-shadow: 0 5px 5px #404040;
 }
 .page-header {
 }
@@ -132,6 +130,50 @@ hr {
 }
 #carousel_splash {
   margin-top: 0;
+}
+.sermon-details {
+  line-height: 2em;
+}
+.sermon-media .glyphicon {
+  font-size: 2em;
+  text-align: right;
+}
+.home .carousel-caption {
+  font-size: 36px;
+}
+#mission {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #fff;
+  background: url('//sharethelife.org/wp-content/uploads/LifePointe_Water.png');
+  background-position-x: center;
+  background-position-y: 25%;
+}
+#mission h5 {
+  text-transform: uppercase;
+}
+#next-steps {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.ns-caption {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  margin-top: -2.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #fff;
+  background: #0055c0;
+  background: rgba(0,85,192,0.75);
+}
+.ns:hover .ns-caption,
+.ns:focus .ns-caption {
+  background: #0055c0;
+  background: rgba(0,85,192,1);
 }
 
 
@@ -181,16 +223,19 @@ hr {
 }
 
 /* All other menus */
-.navbar-trinity {
-  background-color: #fefefe;
-  border-color: #c2c2c2;
+.nav-trinity {
+  border: 1px solid #c2c2c2;
   border-right: 0;
   border-left: 0;
   border-radius: 0;
+}
+.navbar-trinity {
   margin-bottom: 0;
+  background-color: #fefefe;
+  border: 0;
 }
 .navbar-trinity .navbar-nav > li {
-  border-right: 1px solid #c2c2c2;
+  border-left: 1px solid #c2c2c2;
 }
 .navbar-trinity .navbar-nav > li > a:hover,
 .navbar-trinity .navbar-nav > li > a:focus {
@@ -236,7 +281,7 @@ hr {
 .menu .blue > a:hover,
 .navbar-trinity .navbar-nav > .blue > a:hover,
 .navbar-trinity .navbar-nav > .blue > a:focus {
-  color: #fff!important;
+  color: #fff;
   background-color: #0037af;
 }
 
@@ -257,10 +302,186 @@ hr {
 /* =Footer
 ----------------------------------------------- */
 
+.footer-row {
+  color: #404040;
+  background: #f2f2f2;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.footer-row a {
+  color: #404040;
+}
+.footer-row a:hover {
+  color: #0055c0;
+  text-decoration: none;
+}
+.footer-row .menu,
+.footer-row .sub-menu {
+  padding-left: 0;
+  list-style: none;
+  border: none;
+}
+.footer-row .sub-menu {
+  margin-top: 10px;
+}
+.footer-row .menu li {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.footer-row .sub-menu li {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.42857143;
+}
+.affiliated img,
+.footer-row iframe {
+          filter: grayscale(1);
+
+  -webkit-filter: grayscale(1);
+     -moz-filter: grayscale(1);
+       -o-filter: grayscale(1);
+      -ms-filter: grayscale(1);
+}
+.affiliated:hover img,
+iframe:hover {
+          filter: grayscale(0);
+
+  -webkit-filter: grayscale(0);
+     -moz-filter: grayscale(0);
+       -o-filter: grayscale(0);
+      -ms-filter: grayscale(0);
+}
 #colophon {
 }
 #colophon {
   margin-top: -62px;
 }
 #credits {
+}
+
+/* =Buttons */
+.btn-blue {
+  color: #fff;
+  background-color: #0055c0;
+  border-color: #004aa7;
+}
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active,
+.open > .dropdown-toggle.btn-blue {
+  color: #fff;
+  background-color: #003e8d;
+  border-color: #002f69;
+}
+.btn-blue:active,
+.btn-blue.active,
+.open > .dropdown-toggle.btn-blue {
+  background-image: none;
+}
+.btn-blue.disabled,
+.btn-blue[disabled],
+fieldset[disabled] .btn-blue,
+.btn-blue.disabled:hover,
+.btn-blue[disabled]:hover,
+fieldset[disabled] .btn-blue:hover,
+.btn-blue.disabled:focus,
+.btn-blue[disabled]:focus,
+fieldset[disabled] .btn-blue:focus,
+.btn-blue.disabled:active,
+.btn-blue[disabled]:active,
+fieldset[disabled] .btn-blue:active,
+.btn-blue.disabled.active,
+.btn-blue[disabled].active,
+fieldset[disabled] .btn-blue.active {
+  background-color: #0055c0;
+  border-color: #004aa7;
+}
+.btn-blue .badge {
+  color: #0055c0;
+  background-color: #fff;
+}
+.btn-gray {
+  color: #0055c0;
+  background-color: #f8f8f8;
+  border-color: #ebebeb;
+}
+.btn-gray:hover,
+.btn-gray:focus,
+.btn-gray:active,
+.btn-gray.active,
+.open > .dropdown-toggle.btn-gray {
+  color: #004aa7;
+  background-color: #dfdfdf;
+  border-color: #cdcdcd;
+}
+.btn-gray:active,
+.btn-gray.active,
+.open > .dropdown-toggle.btn-gray {
+  background-image: none;
+}
+.btn-gray.disabled,
+.btn-gray[disabled],
+fieldset[disabled] .btn-gray,
+.btn-gray.disabled:hover,
+.btn-gray[disabled]:hover,
+fieldset[disabled] .btn-gray:hover,
+.btn-gray.disabled:focus,
+.btn-gray[disabled]:focus,
+fieldset[disabled] .btn-gray:focus,
+.btn-gray.disabled:active,
+.btn-gray[disabled]:active,
+fieldset[disabled] .btn-gray:active,
+.btn-gray.disabled.active,
+.btn-gray[disabled].active,
+fieldset[disabled] .btn-gray.active {
+  background-color: #f8f8f8;
+  border-color: #ebebeb;
+}
+.btn-gray .badge {
+  color: #f8f8f8;
+  background-color: #fff;
+}
+
+/* =Panels */
+.panel-blue {
+  border-color: #0055c0;
+}
+.panel-blue > .panel-heading {
+  color: #fff;
+  background-color: #0055c0;
+  border-color: #0055c0;
+}
+.panel-blue > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #0055c0;
+}
+.panel-blue > .panel-heading .badge {
+  color: #0055c0;
+  background-color: #fff;
+}
+.panel-blue > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #0055c0;
+}
+.panel-gray {
+  border-color: #d6e9c6;
+}
+.panel-gray > .panel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.panel-gray > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #d6e9c6;
+}
+.panel-gray > .panel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+.panel-gray > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #d6e9c6;
 }
