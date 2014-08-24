@@ -18,20 +18,23 @@ function trinity_after_setup_theme() {
     'screen-md' => __( 'Desktops'      , 'trinity' ),
     'screen-sm' => __( 'Tablets'       , 'trinity' ),
     'screen-xs' => __( 'Phones'        , 'trinity' ),
+    'footer1'   => __( 'Footer 1'      , 'trinity' ),
+    'footer2'   => __( 'Footer 2'      , 'trinity' ),
   ) );
-  
-  add_theme_support( 'post-thumbnails' );
-  set_post_thumbnail_size( 150, 150 );
-  
-  add_image_size('small-icon',   32,  32, true);
-  add_image_size('large-icon',   64,  64, true);
-  add_image_size('profile',     120, 150, true);
-  add_image_size('next-steps',  220, 125, true);
-  add_image_size('podcast',     300, 300, true);
-  add_image_size('small-title', 400, 225, true);
-  add_image_size('large-title', 640, 360, true);
 
 }
 add_action( 'after_setup_theme', 'trinity_after_setup_theme', 20 );
 
+/**
+ * Enqueue scripts and styles
+ */
+function trinity_enqueue_scripts() {
 
+  /**
+   * Load scriptaculous
+   */
+  wp_enqueue_script('scriptaculous');
+  wp_enqueue_script('scriptaculous-effects');
+
+}
+add_action( 'wp_enqueue_scripts', 'trinity_enqueue_scripts', 20 );
