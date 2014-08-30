@@ -14,6 +14,7 @@ function trinity_after_setup_theme() {
   register_nav_menus( array(
     'footer1'   => __( 'Sitemap Left' , 'trinity' ),
     'footer2'   => __( 'Sitemap Right', 'trinity' ),
+    'footer3'   => __( 'Social Links' , 'trinity' ),
   ) );
 
 }

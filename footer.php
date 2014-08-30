@@ -35,17 +35,21 @@
         </div>
       </div>
 
-      <div class="col-md-4">
-        <h3 class="text-center">Affiliations</h3>
-        <div class="col-xs-4">
-          <a href="http://thegospelcoalition.org" class="affiliated"><img src="http://sharethelife.org/wp-content/uploads/tgclogo.jpg" alt="The Gospel Coalition"></a>
-        </div>
-        <div class="col-xs-4">
-          <a href="http://rmcn.org" class="affiliated"><img src="http://sharethelife.org/wp-content/uploads/rmcnlogo.png" alt="Rocky Mountain Church Network"></a>
-        </div>
-        <div class="col-xs-4">
-          <a href="http://www.fcgov.com/climatewise/" class="affiliated"><img src="http://sharethelife.org/wp-content/uploads/cwlogo.png" alt="ClimateWise"></a>
-        </div>
+      <div class="col-xs-6 col-md-2">
+        <h3>Affiliations</h3>
+        <p class="affiliated">
+          <a href="http://thegospelcoalition.org"><img src="http://sharethelife.org/wp-content/uploads/tgclogo.jpg" alt="The Gospel Coalition"></a>
+        </p>
+        <p class="affiliated">
+          <a href="http://rmcn.org"><img src="http://sharethelife.org/wp-content/uploads/rmcnlogo.png" alt="Rocky Mountain Church Network"></a>
+        </p>
+        <p class="affiliated">
+          <a href="http://www.fcgov.com/climatewise/"><img src="http://sharethelife.org/wp-content/uploads/cwlogo.png" alt="ClimateWise"></a>
+        </p>
+      </div>
+
+      <div class="col-xs-6 col-md-2">
+        <?php wp_nav_menu( array( 'theme_location' => 'footer3', 'container' => false, 'fallback_cb' => false ) ); ?>
       </div>
 
     </div><!-- .row -->
