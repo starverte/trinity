@@ -3,7 +3,7 @@
  * The template used for displaying custom post type content
  *
  * @package Flint/Trinity
- * @since 0.0.0
+ * @since 0.1
  */
 
 if ( get_post_meta($post->ID, 'week1_date', true) ) {

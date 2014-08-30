@@ -2,8 +2,8 @@
 /**
  * Method to cause automatic download of audio mpeg files
  *
- * @package LifePointe
- * @since 0.7.7
+ * @package Flint/Trinity
+ * @since 0.1
  */
 
 // Define the path to file

@@ -4,8 +4,8 @@
  *
  * Contains the closing of the id=main div and all content after
  *
- * @package Flint
- * @since 1.2.0
+ * @package Flint/Trinity
+ * @since 0.1
  */
 ?>
 

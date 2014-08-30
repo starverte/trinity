@@ -5,7 +5,7 @@
  * Displays the navigation menu
  *
  * @package Flint/Trinity
- * @since 0.0.0
+ * @since 0.1
  */
 ?>
 
