@@ -193,44 +193,6 @@ hr {
 /* =Navigation
 ----------------------------------------------- */
 
-/* Mobile Menu */
-.menu {
-  position: relative;
-  min-height: 52px;
-  border: 1px solid #c2c2c2;
-  border-right: 0;
-  border-left: 0;
-  border-radius: 0;
-}
-.menu-nav {
-  margin: 7.5px -15px;
-}
-.menu-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
-}
-.menu-nav {
-  float: left;
-  margin: 0;
-}
-.menu-nav > li {
-  float: left;
-  background: #fefefe;
-  border-right: 1px solid #c2c2c2;
-}
-.menu-nav > li:last-child {
-  border-right: 0;
-}
-.menu-nav > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.menu-nav.menu-right:last-child {
-  margin-right: -15px;
-}
-
-/* All other menus */
 .navbar-trinity  {
   margin-bottom: 0;
   background-color: #fefefe;
