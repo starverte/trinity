@@ -202,8 +202,8 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
       </div><!-- .entry-summary -->
       <?php else : ?>
       <div class="entry-content">
-        <?php flint_the_content(); ?>
         <button class="btn btn-blue" data-toggle="collapse" data-target="#sermon-list-<?php the_ID(); ?>"><?php echo has_term('academy', 'sermon-topics') ? 'Sessions' : 'Sermon List'; ?></button>
+        <?php flint_the_content(); ?>
       </div><!-- .entry-content -->
       <?php endif; ?>
 
