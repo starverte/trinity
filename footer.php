@@ -13,17 +13,17 @@
   <div class="container">
     <div class="row">
 
-      <div class="col-xs-6 col-md-2">
+      <div class="col-xs-6 col-sm-2">
         <?php wp_nav_menu( array( 'theme_location' => 'footer1', 'container' => false, 'fallback_cb' => false ) ); ?>
       </div>
 
-      <div class="col-xs-6 col-md-2">
+      <div class="col-xs-6 col-sm-2">
         <?php wp_nav_menu( array( 'theme_location' => 'footer2', 'container' => false, 'fallback_cb' => false ) ); ?>
       </div>
 
       <div class="clearfix hidden-md hidden-lg"></div>
 
-      <div class="col-md-4 text-center">
+      <div class="col-sm-4 text-center">
         <h3>Sunday Worship @ 9:30am</h3>
         <p>900 E Prospect Rd<br>
         Fort Collins, CO 80524<br>
@@ -35,7 +35,7 @@
         </div>
       </div>
 
-      <div class="col-xs-6 col-md-2">
+      <div class="col-xs-6 col-sm-2">
         <h3>Affiliations</h3>
         <p class="affiliated">
           <a href="http://thegospelcoalition.org"><img src="http://sharethelife.org/wp-content/uploads/tgclogo.jpg" alt="The Gospel Coalition"></a>
@@ -48,7 +48,7 @@
         </p>
       </div>
 
-      <div class="col-xs-6 col-md-2">
+      <div class="col-xs-6 col-sm-2">
         <?php wp_nav_menu( array( 'theme_location' => 'footer3', 'container' => false, 'fallback_cb' => false ) ); ?>
       </div>
 
