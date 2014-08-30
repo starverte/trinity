@@ -203,7 +203,7 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
       <?php else : ?>
       <div class="entry-content">
         <?php flint_the_content(); ?>
-        <a class="btn btn-blue" href="#" onclick="Effect.toggle('sermon-list-<?php the_ID(); ?>', 'slide'); return false;"><?php echo has_term('academy', 'sermon-topics') ? 'Sessions' : 'Sermon List'; ?></a>
+        <button class="btn btn-blue" data-toggle="collapse" data-target="#sermon-list-<?php the_ID(); ?>"><?php echo has_term('academy', 'sermon-topics') ? 'Sessions' : 'Sermon List'; ?></button>
       </div><!-- .entry-content -->
       <?php endif; ?>
 
@@ -212,10 +212,10 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
       </footer><!-- .entry-meta -->
     </div>
   </article><!-- #series-<?php the_ID(); ?> -->
-  <div id="sermon-list-<?php the_ID(); ?>" class="sermon-list" style="display:none;">
+  <div id="sermon-list-<?php the_ID(); ?>" class="sermon-list collapse">
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week1_audio', true) ) : ?>
+    <div class="clearfix"></div>
     <div id="week1" class="sermons">
       <?php $audioMeta1 = get_post_meta($post->ID, 'week1_audio', true);
             $week1_audio_id = url_to_postid( $audioMeta1 );
@@ -230,15 +230,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week1_title') ?>" href="<?php meta('week1_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week1_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week1_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week1_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week1_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week1_vimeo_id', true) ) { ?><a title="<?php meta('week1_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week1_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week1_pdf', true) ) { ?> <a title="<?php echo get_the_title($week1_pdf_id); ?>" class="col-xs-3" href="<?php echo $week1_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week1 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week2_audio', true) ) : ?>
     <div id="week2" class="sermons">
       <?php $audioMeta2 = get_post_meta($post->ID, 'week2_audio', true);
@@ -254,15 +254,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week2_title') ?>" href="<?php meta('week2_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week2_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week2_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week2_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week2_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week2_vimeo_id', true) ) { ?><a title="<?php meta('week2_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week2_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week2_pdf', true) ) { ?> <a title="<?php echo get_the_title($week2_pdf_id); ?>" class="col-xs-3" href="<?php echo $week2_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week2 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week3_audio', true) ) : ?>
     <div id="week3" class="sermons">
       <?php $audioMeta3 = get_post_meta($post->ID, 'week3_audio', true);
@@ -278,15 +278,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week3_title') ?>" href="<?php meta('week3_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week3_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week3_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week3_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week3_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week3_vimeo_id', true) ) { ?><a title="<?php meta('week3_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week3_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week3_pdf', true) ) { ?> <a title="<?php echo get_the_title($week3_pdf_id); ?>" class="col-xs-3" href="<?php echo $week3_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week3 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week4_audio', true) ) : ?>
     <div id="week4" class="sermons">
       <?php $audioMeta4 = get_post_meta($post->ID, 'week4_audio', true);
@@ -302,15 +302,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week4_title') ?>" href="<?php meta('week4_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week4_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week4_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week4_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week4_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week4_vimeo_id', true) ) { ?><a title="<?php meta('week4_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week4_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week4_pdf', true) ) { ?> <a title="<?php echo get_the_title($week4_pdf_id); ?>" class="col-xs-3" href="<?php echo $week4_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week4 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week5_audio', true) ) : ?>
     <div id="week5" class="sermons">
       <?php $audioMeta5 = get_post_meta($post->ID, 'week5_audio', true);
@@ -326,15 +326,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week5_title') ?>" href="<?php meta('week5_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week5_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week5_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week5_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week5_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week5_vimeo_id', true) ) { ?><a title="<?php meta('week5_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week5_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week5_pdf', true) ) { ?> <a title="<?php echo get_the_title($week5_pdf_id); ?>" class="col-xs-3" href="<?php echo $week5_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week5 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week6_audio', true) ) : ?>
     <div id="week6" class="sermons">
       <?php $audioMeta6 = get_post_meta($post->ID, 'week6_audio', true);
@@ -350,15 +350,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week6_title') ?>" href="<?php meta('week6_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week6_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week6_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week6_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week6_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week6_vimeo_id', true) ) { ?><a title="<?php meta('week6_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week6_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week6_pdf', true) ) { ?> <a title="<?php echo get_the_title($week6_pdf_id); ?>" class="col-xs-3" href="<?php echo $week6_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week6 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week7_audio', true) ) : ?>
     <div id="week7" class="sermons">
       <?php $audioMeta7 = get_post_meta($post->ID, 'week7_audio', true);
@@ -374,15 +374,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week7_title') ?>" href="<?php meta('week7_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week7_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week7_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week7_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week7_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week7_vimeo_id', true) ) { ?><a title="<?php meta('week7_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week7_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week7_pdf', true) ) { ?> <a title="<?php echo get_the_title($week7_pdf_id); ?>" class="col-xs-3" href="<?php echo $week7_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week7 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week8_audio', true) ) : ?>
     <div id="week8" class="sermons">
       <?php $audioMeta8 = get_post_meta($post->ID, 'week8_audio', true);
@@ -398,15 +398,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week8_title') ?>" href="<?php meta('week8_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week8_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week8_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week8_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week8_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week8_vimeo_id', true) ) { ?><a title="<?php meta('week8_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week8_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week8_pdf', true) ) { ?> <a title="<?php echo get_the_title($week8_pdf_id); ?>" class="col-xs-3" href="<?php echo $week8_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week8 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week9_audio', true) ) : ?>
     <div id="week9" class="sermons">
       <?php $audioMeta9 = get_post_meta($post->ID, 'week9_audio', true);
@@ -422,15 +422,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week9_title') ?>" href="<?php meta('week9_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week9_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week9_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week9_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week9_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week9_vimeo_id', true) ) { ?><a title="<?php meta('week9_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week9_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week9_pdf', true) ) { ?> <a title="<?php echo get_the_title($week9_pdf_id); ?>" class="col-xs-3" href="<?php echo $week9_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week9 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week10_audio', true) ) : ?>
     <div id="week10" class="sermons">
       <?php $audioMeta10 = get_post_meta($post->ID, 'week10_audio', true);
@@ -446,15 +446,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week10_title') ?>" href="<?php meta('week10_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week10_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week10_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week10_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week10_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week10_vimeo_id', true) ) { ?><a title="<?php meta('week10_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week10_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week10_pdf', true) ) { ?> <a title="<?php echo get_the_title($week10_pdf_id); ?>" class="col-xs-3" href="<?php echo $week10_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week10 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week11_audio', true) ) : ?>
     <div id="week11" class="sermons">
       <?php $audioMeta11 = get_post_meta($post->ID, 'week11_audio', true);
@@ -470,15 +470,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week11_title') ?>" href="<?php meta('week11_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week11_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week11_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week11_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week11_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week11_vimeo_id', true) ) { ?><a title="<?php meta('week11_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week11_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week11_pdf', true) ) { ?> <a title="<?php echo get_the_title($week11_pdf_id); ?>" class="col-xs-3" href="<?php echo $week11_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week11 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week12_audio', true) ) : ?>
     <div id="week12" class="sermons">
       <?php $audioMeta12 = get_post_meta($post->ID, 'week12_audio', true);
@@ -494,15 +494,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week12_title') ?>" href="<?php meta('week12_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week12_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week12_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week12_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week12_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week12_vimeo_id', true) ) { ?><a title="<?php meta('week12_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week12_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week12_pdf', true) ) { ?> <a title="<?php echo get_the_title($week12_pdf_id); ?>" class="col-xs-3" href="<?php echo $week12_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week12 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week13_audio', true) ) : ?>
     <div id="week13" class="sermons">
       <?php $audioMeta13 = get_post_meta($post->ID, 'week13_audio', true);
@@ -518,15 +518,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week13_title') ?>" href="<?php meta('week13_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week13_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week13_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week13_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week13_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week13_vimeo_id', true) ) { ?><a title="<?php meta('week13_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week13_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week13_pdf', true) ) { ?> <a title="<?php echo get_the_title($week13_pdf_id); ?>" class="col-xs-3" href="<?php echo $week13_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week13 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week14_audio', true) ) : ?>
     <div id="week14" class="sermons">
       <?php $audioMeta14 = get_post_meta($post->ID, 'week14_audio', true);
@@ -542,15 +542,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week14_title') ?>" href="<?php meta('week14_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week14_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week14_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week14_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week14_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week14_vimeo_id', true) ) { ?><a title="<?php meta('week14_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week14_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week14_pdf', true) ) { ?> <a title="<?php echo get_the_title($week14_pdf_id); ?>" class="col-xs-3" href="<?php echo $week14_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week14 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week15_audio', true) ) : ?>
     <div id="week15" class="sermons">
       <?php $audioMeta15 = get_post_meta($post->ID, 'week15_audio', true);
@@ -566,15 +566,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week15_title') ?>" href="<?php meta('week15_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week15_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week15_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week15_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week15_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week15_vimeo_id', true) ) { ?><a title="<?php meta('week15_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week15_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week15_pdf', true) ) { ?> <a title="<?php echo get_the_title($week15_pdf_id); ?>" class="col-xs-3" href="<?php echo $week15_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week15 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week16_audio', true) ) : ?>
     <div id="week16" class="sermons">
       <?php $audioMeta16 = get_post_meta($post->ID, 'week16_audio', true);
@@ -590,15 +590,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week16_title') ?>" href="<?php meta('week16_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week16_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week16_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week16_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week16_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week16_vimeo_id', true) ) { ?><a title="<?php meta('week16_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week16_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week16_pdf', true) ) { ?> <a title="<?php echo get_the_title($week16_pdf_id); ?>" class="col-xs-3" href="<?php echo $week16_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week16 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week17_audio', true) ) : ?>
     <div id="week17" class="sermons">
       <?php $audioMeta17 = get_post_meta($post->ID, 'week17_audio', true);
@@ -614,15 +614,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week17_title') ?>" href="<?php meta('week17_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week17_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week17_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week17_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week17_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week17_vimeo_id', true) ) { ?><a title="<?php meta('week17_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week17_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week17_pdf', true) ) { ?> <a title="<?php echo get_the_title($week17_pdf_id); ?>" class="col-xs-3" href="<?php echo $week17_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week17 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week18_audio', true) ) : ?>
     <div id="week18" class="sermons">
       <?php $audioMeta18 = get_post_meta($post->ID, 'week18_audio', true);
@@ -638,15 +638,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week18_title') ?>" href="<?php meta('week18_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week18_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week18_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week18_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week18_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week18_vimeo_id', true) ) { ?><a title="<?php meta('week18_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week18_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week18_pdf', true) ) { ?> <a title="<?php echo get_the_title($week18_pdf_id); ?>" class="col-xs-3" href="<?php echo $week18_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week18 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week19_audio', true) ) : ?>
     <div id="week19" class="sermons">
       <?php $audioMeta19 = get_post_meta($post->ID, 'week19_audio', true);
@@ -662,15 +662,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week19_title') ?>" href="<?php meta('week19_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week19_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week19_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week19_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week19_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week19_vimeo_id', true) ) { ?><a title="<?php meta('week19_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week19_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week19_pdf', true) ) { ?> <a title="<?php echo get_the_title($week19_pdf_id); ?>" class="col-xs-3" href="<?php echo $week19_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week19 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week20_audio', true) ) : ?>
     <div id="week20" class="sermons">
       <?php $audioMeta20 = get_post_meta($post->ID, 'week20_audio', true);
@@ -686,15 +686,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week20_title') ?>" href="<?php meta('week20_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week20_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week20_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week20_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week20_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week20_vimeo_id', true) ) { ?><a title="<?php meta('week20_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week20_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week20_pdf', true) ) { ?> <a title="<?php echo get_the_title($week20_pdf_id); ?>" class="col-xs-3" href="<?php echo $week20_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
     </div><!-- #week20 -->
+    <div class="clearfix"></div>
     <?php endif; ?>
 
-    <div class="clearfix"></div>
     <?php if ( get_post_meta($post->ID, 'week21_audio', true) ) : ?>
     <div id="week21" class="sermons">
       <?php $audioMeta21 = get_post_meta($post->ID, 'week21_audio', true);
@@ -710,7 +710,7 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
 
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php meta('week21_title') ?>" href="<?php meta('week21_audio') ?>"><i class="glyphicon glyphicon-music"></i></a>
-        <a class="col-xs-3" title="Download <?php meta('week21_title') ?>" href="<?php echo get_template_directory_uri(); ?>/download.php?file=<?php echo $week21_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
+        <a class="col-xs-3" title="Download <?php meta('week21_title') ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week21_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
     <?php if ( get_post_meta($post->ID, 'week21_vimeo_id', true) ) { ?><a title="<?php meta('week21_vimeo_title') ?>" class="col-xs-3" href="http://player.vimeo.com/video/<?php meta('week21_vimeo_id') ?>"><i class="glyphicon glyphicon-youtube-play"></i></a><?php } ?>
     <?php if ( get_post_meta($post->ID, 'week21_pdf', true) ) { ?> <a title="<?php echo get_the_title($week21_pdf_id); ?>" class="col-xs-3" href="<?php echo $week21_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
