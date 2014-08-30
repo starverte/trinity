@@ -39,6 +39,9 @@ textarea {
 body {
   padding-top: 0;
 }
+a {
+  font-weight: 400;
+}
 article {
 }
 b, strong {
@@ -223,16 +226,13 @@ hr {
 }
 
 /* All other menus */
-.nav-trinity {
+.navbar-trinity  {
+  margin-bottom: 0;
+  background-color: #fefefe;
   border: 1px solid #c2c2c2;
   border-right: 0;
   border-left: 0;
   border-radius: 0;
-}
-.navbar-trinity {
-  margin-bottom: 0;
-  background-color: #fefefe;
-  border: 0;
 }
 .navbar-trinity .navbar-nav > li {
   border-left: 1px solid #c2c2c2;
@@ -251,14 +251,40 @@ hr {
 .navbar-trinity .navbar-nav > .disabled > a:focus {
   background-color: transparent;
 }
-.navbar-trinity .navbar-form {
-  border-color: #c2c2c2;
+.navbar-trinity .navbar-toggle {
+  border-color: #eee;
+}
+.navbar-trinity .navbar-toggle:hover,
+.navbar-trinity .navbar-toggle:focus {
+  background-color: #eee;
+}
+.navbar-trinity .navbar-toggle .icon-bar {
+  background-color: #999;
 }
 .navbar-trinity .navbar-nav > .open > a,
 .navbar-trinity .navbar-nav > .open > a:hover,
 .navbar-trinity .navbar-nav > .open > a:focus {
-  color: #555;
-  background-color: #c2c2c2;
+  color: #0055c0;
+  background-color: #f2f2f2;
+}
+@media (max-width: 767px) {
+  .navbar-trinity .navbar-nav .open .dropdown-menu > li > a {
+    color: #0055c0;
+  }
+  .navbar-trinity .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-color: transparent;
+  }
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .active > a:focus {
+    background-color: #d7d7d7;
+  }
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    background-color: transparent;
+  }
 }
 .navbar-trinity .navbar-link {
   color: #777;
@@ -269,20 +295,21 @@ hr {
 
 
 /* Specific to LifePointe */
-.menu .blue,
-.navbar-trinity .blue {
-  background: #0051c3;
-  border-color: #0051c3;
-}
-.menu .blue > a,
-.navbar-trinity .blue > a {
+.navbar-trinity .navbar-nav > .blue > a {
   color: #fff;
+  background-color: #0055c0;
+  border-color: #0055c0;
 }
-.menu .blue > a:hover,
 .navbar-trinity .navbar-nav > .blue > a:hover,
 .navbar-trinity .navbar-nav > .blue > a:focus {
   color: #fff;
-  background-color: #0037af;
+  background-color: #003e8d;
+}
+.navbar-trinity .navbar-nav > .blue.active > a,
+.navbar-trinity .navbar-nav > .blue.active > a:hover,
+.navbar-trinity .navbar-nav > .blue.active > a:focus {
+  color: #fff;
+  background-color: #0055c0;
 }
 
 /* =Comments
@@ -338,6 +365,9 @@ hr {
   font-weight: 300;
   line-height: 1.42857143;
 }
+.affiliated {
+  text-align: center;
+}
 .affiliated img,
 .footer-row iframe {
           filter: grayscale(1);
@@ -346,6 +376,10 @@ hr {
      -moz-filter: grayscale(1);
        -o-filter: grayscale(1);
       -ms-filter: grayscale(1);
+}
+.affiliated img {
+  width: auto;
+  max-height: 100px;
 }
 .affiliated:hover img,
 iframe:hover {
