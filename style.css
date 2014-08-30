@@ -3,14 +3,14 @@ Theme Name: Trinity
 Theme URI: https://github.com/starverte/trinity.git
 Author: Star Verte LLC
 Description: Child theme of Flint. Theme developed for use with nonprofit organizations, particularly churches.
-Version: 0.0.0
+Version: 0.1
 License: GPLv3
 License URI: LICENSE.md
-Tags: 
+Tags:
 Template: flint
 
     Copyright 2014 Star Verte LLC (email : dev@starverte.com)
-    
+
     This program is free software: you can redistribute it and/or modify
     it under the terms of the GNU General Public License as published by
     the Free Software Foundation, either version 3 of the License, or
@@ -25,7 +25,7 @@ Template: flint
     along with this program.  If not, see <http://www.gnu.org/licenses/>.
 */
 
-@import(../flint/style.css)
+@import url(../flint/style.css);
 
 /* =Global
 ----------------------------------------------- */
@@ -36,8 +36,11 @@ input,
 select,
 textarea {
 }
-html,
 body {
+  padding-top: 0;
+}
+a {
+  font-weight: 400;
 }
 article {
 }
@@ -75,6 +78,26 @@ hr {
 ----------------------------------------------- */
 
 #top-pad {
+  display: none;
+}
+#masthead {
+  padding: 0;
+}
+#masthead .container {
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+}
+.site-branding {
+  line-height: 1;
+  color: #0051c3;
+  text-align: right;
+}
+.site-branding h3 {
+  margin: 0;
+  font-size: 15px;
+}
+.site-description {
+  font-size: 24px;
 }
 
 
@@ -83,7 +106,9 @@ hr {
 
 .bypostauthor {
 }
-.entry-title {
+.page .entry-title,
+.single .entry-title {
+  margin-top: 0;
 }
 .btn-edit {
 }
@@ -96,10 +121,62 @@ hr {
 .page-links {
 }
 #primary {
+  margin-top: 1em;
+  margin-bottom: 1em;
+}
+.home #primary {
+  margin-top: 0;
 }
 .page-header {
 }
 .pw {
+}
+#carousel_splash {
+  margin-top: 0;
+}
+.sermon-details {
+  line-height: 2em;
+}
+.sermon-media .glyphicon {
+  font-size: 2em;
+  text-align: right;
+}
+.home .carousel-caption {
+  font-size: 36px;
+}
+#mission {
+  padding-top: 1em;
+  padding-bottom: 1em;
+  color: #fff;
+  background: url('//sharethelife.org/wp-content/uploads/LifePointe_Water.png');
+  background-position-x: center;
+  background-position-y: 25%;
+}
+#mission h5 {
+  text-transform: uppercase;
+}
+#next-steps {
+  padding-top: 1em;
+  padding-bottom: 1em;
+}
+.ns-caption {
+  position: relative;
+  top: 0;
+  left: 0;
+  padding-top: 0.5em;
+  padding-bottom: 0.5em;
+  padding-left: 1em;
+  margin-top: -2.5em;
+  font-size: 1.5em;
+  font-weight: 600;
+  color: #fff;
+  background: #0055c0;
+  background: rgba(0,85,192,0.75);
+}
+.ns:hover .ns-caption,
+.ns:focus .ns-caption {
+  background: #0055c0;
+  background: rgba(0,85,192,1);
 }
 
 
@@ -111,9 +188,129 @@ hr {
 /* =Navigation
 ----------------------------------------------- */
 
-.navbar-brand {
+/* Mobile Menu */
+.menu {
+  position: relative;
+  min-height: 52px;
+  border: 1px solid #c2c2c2;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+.menu-nav {
+  margin: 7.5px -15px;
+}
+.menu-nav > li > a {
+  padding-top: 10px;
+  padding-bottom: 10px;
+  line-height: 20px;
+}
+.menu-nav {
+  float: left;
+  margin: 0;
+}
+.menu-nav > li {
+  float: left;
+  background: #fefefe;
+  border-right: 1px solid #c2c2c2;
+}
+.menu-nav > li:last-child {
+  border-right: 0;
+}
+.menu-nav > li > a {
+  padding-top: 15px;
+  padding-bottom: 15px;
+}
+.menu-nav.menu-right:last-child {
+  margin-right: -15px;
 }
 
+/* All other menus */
+.navbar-trinity  {
+  margin-bottom: 0;
+  background-color: #fefefe;
+  border: 1px solid #c2c2c2;
+  border-right: 0;
+  border-left: 0;
+  border-radius: 0;
+}
+.navbar-trinity .navbar-nav > li {
+  border-left: 1px solid #c2c2c2;
+}
+.navbar-trinity .navbar-nav > li > a:hover,
+.navbar-trinity .navbar-nav > li > a:focus {
+  background-color: #f8f8f8;
+}
+.navbar-trinity .navbar-nav > .active > a,
+.navbar-trinity .navbar-nav > .active > a:hover,
+.navbar-trinity .navbar-nav > .active > a:focus {
+  background-color: #eee;
+}
+.navbar-trinity .navbar-nav > .disabled > a,
+.navbar-trinity .navbar-nav > .disabled > a:hover,
+.navbar-trinity .navbar-nav > .disabled > a:focus {
+  background-color: transparent;
+}
+.navbar-trinity .navbar-toggle {
+  border-color: #eee;
+}
+.navbar-trinity .navbar-toggle:hover,
+.navbar-trinity .navbar-toggle:focus {
+  background-color: #eee;
+}
+.navbar-trinity .navbar-toggle .icon-bar {
+  background-color: #999;
+}
+.navbar-trinity .navbar-nav > .open > a,
+.navbar-trinity .navbar-nav > .open > a:hover,
+.navbar-trinity .navbar-nav > .open > a:focus {
+  color: #0055c0;
+  background-color: #f2f2f2;
+}
+@media (max-width: 767px) {
+  .navbar-trinity .navbar-nav .open .dropdown-menu > li > a {
+    color: #0055c0;
+  }
+  .navbar-trinity .navbar-nav .open .dropdown-menu > li > a:hover,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > li > a:focus {
+    background-color: transparent;
+  }
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .active > a,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .active > a:hover,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .active > a:focus {
+    background-color: #d7d7d7;
+  }
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .disabled > a,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .disabled > a:hover,
+  .navbar-trinity .navbar-nav .open .dropdown-menu > .disabled > a:focus {
+    background-color: transparent;
+  }
+}
+.navbar-trinity .navbar-link {
+  color: #777;
+}
+.navbar-trinity .navbar-link:hover {
+  color: #333;
+}
+
+
+/* Specific to LifePointe */
+.navbar-trinity .navbar-nav > .blue > a {
+  color: #fff;
+  background-color: #0055c0;
+  border-color: #0055c0;
+}
+.navbar-trinity .navbar-nav > .blue > a:hover,
+.navbar-trinity .navbar-nav > .blue > a:focus {
+  color: #fff;
+  background-color: #003e8d;
+}
+.navbar-trinity .navbar-nav > .blue.active > a,
+.navbar-trinity .navbar-nav > .blue.active > a:hover,
+.navbar-trinity .navbar-nav > .blue.active > a:focus {
+  color: #fff;
+  background-color: #0055c0;
+}
 
 /* =Comments
 ----------------------------------------------- */
@@ -132,9 +329,193 @@ hr {
 /* =Footer
 ----------------------------------------------- */
 
+.footer-row {
+  color: #404040;
+  background: #f2f2f2;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+}
+.footer-row a {
+  color: #404040;
+}
+.footer-row a:hover {
+  color: #0055c0;
+  text-decoration: none;
+}
+.footer-row .menu,
+.footer-row .sub-menu {
+  padding-left: 0;
+  list-style: none;
+  border: none;
+}
+.footer-row .sub-menu {
+  margin-top: 10px;
+}
+.footer-row .menu li {
+  margin-top: 20px;
+  margin-bottom: 10px;
+  font-size: 20px;
+  font-weight: 400;
+  line-height: 1.1;
+}
+.footer-row .sub-menu li {
+  margin-top: 0;
+  margin-bottom: 0;
+  font-size: 15px;
+  font-weight: 300;
+  line-height: 1.42857143;
+}
+.affiliated {
+  text-align: center;
+}
+.affiliated img,
+.footer-row iframe {
+          filter: grayscale(1);
+
+  -webkit-filter: grayscale(1);
+     -moz-filter: grayscale(1);
+       -o-filter: grayscale(1);
+      -ms-filter: grayscale(1);
+}
+.affiliated img {
+  width: auto;
+  max-height: 100px;
+}
+.affiliated:hover img,
+iframe:hover {
+          filter: grayscale(0);
+
+  -webkit-filter: grayscale(0);
+     -moz-filter: grayscale(0);
+       -o-filter: grayscale(0);
+      -ms-filter: grayscale(0);
+}
 #colophon {
 }
-.site-info {
+#colophon {
+  margin-top: -62px;
 }
 #credits {
+}
+
+/* =Buttons */
+.btn-blue {
+  color: #fff;
+  background-color: #0055c0;
+  border-color: #004aa7;
+}
+.btn-blue:hover,
+.btn-blue:focus,
+.btn-blue:active,
+.btn-blue.active,
+.open > .dropdown-toggle.btn-blue {
+  color: #fff;
+  background-color: #003e8d;
+  border-color: #002f69;
+}
+.btn-blue:active,
+.btn-blue.active,
+.open > .dropdown-toggle.btn-blue {
+  background-image: none;
+}
+.btn-blue.disabled,
+.btn-blue[disabled],
+fieldset[disabled] .btn-blue,
+.btn-blue.disabled:hover,
+.btn-blue[disabled]:hover,
+fieldset[disabled] .btn-blue:hover,
+.btn-blue.disabled:focus,
+.btn-blue[disabled]:focus,
+fieldset[disabled] .btn-blue:focus,
+.btn-blue.disabled:active,
+.btn-blue[disabled]:active,
+fieldset[disabled] .btn-blue:active,
+.btn-blue.disabled.active,
+.btn-blue[disabled].active,
+fieldset[disabled] .btn-blue.active {
+  background-color: #0055c0;
+  border-color: #004aa7;
+}
+.btn-blue .badge {
+  color: #0055c0;
+  background-color: #fff;
+}
+.btn-gray {
+  color: #0055c0;
+  background-color: #f8f8f8;
+  border-color: #ebebeb;
+}
+.btn-gray:hover,
+.btn-gray:focus,
+.btn-gray:active,
+.btn-gray.active,
+.open > .dropdown-toggle.btn-gray {
+  color: #004aa7;
+  background-color: #dfdfdf;
+  border-color: #cdcdcd;
+}
+.btn-gray:active,
+.btn-gray.active,
+.open > .dropdown-toggle.btn-gray {
+  background-image: none;
+}
+.btn-gray.disabled,
+.btn-gray[disabled],
+fieldset[disabled] .btn-gray,
+.btn-gray.disabled:hover,
+.btn-gray[disabled]:hover,
+fieldset[disabled] .btn-gray:hover,
+.btn-gray.disabled:focus,
+.btn-gray[disabled]:focus,
+fieldset[disabled] .btn-gray:focus,
+.btn-gray.disabled:active,
+.btn-gray[disabled]:active,
+fieldset[disabled] .btn-gray:active,
+.btn-gray.disabled.active,
+.btn-gray[disabled].active,
+fieldset[disabled] .btn-gray.active {
+  background-color: #f8f8f8;
+  border-color: #ebebeb;
+}
+.btn-gray .badge {
+  color: #f8f8f8;
+  background-color: #fff;
+}
+
+/* =Panels */
+.panel-blue {
+  border-color: #0055c0;
+}
+.panel-blue > .panel-heading {
+  color: #fff;
+  background-color: #0055c0;
+  border-color: #0055c0;
+}
+.panel-blue > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #0055c0;
+}
+.panel-blue > .panel-heading .badge {
+  color: #0055c0;
+  background-color: #fff;
+}
+.panel-blue > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #0055c0;
+}
+.panel-gray {
+  border-color: #d6e9c6;
+}
+.panel-gray > .panel-heading {
+  color: #3c763d;
+  background-color: #dff0d8;
+  border-color: #d6e9c6;
+}
+.panel-gray > .panel-heading + .panel-collapse > .panel-body {
+  border-top-color: #d6e9c6;
+}
+.panel-gray > .panel-heading .badge {
+  color: #dff0d8;
+  background-color: #3c763d;
+}
+.panel-gray > .panel-footer + .panel-collapse > .panel-body {
+  border-bottom-color: #d6e9c6;
 }
