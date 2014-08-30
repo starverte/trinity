@@ -142,7 +142,12 @@ hr {
   text-align: right;
 }
 .home .carousel-caption {
-  font-size: 36px;
+  font-size: 24px;
+}
+@media (max-width: 992px) {
+  .home .carousel-caption {
+    font-size: 36px;
+  }
 }
 #mission {
   padding-top: 1em;
