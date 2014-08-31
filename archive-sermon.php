@@ -44,7 +44,7 @@ get_header(); ?>
         <?php global $wp_query;
               $args = array_merge( $wp_query->query, array( 'post_type' => 'sermon', 'posts_per_page' => 99, 'orderby' => 'date', 'order' => 'DESC', 'tax_query' => array(
                 array(
-                  'taxonomy' => 'sermon-topics',
+                  'taxonomy' => 'sermon_topics',
                   'field' => 'slug',
                   'terms' => 'academy',
                   'operator' => 'NOT IN'
