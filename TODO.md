@@ -33,8 +33,8 @@
  - [ ] For Slider
     - [ ] If only title, center text
     - [ ] If title and description, title goes to left description goes to right
-    - [ ] Allow <a> <strong> and <em> tags for both
- - [ ] Add ability to put <a> <strong> and <em> into Sermon Series audio text
+    - [ ] Allow `<a>` `<strong>` and `<em>` tags for both
+ - [ ] Add ability to put `<a>` `<strong>` and `<em>` into Sermon Series audio text
 
 ## Low
 
@@ -42,5 +42,5 @@
  - [ ] Three front page featured events => select via “Customize”
  - [ ] Tighten up margin-bottom on sermon week titles
  - [ ] ChurchTeams CSS needs updated to match look
- - [ ] [btn target=“_blank”]
+ - [ ] `[btn target=“_blank”]`
  - [ ] Getting all videos to use responsive code
