@@ -17,8 +17,8 @@
  - [ ] Podcast
     - [x] ~~Sermon Series Template~~
     - [x] ~~Academy Audio Template~~
-    - [ ] RSS/ITPC Template
-    - [ ] Resubmit to iTunes
+    - [ ] RSS/ITPC Template**
+    - [ ] Resubmit to iTunes**
 
 ## Important
 
@@ -36,7 +36,8 @@
     - [ ] If only title, center text
     - [ ] If title and description, title goes to left description goes to right
     - [ ] Allow `<a>` `<strong>` and `<em>` tags for both
- - [ ] Add ability to put `<a>` `<strong>` and `<em>` into Sermon Series audio text
+    - [ ] Make title shorter
+ - [ ] Add ability to put `<a>` `<strong>` and `<em>` into Sermon Series audio text**
 
 ## Low
 
@@ -46,3 +47,8 @@
  - [ ] ChurchTeams CSS needs updated to match look
  - [ ] `[btn target=“_blank”]`
  - [ ] Getting all videos to use responsive code
+  - [x] ~~Steve - first run through~~
+  - [ ] Matt - second run through
+ 
+**These items will be postponed and addressed by adding the Podcast module to Steel.
+
