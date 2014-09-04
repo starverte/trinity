@@ -40,7 +40,7 @@
  - [ ] **Add ability to put `<a>` `<strong>` and `<em>` into Sermon Series audio text**
 
 ## Low
-**
+
  - [ ] **Add Logos and Graphics link to footer**
  - [ ] **Three front page featured events => select via “Customize”**
  - [ ] **Tighten up margin-bottom on sermon week titles**
