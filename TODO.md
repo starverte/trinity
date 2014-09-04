@@ -46,7 +46,7 @@
  - [ ] **Tighten up margin-bottom on sermon week titles**
  - [ ] **ChurchTeams CSS needs updated to match look**
  - [ ] **`[btn target=“_blank”]`**
- - [ ] **Getting all videos to use responsive code
+ - [ ] **Getting all videos to use responsive code**
   - [x] Steve - first run through
   - [ ] **Matt - second run through**
  
