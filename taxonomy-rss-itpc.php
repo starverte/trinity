@@ -3,7 +3,7 @@
  * The template for displaying podcast feed
  *
  * @package Flint/Trinity
- * @since 0.1
+ * @since 0.2
  */
 
 header('Content-Type: text/xml; charset=' . get_option('blog_charset'), true);

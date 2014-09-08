@@ -3,7 +3,7 @@
  * Template Name: Academy Audio
  *
  * @package Flint/Trinity
- * @since 0.0.0
+ * @since 0.2
  */
 
 get_header(); ?>

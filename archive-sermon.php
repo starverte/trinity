@@ -3,7 +3,7 @@
  * The template for displaying sermon "archive" pages
  *
  * @package Flint/Trinity
- * @since 0.1
+ * @since 0.2
  */
 
 get_header(); ?>
