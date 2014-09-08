@@ -1,6 +1,6 @@
 <?php
 /**
- * The template for displaying sermon "archive" pages
+ * Template Name: Academy Audio
  *
  * @package Flint/Trinity
  * @since 0.2
@@ -38,19 +38,9 @@ get_header(); ?>
     <?php if ( have_posts() ) : ?>
 
       <header class="page-header">
-        <h1 class="page-title">Sermons</h1>
+        <h1 class="page-title">Academy</h1>
       </header><!-- .page-header -->
 
-        <?php global $wp_query;
-              $args = array_merge( $wp_query->query, array( 'post_type' => 'sermon', 'posts_per_page' => 99, 'orderby' => 'date', 'order' => 'DESC', 'tax_query' => array(
-                array(
-                  'taxonomy' => 'sermon_topics',
-                  'field' => 'slug',
-                  'terms' => 'academy',
-                  'operator' => 'NOT IN'
-                )
-              )));
-              query_posts( $args ); ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
         <?php get_template_part( 'type', 'sermon' ); ?>
@@ -73,3 +63,4 @@ get_header(); ?>
 
 <?php flint_get_widgets('footer'); ?>
 <?php get_footer(); ?>
+

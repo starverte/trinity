@@ -3,8 +3,8 @@ Theme Name: Trinity
 Theme URI: https://github.com/starverte/trinity.git
 Author: Star Verte LLC
 Description: Child theme of Flint. Theme developed for use with nonprofit organizations, particularly churches.
-Version: 0.1
-License: GPLv3
+Version: 0.2
+License: GPLv3 or later
 License URI: LICENSE.md
 Tags:
 Template: flint
@@ -142,7 +142,12 @@ hr {
   text-align: right;
 }
 .home .carousel-caption {
-  font-size: 36px;
+  font-size: 24px;
+}
+@media (max-width: 992px) {
+  .home .carousel-caption {
+    font-size: 36px;
+  }
 }
 #mission {
   padding-top: 1em;
@@ -167,7 +172,7 @@ hr {
   padding-bottom: 0.5em;
   padding-left: 1em;
   margin-top: -2.5em;
-  font-size: 1.5em;
+  font-size: 1.2em;
   font-weight: 600;
   color: #fff;
   background: #0055c0;
@@ -188,44 +193,6 @@ hr {
 /* =Navigation
 ----------------------------------------------- */
 
-/* Mobile Menu */
-.menu {
-  position: relative;
-  min-height: 52px;
-  border: 1px solid #c2c2c2;
-  border-right: 0;
-  border-left: 0;
-  border-radius: 0;
-}
-.menu-nav {
-  margin: 7.5px -15px;
-}
-.menu-nav > li > a {
-  padding-top: 10px;
-  padding-bottom: 10px;
-  line-height: 20px;
-}
-.menu-nav {
-  float: left;
-  margin: 0;
-}
-.menu-nav > li {
-  float: left;
-  background: #fefefe;
-  border-right: 1px solid #c2c2c2;
-}
-.menu-nav > li:last-child {
-  border-right: 0;
-}
-.menu-nav > li > a {
-  padding-top: 15px;
-  padding-bottom: 15px;
-}
-.menu-nav.menu-right:last-child {
-  margin-right: -15px;
-}
-
-/* All other menus */
 .navbar-trinity  {
   margin-bottom: 0;
   background-color: #fefefe;
@@ -500,6 +467,9 @@ fieldset[disabled] .btn-gray.active {
 }
 .panel-blue > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #0055c0;
+}
+.panel-blue > .panel-heading a:hover {
+  color: #fff;
 }
 .panel-gray {
   border-color: #d6e9c6;
