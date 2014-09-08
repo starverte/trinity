@@ -458,9 +458,6 @@ fieldset[disabled] .btn-gray.active {
   background-color: #0055c0;
   border-color: #0055c0;
 }
-.panel-blue > .panel-heading a:hover {
-  color: #fff;
-}
 .panel-blue > .panel-heading + .panel-collapse > .panel-body {
   border-top-color: #0055c0;
 }
@@ -470,6 +467,9 @@ fieldset[disabled] .btn-gray.active {
 }
 .panel-blue > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #0055c0;
+}
+.panel-blue > .panel-heading a:hover {
+  color: #fff;
 }
 .panel-gray {
   border-color: #d6e9c6;
