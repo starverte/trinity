@@ -13,7 +13,7 @@
  - [x] Download link for Sermon Archives
  - [x] Change slider ratio to 1920 x 750
  - [x] Newsletter link
- - [ ] **Staff template**
+ - [x] Staff template
  - [ ] Podcast
     - [x] Sermon Series Template
     - [x] Academy Audio Template
