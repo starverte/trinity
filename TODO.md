@@ -17,8 +17,8 @@
  - [ ] Podcast
     - [x] Sermon Series Template
     - [x] Academy Audio Template
-    - [ ] RSS/ITPC Template**
-    - [ ] Resubmit to iTunes**
+    - [ ] ~~RSS/ITPC Template~~**
+    - [ ] ~~Resubmit to iTunes~~**
 
 ## Important
 
@@ -37,7 +37,7 @@
     - [ ] **If title and description, title goes to left description goes to right**
     - [ ] **Allow `<a>` `<strong>` and `<em>` tags for both**
     - [ ] **Make title shorter**
- - [ ] **Add ability to put `<a>` `<strong>` and `<em>` into Sermon Series audio text**
+ - [ ] ~~Add ability to put `<a>` `<strong>` and `<em>` into Sermon Series audio text~~**
 
 ## Low
 
