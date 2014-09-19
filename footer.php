@@ -38,13 +38,16 @@
       <div class="col-xs-6 col-sm-2">
         <h3>Affiliations</h3>
         <p class="affiliated">
-          <a href="http://thegospelcoalition.org"><img src="http://sharethelife.org/wp-content/uploads/tgclogo.jpg" alt="The Gospel Coalition"></a>
+          <a href="http://thegospelcoalition.org"><img src="<?php get_stylesheet_directory() ?>/img/tgclogo.jpg" alt="The Gospel Coalition"></a>
         </p>
         <p class="affiliated">
-          <a href="http://rmcn.org"><img src="http://sharethelife.org/wp-content/uploads/rmcnlogo.png" alt="Rocky Mountain Church Network"></a>
+          <a href="http://rmcn.org"><img src="<?php get_stylesheet_directory() ?>/img/rmcnlogo.png" alt="Rocky Mountain Church Network"></a>
         </p>
         <p class="affiliated">
-          <a href="http://www.fcgov.com/climatewise/"><img src="http://sharethelife.org/wp-content/uploads/cwlogo.png" alt="ClimateWise"></a>
+          <a href="http://fortcollinschurchnetwork.org"><img src="<?php get_stylesheet_directory() ?>/img/fccnlogo.png" alt="Fort Collins Church Network"></a>
+        </p>
+        <p class="affiliated">
+          <a href="http://www.fcgov.com/climatewise/"><img src="<?php get_stylesheet_directory() ?>/img/cwlogo.png" alt="ClimateWise"></a>
         </p>
       </div>
 
