@@ -157,7 +157,7 @@ hr {
   padding-top: 1em;
   padding-bottom: 1em;
   color: #fff;
-  background: url('//sharethelife.org/wp-content/uploads/LifePointe_Water.png');
+  background: url("//sharethelife.org/wp-content/uploads/LifePointe_Water.png");
   background-position-x: center;
   background-position-y: 25%;
 }
@@ -211,7 +211,7 @@ hr {
 /* =Navigation
 ----------------------------------------------- */
 
-.navbar-trinity  {
+.navbar-trinity {
   margin-bottom: 0;
   background-color: #fefefe;
   border: 1px solid #c2c2c2;
@@ -359,8 +359,8 @@ hr {
 
   -webkit-filter: grayscale(1);
      -moz-filter: grayscale(1);
-       -o-filter: grayscale(1);
       -ms-filter: grayscale(1);
+       -o-filter: grayscale(1);
 }
 .affiliated img {
   width: auto;
@@ -372,8 +372,8 @@ iframe:hover {
 
   -webkit-filter: grayscale(0);
      -moz-filter: grayscale(0);
-       -o-filter: grayscale(0);
       -ms-filter: grayscale(0);
+       -o-filter: grayscale(0);
 }
 #colophon {
 }
