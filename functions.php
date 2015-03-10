@@ -26,7 +26,7 @@ function trinity_enqueue_scripts() {
    * If using Give page template, loads Javascript
    */
   if (is_page_template('templates/give.php')) {
-    wp_enqueue_script( 'give-form', get_template_directory_uri() . '/js/give.js' );
+    wp_enqueue_script( 'give-form', get_stylesheet_directory_uri() . '/js/give.js', array('jquery') );
   }
 }
 add_action( 'wp_enqueue_scripts', 'trinity_enqueue_scripts' );
