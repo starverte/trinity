@@ -84,6 +84,14 @@ hr {
 #masthead {
   padding: 0;
 }
+@media screen and (min-width: 992px) {
+  #masthead {
+    color: #fff;
+    background: url("//sharethelife.org/wp-content/uploads/LifePointe_Water.png");
+    background-position-x: center;
+    background-position-y: 25%;
+  }
+}
 #masthead .container {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -92,6 +100,11 @@ hr {
   line-height: 1;
   color: #0051c3;
   text-align: right;
+}
+@media screen and (min-width: 992px) {
+  .site-branding {
+    color: #fff!important;
+  }
 }
 .site-branding h3 {
   margin: 0;
