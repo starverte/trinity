@@ -49,6 +49,7 @@
  - [ ] **Getting all videos to use responsive code**
   - [x] Steve - first run through
   - [ ] **Matt - second run through**
+ - [ ] **Background color for entry-content**
 
 **These items will be postponed and addressed by adding the Podcast module to Steel.
 

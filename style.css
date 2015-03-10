@@ -38,6 +38,7 @@ textarea {
 }
 body {
   padding-top: 0;
+  color: #333;
 }
 a {
   font-weight: 400;
@@ -83,6 +84,14 @@ hr {
 #masthead {
   padding: 0;
 }
+@media screen and (min-width: 992px) {
+  #masthead {
+    color: #fff;
+    background: url("//sharethelife.org/wp-content/uploads/LifePointe_Water.png");
+    background-position-x: center;
+    background-position-y: 25%;
+  }
+}
 #masthead .container {
   padding-top: 0.5em;
   padding-bottom: 0.5em;
@@ -92,12 +101,21 @@ hr {
   color: #0051c3;
   text-align: right;
 }
+@media screen and (min-width: 992px) {
+  .site-branding {
+    color: #fff!important;
+  }
+}
 .site-branding h3 {
   margin: 0;
   font-size: 15px;
 }
 .site-description {
   font-size: 24px;
+}
+#logo {
+  padding: 0;
+  margin: 0;
 }
 
 
@@ -153,7 +171,7 @@ hr {
   padding-top: 1em;
   padding-bottom: 1em;
   color: #fff;
-  background: url('//sharethelife.org/wp-content/uploads/LifePointe_Water.png');
+  background: url("//sharethelife.org/wp-content/uploads/LifePointe_Water.png");
   background-position-x: center;
   background-position-y: 25%;
 }
@@ -184,6 +202,20 @@ hr {
   background: rgba(0,85,192,1);
 }
 
+/** LifePointe Men Page */
+#post-3970 .left h2 {
+  font-weight: 600;
+  line-height: 1.5em;
+  color: #000;
+  background: #ecb204;
+}
+#post-3970 .right h2 {
+  font-weight: 600;
+  line-height: 1.5em;
+  color: #fff;
+  background: #660505;
+}
+
 
 /* =Media
 ----------------------------------------------- */
@@ -193,7 +225,7 @@ hr {
 /* =Navigation
 ----------------------------------------------- */
 
-.navbar-trinity  {
+.navbar-trinity {
   margin-bottom: 0;
   background-color: #fefefe;
   border: 1px solid #c2c2c2;
@@ -341,8 +373,8 @@ hr {
 
   -webkit-filter: grayscale(1);
      -moz-filter: grayscale(1);
-       -o-filter: grayscale(1);
       -ms-filter: grayscale(1);
+       -o-filter: grayscale(1);
 }
 .affiliated img {
   width: auto;
@@ -354,8 +386,8 @@ iframe:hover {
 
   -webkit-filter: grayscale(0);
      -moz-filter: grayscale(0);
-       -o-filter: grayscale(0);
       -ms-filter: grayscale(0);
+       -o-filter: grayscale(0);
 }
 #colophon {
 }
