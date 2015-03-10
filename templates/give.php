@@ -3,7 +3,7 @@
  * Template Name: Give
  *
  * @package Flint/Trinity
- * @since 0.2
+ * @since 0.2.1
  */
 get_header(); ?>
 <?php flint_get_widgets('header'); ?>
