@@ -112,7 +112,6 @@ get_header(); ?>
               </div><!-- .entry-summary -->
               <?php else : ?>
               <div class="entry-content">
-                <pre><?php print_r($_POST); ?></pre>
                 <h3>Thank you for your donation to LifePointe Church!</h3>
                 <p>We appreciate your generosity and commit to use your gifts in a God honoring way. We are excited about how God is working in our church body as we focus on our mission to make gospel-centered disciples of Jesus Christ.</p>
                 <div class="row">
