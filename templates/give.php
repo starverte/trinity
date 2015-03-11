@@ -24,40 +24,38 @@ if (!empty($_POST['session'])) {
       $paypal_account = false;
     }
 
-    $general_fund   = !empty($_POST['general_fund'])   ? float_val($_POST['general_fund'])   : 0.00;
-    $puerto_penasco = !empty($_POST['puerto_penasco']) ? float_val($_POST['puerto_penasco']) : 0.00;
-    $imagine        = !empty($_POST['imagine'])        ? float_val($_POST['imagine'])        : 0.00;
-    $benevolence    = !empty($_POST['benevolence'])    ? float_val($_POST['benevolence'])    : 0.00;
-    $new            = !empty($_POST['new'])            ? float_val($_POST['new'])            : 0.00;
-    $other          = !empty($_POST['other'])          ? float_val($_POST['other'])          : 0.00;
-    $total          = !empty($_POST['total'])          ? float_val($_POST['total'])          : 0.00;
+    $general_fund   = !empty($_POST['general_fund'])   ? floatval($_POST['general_fund'])   : 0.00;
+    $puerto_penasco = !empty($_POST['puerto_penasco']) ? floatval($_POST['puerto_penasco']) : 0.00;
+    $imagine        = !empty($_POST['imagine'])        ? floatval($_POST['imagine'])        : 0.00;
+    $benevolence    = !empty($_POST['benevolence'])    ? floatval($_POST['benevolence'])    : 0.00;
+    $new            = !empty($_POST['new'])            ? floatval($_POST['new'])            : 0.00;
+    $other          = !empty($_POST['other'])          ? floatval($_POST['other'])          : 0.00;
+    $total          = $general_fund + $puerto_penasco + $imagine + $benevolence + $new + $other;
 
     $notes = !empty($_POST['notes']) ? sanitize_text_field($_POST['notes']) : '';
 
     if (!empty($first_name) && !empty($last_name) && $total > 0) {
 
-      $recipient = 'mbeall@starverte.com';
-      $subject   = $first_name . $last_name . ' pledged to donate $' . $total;
+      $recipient = 'stevepaxton@sharethelife.org';
+      $subject   = $first_name . ' ' . $last_name . ' pledged to donate $' . $total;
+      $subject  .= $paypal_account == true ? ' through the PayPal Giving Fund' : ' with PayPal';
 
-      $message  = '<h4>'.$subject.'</h4>';
-      $message .= '<table style="border:0;">';
-      $message .= '<tr><th>Designation</th><th>Amount</th></tr>';
-      $message .= '<tr><td>General Fund</td><td>'.$general_fund.'</td></tr>';
-      $message .= '<tr><td>College Mission Trip <br>to Puerto Penasco over Spring Break</td><td>'.$puerto_penasco.'</td></tr>';
-      $message .= '<tr><td>Building Fund (Imagine)</td><td>'.$imagine.'</td></tr>';
-      $message .= '<tr><td>Benevolence Fund</td><td>'.$benevolence.'</td></tr>';
-      $message .= '<tr><td>New Ministries</td><td>'.$new.'</td></tr>';
-      $message .= '<tr><td>Other</td><td>'.$other.'</td></tr>';
-      $message .= '<tr><td><strong>Total</strong></td><td><strong>'.$total.'</strong></td></tr>';
-      $message .= '</table>';
+      $message  = $subject.'.'."\r\n"."\r\n";
+      $message .= 'General Fund: $'.number_format($general_fund,2)."\r\n"."\r\n";
+      $message .= 'College Mission Trip to Puerto Penasco over Spring Break: $'.number_format($puerto_penasco,2)."\r\n"."\r\n";
+      $message .= 'Building Fund (Imagine): $'.number_format($imagine,2)."\r\n"."\r\n";
+      $message .= 'Benevolence Fund: $'.number_format($benevolence,2)."\r\n"."\r\n";
+      $message .= 'New Ministries: $'.number_format($new,2)."\r\n"."\r\n";
+      $message .= 'Other: $'.number_format($other,2)."\r\n"."\r\n";
+      $message .= 'Total: $'.number_format($total,2);
 
       if (!empty($notes)) {
-        $message .= '<strong>Additional Notes</strong>: <br>';
+        $message .= "\r\n"."\r\n".'Additional Notes:'."\r\n";
         $message .= $notes;
       }
 
       $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: mbeall@starverte.com'."\r\n".'X-Mailer: PHP/'.phpversion();
-      @mail($recipient, $subject, $message, $headers);
+      mail($recipient, $subject, $message, $headers);
 
       if ($paypal_account == true) {
         header("Location: https://www.paypal-donations.com/pp-charity/web.us/charity_i.jsp?id=72286&s=3");
@@ -71,8 +69,7 @@ if (!empty($_POST['session'])) {
     }
   }
   else {
-    session_destroy();
-    session_start();
+    unset($_SESSION['session']);
     $_SESSION['session'] = bin2hex(openssl_random_pseudo_bytes(10));
   }
 }
@@ -115,23 +112,24 @@ get_header(); ?>
               </div><!-- .entry-summary -->
               <?php else : ?>
               <div class="entry-content">
+                <pre><?php print_r($_POST); ?></pre>
                 <h3>Thank you for your donation to LifePointe Church!</h3>
                 <p>We appreciate your generosity and commit to use your gifts in a God honoring way. We are excited about how God is working in our church body as we focus on our mission to make gospel-centered disciples of Jesus Christ.</p>
                 <div class="row">
                   <div class="col-md-8">
                     <h3>Give through PayPal</h3>
                     <p class="text-muted">We utilize PayPal for online donations, but you do not have to have a PayPal account to make a donation.</p>
-                    <form class="form-horizontal" id="paypal_giving" method="post">
+                    <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>">
                       <div class="form-group">
                         <label class="col-xs-12" for="first_name">First Name</label>
                         <div class="col-xs-12">
-                          <input type="text" class="form-control" id="first_name" placeholder="First Name" required>
+                          <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>" required>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-xs-12" for="last_name">Last Name</label>
                         <div class="col-xs-12">
-                          <input type="text" class="form-control" id="last_name" placeholder="Last Name" required>
+                          <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>"  required>
                         </div>
                       </div>
                       <div class="form-group">
@@ -149,7 +147,7 @@ get_header(); ?>
                         <div class="col-xs-12">
                           <div class="radio">
                             <label>
-                              <input type="radio" name="paypal_account" id="paypal_account_false" value="false"  required>
+                              <input type="radio" name="paypal_account" id="paypal_account_false" value="false" required>
                               <strong>I do not have a PayPal account</strong><br>
                               <small>Approximately 2.5% of your donation will go to transaction fees</small>
                             </label>
@@ -166,7 +164,7 @@ get_header(); ?>
                         <div class="col-xs-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="general_fund" id="general_fund">
+                            <input class="form-control donation" type="number" name="general_fund" id="general_fund" value="<?php echo $general_fund; ?>" >
                           </div>
                         </div>
                       </div>
@@ -175,7 +173,7 @@ get_header(); ?>
                         <div class="col-xs-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="puerto_penasco" id="puerto_penasco">
+                            <input class="form-control donation" type="number" name="puerto_penasco" id="puerto_penasco" value="<?php echo $puerto_penasco; ?>" >
                           </div>
                         </div>
                       </div>
@@ -184,7 +182,7 @@ get_header(); ?>
                         <div class="col-xs-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="imagine" id="imagine">
+                            <input class="form-control donation" type="number" name="imagine" id="imagine" value="<?php echo $imagine; ?>" >
                           </div>
                         </div>
                       </div>
@@ -193,7 +191,7 @@ get_header(); ?>
                         <div class="col-xs-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="benevolence" id="benevolence">
+                            <input class="form-control donation" type="number" name="benevolence" id="benevolence" value="<?php echo $benevolence; ?>" >
                           </div>
                         </div>
                       </div>
@@ -202,7 +200,7 @@ get_header(); ?>
                         <div class="col-xs-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="new" id="new">
+                            <input class="form-control donation" type="number" name="new" id="new" value="<?php echo $new; ?>" >
                           </div>
                         </div>
                       </div>
@@ -211,7 +209,7 @@ get_header(); ?>
                         <div class="col-xs-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="other" id="other">
+                            <input class="form-control donation" type="number" name="other" id="other" value="<?php echo $other; ?>" >
                           </div>
                         </div>
                       </div>
@@ -221,14 +219,14 @@ get_header(); ?>
                         <div class="col-xs-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control" type="number" name="total" id="total" disabled required>
+                            <input class="form-control" type="number" name="total" id="total" disabled required value="<?php echo $total; ?>" >
                           </div>
                         </div>
                       </div>
                       <div class="form-group">
                         <label class="col-xs-12" for="notes">Additional Notes</label>
                         <div class="col-xs-12">
-                          <textarea class="form-control" rows="3"></textarea>
+                          <textarea class="form-control" name="notes" id="notes" rows="3"><?php echo $notes; ?></textarea>
                         </div>
                       </div>
                       <input type="hidden" name="redirect_url" id="redirect_url">
