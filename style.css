@@ -152,11 +152,12 @@ hr {
 #carousel_splash {
   margin-top: 0;
 }
-.sermon-details {
-  line-height: 2em;
+.sermons .title {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .sermon-media .glyphicon {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: right;
 }
 .home .carousel-caption {
