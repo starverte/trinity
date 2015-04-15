@@ -12,6 +12,7 @@ $form.delegate('.donation', 'change', function () {
   var sum = 0;
   $summands.each(function () {
     var value = Number(jQuery(this).val());
+    value = Math.abs(value);
     if (!isNaN(value)) { sum += value; }
     jQuery(this).val(value.toFixed(2));
   });
