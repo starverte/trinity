@@ -1,28 +1,45 @@
 function steel_validate() {
   'use strict';
-  var valid = true;
+  var success = true;
+  var alert = '<div class="alert alert-danger"><ul>';
   jQuery('*').removeClass('has-error');
-  jQuery('.validate').each(function () {
-    var elTarget = jQuery(this).data('target');
-    if (true === jQuery(this).data('required')) {
-      if ('' === jQuery('#' + elTarget).val()) {
-        valid = false;
+  jQuery('.form-validate').each(function () {
+    var _target = jQuery(this).data('target');
+    var target = '#' + _target;
+    var data = jQuery(target).val();
+    var title = _target;
+
+    if (jQuery(this).data('title')) {
+      var title = jQuery(this).data('title');
+    }
+
+    if (!data) {
+      if (true === jQuery(this).data('required')) {
+        success = false;
         jQuery(this).addClass('has-error');
-      }
-      else {
-        console.log(jQuery(this).data('target') + ' is required but not null. value=' + jQuery('#' + elTarget).val());
+        alert += '<li>' + title + ' is required.</li>';
       }
     }
     else {
-      console.log(jQuery(this).data('target') + ' is not required. data-required=' + jQuery(this).data('required'));
+      if ('currency' === jQuery(this).data('type')) {
+        var amount = Number(data).toFixed(2);
+        if (true === jQuery(this).data('required') && 0 >= amount) {
+          success = false;
+          jQuery(this).addClass('has-error');
+        }
+        else {
+          jQuery(target).val(amount);
+        }
+      }
     }
   });
-  if (false === valid) {
-    console.log('Failure');
+
+  if (false === success) {
+    alert += '</ul></div>';
+    jQuery('#form_alert').html(alert);
     return false;
   }
   else {
-    console.log('Success. You pledged to donate $x. You will now be redirected to PayPal to complete your transaction.');
-    return false;
+    return;
   }
 }

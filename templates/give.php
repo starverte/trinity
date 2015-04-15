@@ -8,10 +8,12 @@
 
 session_start();
 
+$alert = '';
+
 if (!empty($_POST['session'])) {
   if ($_POST['session'] == $_SESSION['session']) {
 
-    $first_name = !empty($_POST['first_name']) ? sanitize_text_field($_POST['first_name']) : '';
+    $first_name = !empty($_POST['first_name']) ? sanitize_text_field($_POST['first_name']) : null;
     $last_name  = !empty($_POST['last_name'])  ? sanitize_text_field($_POST['last_name'])  : '';
 
     if (!empty($_POST['paypal_account'])) {
@@ -56,13 +58,19 @@ if (!empty($_POST['session'])) {
       mail($recipient, $subject, $message, $headers);
 
       if ($paypal_account == true) {
-        header("Location: https://www.paypal-donations.com/pp-charity/web.us/charity_i.jsp?id=72286&s=3");
-        exit;
+//        header("Location: https://www.paypal-donations.com/pp-charity/web.us/charity_i.jsp?id=72286&s=3");
+//        exit;
+        $paypal_link = 'https://www.paypal-donations.com/pp-charity/web.us/charity_i.jsp?id=72286&s=3';
       }
       else {
-        header("Location: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE");
-        exit;
+//        header("Location: https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE");
+//        exit;
+        $paypal_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE';
       }
+
+      $alert = '<div class="alert alert-info"><strong>Your pledge in the amount of $' . $total . ' was sent successfully</strong>. You will now be redirected to PayPal to complete the transaction. You will need to re-enter the total amount.<br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div>';
+
+      echo '<script type="text/javascript">setTimeout(function() {window.open("' . $paypal_link . '")},10000);</script>';
 
     }
   }
@@ -122,8 +130,9 @@ get_header(); ?>
                   <div class="col-md-8">
                     <h3>Give through PayPal</h3>
                     <p class="text-muted">We utilize PayPal for online donations, but you do not have to have a PayPal account to make a donation.</p>
+                    <div id="form_alert"><?php echo $alert; ?></div>
                     <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>" onsubmit="return steel_validate()">
-                      <div class="form-group validate" data-target="first_name" data-required="true" data-validate="text">
+                      <div class="form-group form-validate" data-target="first_name" data-required="true" data-type="text" data-title="First Name">
                         <div class="col-xs-12">
                           <label class="control-label" for="first_name">First Name</label>
                         </div>
@@ -131,7 +140,7 @@ get_header(); ?>
                           <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>" required>
                         </div>
                       </div>
-                      <div class="form-group validate" data-target="last_name" data-required="true" data-validate="text">
+                      <div class="form-group form-validate" data-target="last_name" data-required="true" data-type="text" data-title="Last Name">
                         <div class="col-xs-12">
                           <label class="control-label" for="last_name">Last Name</label>
                         </div>
@@ -139,27 +148,23 @@ get_header(); ?>
                           <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>" required>
                         </div>
                       </div>
-                      <div class="validate" data-target="paypal_account" data-required="true" data-validate="boolean">
-                        <div class="form-group">
-                          <div class="col-xs-12">
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="paypal_account" id="paypal_account_true" value="true" required>
-                                <strong>I have a PayPal account</strong> or will create one<br>
-                                <small>100% of your donation will go to LifePointe Church</small>
-                              </label>
-                            </div>
+                      <div class="form-group">
+                        <div class="col-xs-12">
+                          <div class="radio">
+                            <label>
+                              <input type="radio" name="paypal_account" id="paypal_account_true" value="true" required>
+                              <strong>I have a PayPal account</strong> or will create one<br>
+                              <small>100% of your donation will go to LifePointe Church</small>
+                            </label>
                           </div>
                         </div>
-                        <div class="form-group">
-                          <div class="col-xs-12">
-                            <div class="radio">
-                              <label>
-                                <input type="radio" name="paypal_account" id="paypal_account_false" value="false" required>
-                                <strong>I do not have a PayPal account</strong><br>
-                                <small>Approximately 2.5% of your donation will go to transaction fees</small>
-                              </label>
-                            </div>
+                        <div class="col-xs-12">
+                          <div class="radio">
+                            <label>
+                              <input type="radio" name="paypal_account" id="paypal_account_false" value="false" required>
+                              <strong>I do not have a PayPal account</strong><br>
+                              <small>Approximately 2.5% of your donation will go to transaction fees</small>
+                            </label>
                           </div>
                         </div>
                       </div>
@@ -167,70 +172,70 @@ get_header(); ?>
                         <h4 class="col-xs-6 col-sm-4 col-md-5 col-lg-4"></h4>
                         <h4 class="col-xs-6 col-sm-4 col-md-5 col-lg-4">Donation Amount</h4>
                       </div>
-                      <div class="form-group validate" data-target="general_fund" data-validate="currency">
+                      <div class="form-group form-validate" data-target="general_fund" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="general_fund">General Fund</label>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="general_fund" id="general_fund" value="<?php echo $general_fund; ?>">
+                            <input class="form-control donation" type="number" name="general_fund" id="general_fund" value="<?php echo number_format($general_fund,2); ?>">
                           </div>
                         </div>
                       </div>
-                      <div class="form-group validate" data-target="imagine" data-validate="currency">
+                      <div class="form-group form-validate" data-target="imagine" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="imagine">Building Fund (Imagine)</label>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="imagine" id="imagine" value="<?php echo $imagine; ?>">
+                            <input class="form-control donation" type="number" name="imagine" id="imagine" value="<?php echo number_format($imagine,2); ?>">
                           </div>
                         </div>
                       </div>
-                      <div class="form-group validate" data-target="benevolence" data-validate="currency">
+                      <div class="form-group form-validate" data-target="benevolence" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="benevolence">Benevolence Fund</label>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="benevolence" id="benevolence" value="<?php echo $benevolence; ?>">
+                            <input class="form-control donation" type="number" name="benevolence" id="benevolence" value="<?php echo number_format($benevolence,2); ?>">
                           </div>
                         </div>
                       </div>
-                      <div class="form-group validate" data-target="new" data-validate="currency">
+                      <div class="form-group form-validate" data-target="new" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="new">New Ministries</label>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="new" id="new" value="<?php echo $new; ?>">
+                            <input class="form-control donation" type="number" name="new" id="new" value="<?php echo number_format($new,2); ?>">
                           </div>
                         </div>
                       </div>
-                      <div class="form-group validate" data-target="other" data-validate="currency">
+                      <div class="form-group form-validate" data-target="other" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="other">Other (please specify below)</label>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control donation" type="number" name="other" id="other" value="<?php echo $other; ?>">
+                            <input class="form-control donation" type="number" name="other" id="other" value="<?php echo number_format($other,2); ?>">
                           </div>
                         </div>
                       </div>
 
-                      <div class="form-group validate" data-target="total" data-required="true" data-validate="currency">
+                      <div class="form-group form-validate" data-target="total" data-required="true" data-type="currency" data-title="Donation Amount">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="total">Total</label>
                         </div>
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
-                            <input class="form-control" type="number" name="total" id="total" value="<?php echo $total; ?>" disabled required>
+                            <input class="form-control" type="number" name="total" id="total" value="<?php echo number_format($total,2); ?>" disabled required>
                           </div>
                         </div>
                       </div>
@@ -268,8 +273,6 @@ get_header(); ?>
             </article><!-- #page-<?php the_ID(); ?> -->
 
           </div><!-- .row -->
-
-          <?php if ( comments_open() || '0' != get_comments_number() ) { comments_template(); } ?>
 
         <?php endwhile; ?>
 
