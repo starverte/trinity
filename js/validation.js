@@ -26,6 +26,7 @@ function steel_validate() {
         if (true === jQuery(this).data('required') && 0 >= amount) {
           success = false;
           jQuery(this).addClass('has-error');
+          alert += '<li>' + title + ' must be greater than $0.00.</li>';
         }
         else {
           jQuery(target).val(amount);
