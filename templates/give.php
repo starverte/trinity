@@ -68,9 +68,7 @@ if (!empty($_POST['session'])) {
         $paypal_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE';
       }
 
-      $alert = '<div class="alert alert-info"><strong>Your pledge in the amount of $' . $total . ' was sent successfully</strong>. You will now be redirected to PayPal to complete the transaction. You will need to re-enter the total amount.<br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div>';
-
-      echo '<script type="text/javascript">setTimeout(function() {window.open("' . $paypal_link . '")},10000);</script>';
+      $alert = '<div class="alert alert-info"><strong>Your pledge in the amount of $' . $total . ' was sent successfully</strong>. You will now be redirected to PayPal to complete the transaction. You will need to re-enter the total amount.<br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {window.open("' . $paypal_link . '")},5000);</script>';
 
     }
   }
