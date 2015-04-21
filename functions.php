@@ -31,3 +31,63 @@ function trinity_enqueue_scripts() {
   }
 }
 add_action( 'wp_enqueue_scripts', 'trinity_enqueue_scripts' );
+
+function trinity_option_defaults( $flint_defaults ) {
+  $defaults = array(
+    'trinity_front_page_featured' => 0,
+    'trinity_front_page_hero'     => 0,
+  );
+
+  return wp_parse_args( $flint_defaults, $defaults );
+}
+add_filter('flint_option_defaults','trinity_option_defaults');
+
+function trinity_customize_register( $wp_customize ) {
+
+  $defaults = flint_get_option_defaults();
+
+  $slideshows = steel_get_slides('options');
+
+  /**
+   * Static Front Page section
+   */
+
+    /**
+     * Hero slider setting
+     */
+    $wp_customize->add_setting('flint_options[trinity_front_page_hero]', array(
+      'default'           => $defaults['trinity_front_page_hero'],
+      'sanitize_callback' => 'steel_sanitize_get_slides',
+      'capability'        => 'edit_theme_options',
+      'type'              => 'option',
+      'transport'         => 'postMessage',
+    ));
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_front_page_hero', array(
+      'label'    => __('Hero slider', 'flint'),
+      'section'  => 'static_front_page',
+      'settings' => 'flint_options[trinity_front_page_hero]',
+      'priority' => 20,
+      'type'     => 'select',
+      'choices'  => $slideshows,
+    )));
+
+    /**
+     * Featured events setting
+     */
+    $wp_customize->add_setting('flint_options[trinity_front_page_featured]', array(
+      'default'           => $defaults['trinity_front_page_featured'],
+      'sanitize_callback' => 'steel_sanitize_get_slides',
+      'capability'        => 'edit_theme_options',
+      'type'              => 'option',
+      'transport'         => 'postMessage',
+    ));
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_front_page_featured', array(
+      'label'    => __('Featured Events', 'flint'),
+      'section'  => 'static_front_page',
+      'settings' => 'flint_options[trinity_front_page_featured]',
+      'priority' => 30,
+      'type'     => 'select',
+      'choices'  => $slideshows,
+    )));
+}
+add_action( 'customize_register', 'trinity_customize_register', 20 );
