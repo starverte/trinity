@@ -17,12 +17,13 @@ get_header(); ?>
   <div id="primary" class="content-area">
 
     <?php
-    $show = get_page_by_title( 'splash', OBJECT, 'steel_slides' );
-    $output = steel_slideshow( $show->ID, 'front-slides' );
-    echo $output;
+    $options = flint_get_options();
+    echo steel_slideshow( $options['trinity_front_page_hero'], 'front-slides' );
     ?>
 
     <div class="container">
+
+      <?php echo steel_slideshow( $options['trinity_front_page_featured'] ); ?>
 
       <div id="content" class="<?php echo $content_class; ?>" role="main">
 
