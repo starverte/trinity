@@ -30,7 +30,12 @@ Template: flint
 /* =Global
 ----------------------------------------------- */
 
-
+body,
+button,
+input,
+select,
+textarea {
+}
 body {
   padding-top: 0;
   color: #333;
@@ -38,22 +43,36 @@ body {
 a {
   font-weight: 400;
 }
-
-
-
-
-
-
-
-
-
-
+article {
+}
+b, strong {
+}
+h1 {
+}
+h2 {
+}
+h3 {
+}
+h4 {
+}
+img, video {
+}
+hr {
+}
+.label {
+}
+#page {
+}
 
 /* Alignment */
-
-
-
-
+.alignleft {
+}
+.alignright {
+}
+.aligncenter {
+}
+.alignnone {
+}
 
 
 /* =Header
@@ -103,16 +122,22 @@ a {
 /* =Content
 ----------------------------------------------- */
 
-
+.bypostauthor {
+}
 .page .entry-title,
 .single .entry-title {
   margin-top: 0;
 }
-
-
-
-
-
+.btn-edit {
+}
+.sticky {
+}
+.byline {
+}
+.more-link {
+}
+.page-links {
+}
 #primary {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -120,8 +145,10 @@ a {
 .home #primary {
   margin-top: 0;
 }
-
-
+.page-header {
+}
+.pw {
+}
 #carousel_splash {
   margin-top: 0;
 }
@@ -293,13 +320,15 @@ a {
 /* =Comments
 ----------------------------------------------- */
 
-
+#comments {
+}
 
 
 /* =Widgets
 ----------------------------------------------- */
 
-
+.widget {
+}
 
 
 /* =Footer
@@ -366,11 +395,13 @@ iframe:hover {
       -ms-filter: grayscale(0);
        -o-filter: grayscale(0);
 }
-
+#colophon {
+}
 #colophon {
   margin-top: -62px;
 }
-
+#credits {
+}
 
 /* =Buttons */
 .btn-blue {
