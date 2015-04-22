@@ -30,12 +30,7 @@ Template: flint
 /* =Global
 ----------------------------------------------- */
 
-body,
-button,
-input,
-select,
-textarea {
-}
+
 body {
   padding-top: 0;
   color: #333;
@@ -43,36 +38,22 @@ body {
 a {
   font-weight: 400;
 }
-article {
-}
-b, strong {
-}
-h1 {
-}
-h2 {
-}
-h3 {
-}
-h4 {
-}
-img, video {
-}
-hr {
-}
-.label {
-}
-#page {
-}
+
+
+
+
+
+
+
+
+
+
 
 /* Alignment */
-.alignleft {
-}
-.alignright {
-}
-.aligncenter {
-}
-.alignnone {
-}
+
+
+
+
 
 
 /* =Header
@@ -87,7 +68,7 @@ hr {
 @media screen and (min-width: 992px) {
   #masthead {
     color: #fff;
-    background: url("//sharethelife.org/wp-content/uploads/LifePointe_Water.png");
+    background: url("img/water.png");
     background-position-x: center;
     background-position-y: 25%;
   }
@@ -122,22 +103,16 @@ hr {
 /* =Content
 ----------------------------------------------- */
 
-.bypostauthor {
-}
+
 .page .entry-title,
 .single .entry-title {
   margin-top: 0;
 }
-.btn-edit {
-}
-.sticky {
-}
-.byline {
-}
-.more-link {
-}
-.page-links {
-}
+
+
+
+
+
 #primary {
   margin-top: 1em;
   margin-bottom: 1em;
@@ -145,10 +120,8 @@ hr {
 .home #primary {
   margin-top: 0;
 }
-.page-header {
-}
-.pw {
-}
+
+
 #carousel_splash {
   margin-top: 0;
 }
@@ -172,7 +145,7 @@ hr {
   padding-top: 1em;
   padding-bottom: 1em;
   color: #fff;
-  background: url("//sharethelife.org/wp-content/uploads/LifePointe_Water.png");
+  background: url("img/water.png");
   background-position-x: center;
   background-position-y: 25%;
 }
@@ -201,6 +174,11 @@ hr {
 .ns:focus .ns-caption {
   background: #0055c0;
   background: rgba(0,85,192,1);
+}
+#church_profile_overlay {
+  color: #0055c0;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 /** LifePointe Men Page */
@@ -315,15 +293,13 @@ hr {
 /* =Comments
 ----------------------------------------------- */
 
-#comments {
-}
+
 
 
 /* =Widgets
 ----------------------------------------------- */
 
-.widget {
-}
+
 
 
 /* =Footer
@@ -390,13 +366,11 @@ iframe:hover {
       -ms-filter: grayscale(0);
        -o-filter: grayscale(0);
 }
-#colophon {
-}
+
 #colophon {
   margin-top: -62px;
 }
-#credits {
-}
+
 
 /* =Buttons */
 .btn-blue {

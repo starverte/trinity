@@ -75,6 +75,18 @@ get_header(); ?>
       </div>
     </div>
 
+    <div id="church_profile_img">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/lifepointe-church-front.png">
+    </div>
+    <div id="church_profile_container" class="container">
+      <div id="church_profile_overlay" class="overlay col-xs-3">
+        <h2>LifePointe Church</h2>
+        <h3>900 E Prospect Rd<br>
+          Fort Collins, CO 80524</h3>
+      </div>
+    </div>
+    <div id="church_profile_clearfix" class="clearfix"></div>
+
   </div><!-- #primary -->
 
 <?php flint_get_widgets('footer'); ?>

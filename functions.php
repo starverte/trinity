@@ -22,6 +22,9 @@ add_action( 'after_setup_theme', 'trinity_after_setup_theme', 20 );
  * Enqueue scripts
  */
 function trinity_enqueue_scripts() {
+  if (is_front_page()) {
+    wp_enqueue_script( 'front-display', get_stylesheet_directory_uri() . '/js/front-page.js', array('jquery'), '0.3.0', true );
+  }
   /**
    * If using Give page template, loads Javascript
    */
