@@ -3,7 +3,7 @@
  * Template Name: Give
  *
  * @package Flint/Trinity
- * @since 0.2
+ * @since 0.3.0
  */
 
 session_start();

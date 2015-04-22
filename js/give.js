@@ -1,9 +1,3 @@
-/**
- * Javascript for Give page template
- *
- * @package Flint\Trinity
- * @since 0.2.1
- */
 var $form = jQuery('#paypal_giving'),
   $summands = $form.find('.donation'),
   $sumDisplay = jQuery('#total');
