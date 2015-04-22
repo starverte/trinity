@@ -87,7 +87,7 @@ hr {
 @media screen and (min-width: 992px) {
   #masthead {
     color: #fff;
-    background: url("//sharethelife.org/wp-content/uploads/LifePointe_Water.png");
+    background: url("img/water.png");
     background-position-x: center;
     background-position-y: 25%;
   }
@@ -152,11 +152,12 @@ hr {
 #carousel_splash {
   margin-top: 0;
 }
-.sermon-details {
-  line-height: 2em;
+.sermons .title {
+  margin-top: 5px;
+  margin-bottom: 5px;
 }
 .sermon-media .glyphicon {
-  font-size: 2em;
+  font-size: 1.5em;
   text-align: right;
 }
 .home .carousel-caption {
@@ -171,7 +172,7 @@ hr {
   padding-top: 1em;
   padding-bottom: 1em;
   color: #fff;
-  background: url("//sharethelife.org/wp-content/uploads/LifePointe_Water.png");
+  background: url("img/water.png");
   background-position-x: center;
   background-position-y: 25%;
 }
@@ -200,6 +201,11 @@ hr {
 .ns:focus .ns-caption {
   background: #0055c0;
   background: rgba(0,85,192,1);
+}
+#church_profile_overlay {
+  color: #0055c0;
+  background: #fff;
+  background: rgba(255, 255, 255, 0.6);
 }
 
 /** LifePointe Men Page */
