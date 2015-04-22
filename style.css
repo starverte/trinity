@@ -30,48 +30,12 @@ Template: flint
 /* =Global
 ----------------------------------------------- */
 
-body,
-button,
-input,
-select,
-textarea {
-}
 body {
   padding-top: 0;
   color: #333;
 }
 a {
   font-weight: 400;
-}
-article {
-}
-b, strong {
-}
-h1 {
-}
-h2 {
-}
-h3 {
-}
-h4 {
-}
-img, video {
-}
-hr {
-}
-.label {
-}
-#page {
-}
-
-/* Alignment */
-.alignleft {
-}
-.alignright {
-}
-.aligncenter {
-}
-.alignnone {
 }
 
 
@@ -122,21 +86,9 @@ hr {
 /* =Content
 ----------------------------------------------- */
 
-.bypostauthor {
-}
 .page .entry-title,
 .single .entry-title {
   margin-top: 0;
-}
-.btn-edit {
-}
-.sticky {
-}
-.byline {
-}
-.more-link {
-}
-.page-links {
 }
 #primary {
   margin-top: 1em;
@@ -144,10 +96,6 @@ hr {
 }
 .home #primary {
   margin-top: 0;
-}
-.page-header {
-}
-.pw {
 }
 #carousel_splash {
   margin-top: 0;
@@ -227,7 +175,6 @@ hr {
 ----------------------------------------------- */
 
 
-
 /* =Navigation
 ----------------------------------------------- */
 
@@ -298,7 +245,6 @@ hr {
   color: #333;
 }
 
-
 /* Specific to LifePointe */
 .navbar-trinity .navbar-nav > .blue > a {
   color: #fff;
@@ -317,18 +263,13 @@ hr {
   background-color: #0055c0;
 }
 
+
 /* =Comments
 ----------------------------------------------- */
-
-#comments {
-}
 
 
 /* =Widgets
 ----------------------------------------------- */
-
-.widget {
-}
 
 
 /* =Footer
@@ -376,7 +317,6 @@ hr {
 .affiliated img,
 .footer-row iframe {
           filter: grayscale(1);
-
   -webkit-filter: grayscale(1);
      -moz-filter: grayscale(1);
       -ms-filter: grayscale(1);
@@ -389,21 +329,18 @@ hr {
 .affiliated:hover img,
 iframe:hover {
           filter: grayscale(0);
-
   -webkit-filter: grayscale(0);
      -moz-filter: grayscale(0);
       -ms-filter: grayscale(0);
        -o-filter: grayscale(0);
 }
 #colophon {
-}
-#colophon {
   margin-top: -62px;
 }
-#credits {
-}
 
-/* =Buttons */
+
+/* =Buttons
+----------------------------------------------- */
 .btn-blue {
   color: #fff;
   background-color: #0055c0;
@@ -487,7 +424,9 @@ fieldset[disabled] .btn-gray.active {
   background-color: #fff;
 }
 
-/* =Panels */
+
+/* =Panels
+----------------------------------------------- */
 .panel-blue {
   border-color: #0055c0;
 }
