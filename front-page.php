@@ -7,7 +7,7 @@
  * or a static page.
  *
  * @package Flint/Trinity
- * @since 0.1
+ * @since 0.3.0
  *
  */
 
@@ -17,12 +17,13 @@ get_header(); ?>
   <div id="primary" class="content-area">
 
     <?php
-    $show = get_page_by_title( 'splash', OBJECT, 'steel_slides' );
-    $output = steel_slideshow( $show->ID, 'front-slides' );
-    echo $output;
+    $options = flint_get_options();
+    echo steel_slideshow( $options['trinity_front_page_hero'], 'front-slides' );
     ?>
 
     <div class="container">
+
+      <?php echo steel_slideshow( $options['trinity_front_page_featured'] ); ?>
 
       <div id="content" class="<?php echo $content_class; ?>" role="main">
 
@@ -73,6 +74,18 @@ get_header(); ?>
         </div>
       </div>
     </div>
+
+    <div id="church_profile_img">
+      <img src="<?php echo get_stylesheet_directory_uri(); ?>/img/lifepointe-church-front.png">
+    </div>
+    <div id="church_profile_container" class="container">
+      <div id="church_profile_overlay" class="overlay col-xs-3">
+        <h2>LifePointe Church</h2>
+        <h3>900 E Prospect Rd<br>
+          Fort Collins, CO 80524</h3>
+      </div>
+    </div>
+    <div id="church_profile_clearfix" class="clearfix"></div>
 
   </div><!-- #primary -->
 
