@@ -68,7 +68,7 @@ if (!empty($_POST['session'])) {
         $paypal_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE';
       }
 
-      $alert = '<div class="alert alert-info"><strong>Your pledge in the amount of $' . $total . ' was sent successfully</strong>. You will now be redirected to PayPal to complete the transaction. You will need to re-enter the total amount.<br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {window.open("' . $paypal_link . '")},5000);</script>';
+      $alert = '<div class="alert alert-info"><strong>Thank you for your generous donation!</strong><p>The designations of your $' . $total . ' were sent to LifePointe Church. You will now be redirected to PayPal to complete the transaction. Please enter $' . $total . ' as the total donation on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {alert("The designations of your $' . $total . ' were sent to LifePointe Church. Please click OK to be redirected to PayPal and enter $' . $total . ' as the total donation on the PayPal form.");window.open("' . $paypal_link . '")},5000);</script>';
 
     }
   }
@@ -122,12 +122,13 @@ get_header(); ?>
               </div><!-- .entry-summary -->
               <?php else : ?>
               <div class="entry-content">
-                <h3>Thank you for your donation to LifePointe Church!</h3>
-                <p>We appreciate your generosity and commit to use your gifts in a God honoring way. We are excited about how God is working in our church body as we focus on our mission to make gospel-centered disciples of Jesus Christ.</p>
+                <h3>Thank you for choosing to donate to LifePointe Church</h3>
+                <p>We appreciate your generosity and commit to use your gifts in a God honoring way. Your gifts enable us to pursue our mission of making gospel-centered disciples of Jesus Christ.</p>
                 <div class="row">
                   <div class="col-md-8">
                     <h3>Give through PayPal</h3>
-                    <p class="text-muted">We utilize PayPal for online donations, but you do not have to have a PayPal account to make a donation.</p>
+                    <p><strong>We utilize PayPal for online donations, but you do not have to have a PayPal account to make a donation.</strong></p>
+                    <p>Please fill out the following form. Upon submission, you will be taken to PayPal and will need to enter the total donation on the PayPal page.</p>
                     <div id="form_alert"><?php echo $alert; ?></div>
                     <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>" onsubmit="return steel_validate()">
                       <div class="form-group form-validate" data-target="first_name" data-required="true" data-type="text" data-title="First Name">
