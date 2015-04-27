@@ -38,6 +38,23 @@ a {
   font-weight: 400;
 }
 
+@media print {
+  #masthead {
+    background: #fff;
+    color: #0055c0;
+  }
+  #logo-xs {
+    display: block;
+  }
+  #logo-md {
+    display: none;
+  }
+  .navbar,
+  .footer-row {
+    display: none;
+  }
+}
+
 
 /* =Header
 ----------------------------------------------- */
@@ -99,6 +116,10 @@ a {
 }
 #carousel_splash {
   margin-top: 0;
+}
+.carousel img {
+  padding-top: 0;
+  padding-bottom: 0;
 }
 .sermons .title {
   margin-top: 5px;
@@ -465,4 +486,50 @@ fieldset[disabled] .btn-gray.active {
 }
 .panel-gray > .panel-footer + .panel-collapse > .panel-body {
   border-bottom-color: #d6e9c6;
+}
+
+
+/* =Japan 2015
+----------------------------------------------- */
+
+#carousel-jp15 {
+  margin-top: -1em;
+  margin-bottom: 1em;
+}
+#carousel-jp15 .carousel-caption {
+  padding-bottom: 40px;
+}
+#jp15_josiah_cover {
+  -moz-transform: scaleX(-1);
+  -o-transform: scaleX(-1);
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+  filter: FlipH;
+  -ms-filter: "FlipH";
+}
+.banner {
+  color: #404040;
+  background: #f2f2f2;
+  border-top: 1px solid #d9d9d9;
+  border-bottom: 1px solid #d9d9d9;
+  text-align: center;
+  padding-left: 20%;
+  padding-right: 20%;
+}
+.banner p {
+  font-size: 24px;
+  line-height: 32px;
+  padding-top: 12px;
+  padding-bottom: 12px;
+  margin-bottom: 0;
+}
+#jp-progress {
+  margin-top: 0;
+  margin-bottom: 0;
+  height: 40px;
+  border-radius: 0;
+}
+#jp-progress .progress-bar {
+  font-size: 12px;
+  line-height: 40px;
 }
