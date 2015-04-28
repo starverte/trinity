@@ -13,7 +13,7 @@ get_header(); ?>
 
     <div id="carousel-jp15" class="carousel slide" data-ride="carousel">
       <!-- Indicators -->
-      <ol class="carousel-indicators">
+      <ol class="carousel-indicators hidden-xs">
         <li data-target="#carousel-jp15" data-slide-to="0" class="active"></li>
         <li data-target="#carousel-jp15" data-slide-to="1"></li>
         <li data-target="#carousel-jp15" data-slide-to="2"></li>
@@ -25,35 +25,35 @@ get_header(); ?>
       <!-- Wrapper for slides -->
       <div class="carousel-inner" role="listbox">
         <div class="item active">
-          <img src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_title_cover.jpg" alt="Japan 2015" id="jp15_title_cover">
+          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_title_cover.jpg" alt="Japan 2015" id="jp15_title_cover">
         </div>
         <div class="item">
-          <img src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_megan_cover.jpg" alt="Megan Spiegel" id="jp15_megan_cover">
-          <div class="carousel-caption carousel-caption-left">
+          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_megan_cover.jpg" alt="Megan Spiegel" id="jp15_megan_cover">
+          <div class="carousel-caption">
             <h3>Megan Spiegel</h3>
           </div>
         </div>
         <div class="item">
-          <img src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_cover.jpg" alt="Whitney Paxton" id="jp15_whitney_cover">
-          <div class="carousel-caption carousel-caption-right">
+          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_cover.jpg" alt="Whitney Paxton" id="jp15_whitney_cover">
+          <div class="carousel-caption">
             <h3>Whitney Paxton</h3>
           </div>
         </div>
         <div class="item">
-          <img src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_cover.jpg" alt="Wiliawan Northrop" id="jp15_wiliawan_cover">
-          <div class="carousel-caption carousel-caption-right">
+          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_cover.jpg" alt="Wiliawan Northrop" id="jp15_wiliawan_cover">
+          <div class="carousel-caption">
             <h3>Wiliawan Northrop</h3>
           </div>
         </div>
         <div class="item">
-          <img src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_josiah_cover.jpg" alt="Josiah Burke" id="jp15_josiah_cover">
-          <div class="carousel-caption carousel-caption-right">
+          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_josiah_cover.jpg" alt="Josiah Burke" id="jp15_josiah_cover">
+          <div class="carousel-caption">
             <h3>Josiah Burke</h3>
           </div>
         </div>
         <div class="item">
-          <img src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_matt_cover.jpg" alt="Matt Beall" id="jp15_matt_cover">
-          <div class="carousel-caption carousel-caption-left">
+          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_matt_cover.jpg" alt="Matt Beall" id="jp15_matt_cover">
+          <div class="carousel-caption">
             <h3>Matt Beall</h3>
           </div>
         </div>
@@ -83,11 +83,11 @@ get_header(); ?>
         <div class="jp-profile col-xs-12 col-md-6">
           <div class="row">
             <h3 class="col-xs-12">Matt Beall</h3>
-            <div class="jp-profile-left col-xs-4">
-              <img class="jp-profile-img" src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_matt_profile.jpg" alt="Matt Beall">
+            <div class="jp-profile-left col-xs-5 col-sm-4">
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_matt_profile.jpg" alt="Matt Beall">
               <a class="btn btn-blue btn-block" href="#pledge-support">Pledge support</a>
             </div>
-            <div class="jp-profile-content col-xs-8">
+            <div class="jp-profile-content col-xs-7 col-sm-8">
               <p>Matt is a recent graduate from CSU, and the Founder and President of Star Verte LLC, a graphic design and website development firm. He loves others through service, and sees this trip as an opportunity for spiritual growth and extending God's love to Japan.</p>
               <p><strong>Prayer requests</strong>
                 <ul>
@@ -102,11 +102,11 @@ get_header(); ?>
         <div class="jp-profile col-xs-12 col-md-6">
           <div class="row">
             <h3 class="col-xs-12">Josiah Burke</h3>
-            <div class="jp-profile-left col-xs-4">
-              <img class="jp-profile-img" src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_josiah_profile.jpg" alt="Josiah Burke">
+            <div class="jp-profile-left col-xs-5 col-sm-4">
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_josiah_profile.jpg" alt="Josiah Burke">
               <a class="btn btn-blue btn-block" href="#pledge-support">Pledge support</a>
             </div>
-            <div class="jp-profile-content col-xs-8">
+            <div class="jp-profile-content col-xs-7 col-sm-8">
               <p>Josiah is a 20 year old college student studying Criminal Justice. He is going to Japan, following Jesus' commission to make disciples in all nations. Josiah hopes to gain a new perspective on humanity in general and discover if God is calling him to lifelong missions.</p>
               <p><strong>Prayer requests</strong>
                 <ul>
@@ -121,11 +121,11 @@ get_header(); ?>
         <div class="jp-profile col-xs-12 col-md-6">
           <div class="row">
             <h3 class="col-xs-12">Wiliawan Northrop</h3>
-            <div class="jp-profile-left col-xs-4">
-              <img class="jp-profile-img" src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_profile.jpg" alt="Wiliawan Northrop">
+            <div class="jp-profile-left col-xs-5 col-sm-4">
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_profile.jpg" alt="Wiliawan Northrop">
               <a class="btn btn-blue btn-block" href="#pledge-support">Pledge support</a>
             </div>
-            <div class="jp-profile-content col-xs-8">
+            <div class="jp-profile-content col-xs-7 col-sm-8">
               <p></p>
               <p><strong>Prayer requests</strong>
                 <ul>
@@ -138,11 +138,11 @@ get_header(); ?>
         <div class="jp-profile col-xs-12 col-md-6">
           <div class="row">
             <h3 class="col-xs-12">Whitney Paxton</h3>
-            <div class="jp-profile-left col-xs-4">
-              <img class="jp-profile-img" src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_profile.jpg" alt="Whitney Paxton">
+            <div class="jp-profile-left col-xs-5 col-sm-4">
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_profile.jpg" alt="Whitney Paxton">
               <a class="btn btn-blue btn-block" href="#pledge-support">Pledge support</a>
             </div>
-            <div class="jp-profile-content col-xs-8">
+            <div class="jp-profile-content col-xs-7 col-sm-8">
               <p>Whitney is majoring in Humanities with an emphasis in Asian Studies at the University of Colorado in Boulder. The Japanese have one of the most beautiful countries and cultures. She wants to spread God's love, and let them know the hope and joy that comes from Jesus.</p>
               <p><strong>Prayer requests</strong>
                 <ul>
@@ -157,11 +157,11 @@ get_header(); ?>
         <div class="jp-profile col-xs-12 col-md-6">
           <div class="row">
             <h3 class="col-xs-12">Megan Spiegel</h3>
-            <div class="jp-profile-left col-xs-4">
-              <img class="jp-profile-img" src="http://lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_megan_profile.jpg" alt="Megan Spiegel">
+            <div class="jp-profile-left col-xs-5 col-sm-4">
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_megan_profile.jpg" alt="Megan Spiegel">
               <a class="btn btn-blue btn-block" href="#pledge-support">Pledge support</a>
             </div>
-            <div class="jp-profile-content col-xs-8">
+            <div class="jp-profile-content col-xs-7 col-sm-8">
               <p>Megan married her husband, Josh, in 2007 and they have a daughter AdiLynn, who is a precious part of their family. They enjoy camping, snowboarding, hunting, fishing, playing games and photography. Megan loves and is certain God will change her life, and strengthen her relationship with Him through this trip.</p>
               <p><strong>Prayer requests</strong>
                 <ul>
@@ -184,12 +184,12 @@ get_header(); ?>
       </div>
 
       <div class="progress" id="jp-progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="10" aria-valuemin="0" aria-valuemax="100" style="width: 10%;">
-          10% funds raised
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 24.66667%;">
+          24.7% <span class="hidden-xs">funds </span>raised
         </div>
       </div>
       <div class="row">
-        <small class="col-xs-12 text-right">Last updated: 4/26/2015</small>
+        <small class="col-xs-12 text-right">Last updated: 4/27/2015</small>
       </div>
       <div class="row">
         <p class="col-xs-12">Coming soon.</p>
