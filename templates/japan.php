@@ -40,7 +40,7 @@ get_header(); ?>
           </div>
         </div>
         <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_cover.jpg" alt="Wiliawan Northrop" id="jp15_wiliawan_cover">
+          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_cover.jpg" alt="Wiliawan Northrop" id="jp15_wiliawan_cover">
           <div class="carousel-caption">
             <h3>Wiliawan Northrop</h3>
           </div>
@@ -122,14 +122,15 @@ get_header(); ?>
           <div class="row">
             <h3 class="col-xs-12">Wiliawan Northrop</h3>
             <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_profile.jpg" alt="Wiliawan Northrop">
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_profile.jpg" alt="Wiliawan Northrop">
               <a class="btn btn-blue btn-block" href="#pledge-support">Pledge support</a>
             </div>
             <div class="jp-profile-content col-xs-7 col-sm-8">
-              <p></p>
+              <p>Wilaiwan accepted Jesus Christ as her Savior in sixth grade, and loves teaching children about the gospel and serving the Lord. Her objective for Japan is to be obedient to God's calling, and learn to trust and depend on God.</p>
               <p><strong>Prayer requests</strong>
                 <ul>
-                  <li></li>
+                  <li>Wisdom and favor from God to serve Him best</li>
+                  <li>God's will be done in her life</li>
                 </ul>
               </p>
             </div>
