@@ -10,7 +10,7 @@ function steel_validate() {
     var title = _target;
 
     if (jQuery(this).data('title')) {
-      var title = jQuery(this).data('title');
+      title = jQuery(this).data('title');
     }
 
     if (!data) {
