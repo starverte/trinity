@@ -40,8 +40,8 @@ a {
 
 @media print {
   #masthead {
-    background: #fff;
     color: #0055c0;
+    background: #fff;
   }
   #logo-xs {
     display: block;
@@ -338,6 +338,7 @@ a {
 .affiliated img,
 .footer-row iframe {
           filter: grayscale(1);
+
   -webkit-filter: grayscale(1);
      -moz-filter: grayscale(1);
       -ms-filter: grayscale(1);
@@ -350,6 +351,7 @@ a {
 .affiliated:hover img,
 iframe:hover {
           filter: grayscale(0);
+
   -webkit-filter: grayscale(0);
      -moz-filter: grayscale(0);
       -ms-filter: grayscale(0);
@@ -500,33 +502,34 @@ fieldset[disabled] .btn-gray.active {
   padding-bottom: 40px;
 }
 #jp15_josiah_cover {
-  -moz-transform: scaleX(-1);
-  -o-transform: scaleX(-1);
+      filter: FlipH;
   -webkit-transform: scaleX(-1);
-  transform: scaleX(-1);
-  filter: FlipH;
+     -moz-transform: scaleX(-1);
+       -o-transform: scaleX(-1);
+          transform: scaleX(-1);
+
   -ms-filter: "FlipH";
 }
 .banner {
+  padding-right: 20%;
+  padding-left: 20%;
   color: #404040;
+  text-align: center;
   background: #f2f2f2;
   border-top: 1px solid #d9d9d9;
   border-bottom: 1px solid #d9d9d9;
-  text-align: center;
-  padding-left: 20%;
-  padding-right: 20%;
 }
 .banner p {
-  font-size: 24px;
-  line-height: 32px;
   padding-top: 12px;
   padding-bottom: 12px;
   margin-bottom: 0;
+  font-size: 24px;
+  line-height: 32px;
 }
 #jp-progress {
+  height: 40px;
   margin-top: 0;
   margin-bottom: 0;
-  height: 40px;
   border-radius: 0;
 }
 #jp-progress .progress-bar {
