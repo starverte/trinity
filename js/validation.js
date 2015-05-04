@@ -4,10 +4,6 @@ function steel_validate() {
   var $alert = '<div class="alert alert-danger"><ul>';
 
   function steel_validate_field() {
-  }
-
-  jQuery('*').removeClass('has-error');
-  jQuery('.form-validate').each(function () {
     var $target = jQuery(this).data('target');
     var $data = jQuery($target).val();
     var $title = $target.substr(1);
@@ -36,7 +32,10 @@ function steel_validate() {
         }
       }
     }
-  });
+  }
+
+  jQuery('*').removeClass('has-error');
+  jQuery('.form-validate').each(steel_validate_field);
 
   if (false === $success) {
     $alert += '</ul></div>';
