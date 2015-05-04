@@ -2,6 +2,10 @@ function steel_validate() {
   'use strict';
   var $success = true;
   var $alert = '<div class="alert alert-danger"><ul>';
+
+  function steel_validate_field() {
+  }
+
   jQuery('*').removeClass('has-error');
   jQuery('.form-validate').each(function () {
     var $target = jQuery(this).data('target');
