@@ -25,11 +25,20 @@ function trinity_enqueue_scripts() {
   if (is_front_page()) {
     wp_enqueue_script( 'front-display', get_stylesheet_directory_uri() . '/js/front-page.js', array('jquery'), '0.3.0', true );
   }
+
   /**
    * If using Give page template, loads Javascript
    */
   if (is_page_template('templates/give.php')) {
     wp_enqueue_script( 'give-form', get_stylesheet_directory_uri() . '/js/give.js', array('jquery'), '0.2.1', true );
+    wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array('jquery'), '0.2.1', true );
+  }
+
+  /**
+   * If using Japan page template, loads Javascript
+   */
+  if (is_page_template('templates/japan.php')) {
+    wp_enqueue_script( 'japan-form', get_stylesheet_directory_uri() . '/js/japan.js', array('jquery'), '0.2.1', true );
     wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array('jquery'), '0.2.1', true );
   }
 }

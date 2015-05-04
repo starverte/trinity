@@ -67,8 +67,7 @@ if (!empty($_POST['session'])) {
 //        exit;
         $paypal_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE';
       }
-
-      $alert = '<div class="alert alert-info"><strong>Your pledge in the amount of $' . $total . ' was sent successfully</strong>. You will now be redirected to PayPal to complete the transaction. You will need to re-enter the total amount.<br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {window.open("' . $paypal_link . '")},5000);</script>';
+      $alert = '<div class="alert alert-info"><strong>Thank you for your generous donation!</strong><p>The designations of your $' . $total . ' were sent to LifePointe Church. You will now be redirected to PayPal to complete the transaction. Please enter $' . $total . ' as the total donation on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {alert("The designations of your $' . $total . ' were sent to LifePointe Church. Please click OK to be redirected to PayPal and enter $' . $total . ' as the total donation on the PayPal form.");window.open("' . $paypal_link . '")},1);</script>';
 
     }
   }
@@ -122,15 +121,15 @@ get_header(); ?>
               </div><!-- .entry-summary -->
               <?php else : ?>
               <div class="entry-content">
-                <h3>Thank you for your donation to LifePointe Church!</h3>
-                <p>We appreciate your generosity and commit to use your gifts in a God honoring way. We are excited about how God is working in our church body as we focus on our mission to make gospel-centered disciples of Jesus Christ.</p>
+                <h3>Thank you for choosing to donate to LifePointe Church</h3>
+                <p>We appreciate your generosity and commit to use your gifts in a God honoring way. Your gifts enable us to pursue our mission of making gospel-centered disciples of Jesus Christ.</p>
                 <div class="row">
                   <div class="col-md-8">
-                    <h3>Give through PayPal</h3>
-                    <p class="text-muted">We utilize PayPal for online donations, but you do not have to have a PayPal account to make a donation.</p>
+                    <h4>We utilize PayPal for online donations, but you do not have to have a PayPal account to make a donation.</h4>
+                    <p>Please fill out the following form. Upon submission, you will be taken to PayPal and will need to enter the total donation on the PayPal page.</p>
                     <div id="form_alert"><?php echo $alert; ?></div>
                     <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>" onsubmit="return steel_validate()">
-                      <div class="form-group form-validate" data-target="first_name" data-required="true" data-type="text" data-title="First Name">
+                      <div class="form-group form-validate" data-target="#first_name" data-required="true" data-type="text" data-title="First Name">
                         <div class="col-xs-12">
                           <label class="control-label" for="first_name">First Name</label>
                         </div>
@@ -138,7 +137,7 @@ get_header(); ?>
                           <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>" required>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="last_name" data-required="true" data-type="text" data-title="Last Name">
+                      <div class="form-group form-validate" data-target="#last_name" data-required="true" data-type="text" data-title="Last Name">
                         <div class="col-xs-12">
                           <label class="control-label" for="last_name">Last Name</label>
                         </div>
@@ -170,7 +169,7 @@ get_header(); ?>
                         <h4 class="col-xs-6 col-sm-4 col-md-5 col-lg-4"></h4>
                         <h4 class="col-xs-6 col-sm-4 col-md-5 col-lg-4">Donation Amount</h4>
                       </div>
-                      <div class="form-group form-validate" data-target="general_fund" data-type="currency">
+                      <div class="form-group form-validate" data-target="#general_fund" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="general_fund">General Fund</label>
                         </div>
@@ -181,7 +180,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="imagine" data-type="currency">
+                      <div class="form-group form-validate" data-target="#imagine" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="imagine">Building Fund (Imagine)</label>
                         </div>
@@ -192,7 +191,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="benevolence" data-type="currency">
+                      <div class="form-group form-validate" data-target="#benevolence" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="benevolence">Benevolence Fund</label>
                         </div>
@@ -203,7 +202,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="new" data-type="currency">
+                      <div class="form-group form-validate" data-target="#new" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="new">New Ministries</label>
                         </div>
@@ -214,7 +213,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="other" data-type="currency">
+                      <div class="form-group form-validate" data-target="#other" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="other">Other (please specify below)</label>
                         </div>
@@ -226,7 +225,7 @@ get_header(); ?>
                         </div>
                       </div>
 
-                      <div class="form-group form-validate" data-target="total" data-required="true" data-type="currency" data-title="Donation Amount">
+                      <div class="form-group form-validate" data-target="#total" data-required="true" data-type="currency" data-title="Donation Amount">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="total">Total</label>
                         </div>
@@ -237,7 +236,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group" data-target="notes" data-parent="other">
+                      <div class="form-group" data-target="#notes" data-parent="other">
                         <div class="col-xs-12">
                           <label class="control-label" for="notes">Additional Notes</label>
                         </div>
