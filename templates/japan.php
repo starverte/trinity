@@ -32,23 +32,31 @@ if (!empty($_POST['session'])) {
     }
 
     if (!empty($_POST['paypal_account'])) {
-      if ($_POST['paypal_account'] == 'true')
+      if ($_POST['paypal_account'] == 'true') {
         $paypal_account = true;
-      else
+        $paypal_link = 'https://www.paypal-donations.com/pp-charity/web.us/charity_i.jsp?id=72286&s=3';
+      }
+      else {
         $paypal_account = false;
+        $paypal_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE';
+      }
     }
     else {
       $paypal_account = false;
+      $paypal_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE';
     }
 
     $amt_dec = !empty($_POST['amt_dec']) ? floatval($_POST['amt_dec']) : 0.00;
 
     $notes = !empty($_POST['notes']) ? sanitize_text_field($_POST['notes']) : '';
 
+    $prayer_support    = !empty($_POST['prayer_support'])    ? true : false;
+    $financial_support = !empty($_POST['financial_support']) ? true : false;
+
     if (!empty($first_name) && !empty($last_name)) {
 
       if ($prayer_support) {
-        $recipient = 'matt.beall@me.com,missionsdirector@sharethelife.org,stevepaxton@sharethelife.org';
+        $recipient = 'matt.beall@me.com,missionsdirector@sharethelife.org';
 
         $subject   = 'Japan 2015: ';
         $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
@@ -57,7 +65,8 @@ if (!empty($_POST['session'])) {
         $message .= ' through prayer before, during, and after the trip';
 
         if (0.00 < $amt_dec) {
-          $message .= ' and with a one-time gift of $'.number_format($amt_dec,2);
+          $message   .= ' and with a one-time gift of $'.number_format($amt_dec,2);
+          $recipient .= ',stevepaxton@sharethelife.org';
         }
         else {
           $message .= '.';
@@ -81,7 +90,7 @@ if (!empty($_POST['session'])) {
         }
         else {
           if ('team' != $benefactor) {
-            $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>'. ucfirst($benefactor) . ' will be notified of your pledge to pray for ' . ucfirst($benefactor) . '.</div>';
+            $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team and '. ucfirst($benefactor) . ' will be notified of your pledge to pray for ' . ucfirst($benefactor) . '.</div>';
           }
           else {
             $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team will be notified of your pledge to pray for the Japan team.</div>';
@@ -106,38 +115,33 @@ if (!empty($_POST['session'])) {
         mail($recipient, $subject, $message, $headers);
 
         if ('team' != $benefactor) {
-          $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>'. ucfirst($benefactor) . ' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {alert("'.ucfirst($benefactor).' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form.");window.open("' . $paypal_link . '")},1);</script>';
+          $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team and '. ucfirst($benefactor) . ' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {alert("'.ucfirst($benefactor).' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form.");window.open("' . $paypal_link . '")},1);</script>';
         }
         else {
           $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {alert("The Japan team will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form.");window.open("' . $paypal_link . '")},1);</script>';
         }
-
       }
-
-      if ($paypal_account == true) {
-        $paypal_link = 'https://www.paypal-donations.com/pp-charity/web.us/charity_i.jsp?id=72286&s=3';
-      }
-      else {
-        $paypal_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE';
-      }
-
     }
   }
   else {
     unset($_SESSION['session']);
     $_SESSION['session'] = bin2hex(openssl_random_pseudo_bytes(10));
-    $first_name = '';
-    $last_name  = '';
-    $benefactor = 'team';
-    $notes      = '';
+    $first_name        = '';
+    $last_name         = '';
+    $benefactor        = 'team';
+    $notes             = '';
+    $prayer_support    = true;
+    $financial_support = false;
   }
 }
 else {
   $_SESSION['session'] = bin2hex(openssl_random_pseudo_bytes(10));
-  $first_name = '';
-  $last_name  = '';
-  $benefactor = 'team';
-  $notes      = '';
+  $first_name        = '';
+  $last_name         = '';
+  $benefactor        = 'team';
+  $notes             = '';
+  $prayer_support    = true;
+  $financial_support = false;
 }
 
 get_header(); ?>
@@ -329,7 +333,7 @@ get_header(); ?>
       <div class="row">
         <div class="col-xs-12">
           <div id="form_alert"><?php echo $alert; ?></div>
-          <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>" onsubmit="return steel_validate()">
+          <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>#pledge-support" onsubmit="return steel_validate()">
             <div class="form-group form-validate" data-target="#first_name" data-required="true" data-type="text" data-title="First Name">
               <div class="col-xs-12">
                 <label class="control-label" for="first_name">First Name</label>
@@ -362,7 +366,7 @@ get_header(); ?>
               <div class="col-xs-12">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="prayer_support" id="prayer_support" value="true">
+                    <input type="checkbox" name="prayer_support" id="prayer_support" value="true" <?php checked($prayer_support); ?>>
                     <strong>through prayer before, during, and after the trip.</strong>
                   </label>
                 </div>
@@ -372,13 +376,13 @@ get_header(); ?>
               <div class="col-xs-12">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="financial_support" id="financial_support" value="true">
+                    <input type="checkbox" name="financial_support" id="financial_support" value="true" <?php checked($financial_support); ?>>
                     <strong>with a one-time gift of:</strong>
                   </label>
                 </div>
               </div>
             </div>
-            <div class="form-group">
+            <div class="form-group" id="amt_dec_group">
               <div class="col-xs-offset-1 col-xs-3">
                 <div class="input-group">
                   <span class="input-group-addon">$</span>
