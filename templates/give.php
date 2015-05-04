@@ -129,7 +129,7 @@ get_header(); ?>
                     <p>Please fill out the following form. Upon submission, you will be taken to PayPal and will need to enter the total donation on the PayPal page.</p>
                     <div id="form_alert"><?php echo $alert; ?></div>
                     <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>" onsubmit="return steel_validate()">
-                      <div class="form-group form-validate" data-target="first_name" data-required="true" data-type="text" data-title="First Name">
+                      <div class="form-group form-validate" data-target="#first_name" data-required="true" data-type="text" data-title="First Name">
                         <div class="col-xs-12">
                           <label class="control-label" for="first_name">First Name</label>
                         </div>
@@ -137,7 +137,7 @@ get_header(); ?>
                           <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>" required>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="last_name" data-required="true" data-type="text" data-title="Last Name">
+                      <div class="form-group form-validate" data-target="#last_name" data-required="true" data-type="text" data-title="Last Name">
                         <div class="col-xs-12">
                           <label class="control-label" for="last_name">Last Name</label>
                         </div>
@@ -169,7 +169,7 @@ get_header(); ?>
                         <h4 class="col-xs-6 col-sm-4 col-md-5 col-lg-4"></h4>
                         <h4 class="col-xs-6 col-sm-4 col-md-5 col-lg-4">Donation Amount</h4>
                       </div>
-                      <div class="form-group form-validate" data-target="general_fund" data-type="currency">
+                      <div class="form-group form-validate" data-target="#general_fund" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="general_fund">General Fund</label>
                         </div>
@@ -180,7 +180,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="imagine" data-type="currency">
+                      <div class="form-group form-validate" data-target="#imagine" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="imagine">Building Fund (Imagine)</label>
                         </div>
@@ -191,7 +191,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="benevolence" data-type="currency">
+                      <div class="form-group form-validate" data-target="#benevolence" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="benevolence">Benevolence Fund</label>
                         </div>
@@ -202,7 +202,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="new" data-type="currency">
+                      <div class="form-group form-validate" data-target="#new" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="new">New Ministries</label>
                         </div>
@@ -213,7 +213,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group form-validate" data-target="other" data-type="currency">
+                      <div class="form-group form-validate" data-target="#other" data-type="currency">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="other">Other (please specify below)</label>
                         </div>
@@ -225,7 +225,7 @@ get_header(); ?>
                         </div>
                       </div>
 
-                      <div class="form-group form-validate" data-target="total" data-required="true" data-type="currency" data-title="Donation Amount">
+                      <div class="form-group form-validate" data-target="#total" data-required="true" data-type="currency" data-title="Donation Amount">
                         <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
                           <label class="control-label" for="total">Total</label>
                         </div>
@@ -236,7 +236,7 @@ get_header(); ?>
                           </div>
                         </div>
                       </div>
-                      <div class="form-group" data-target="notes" data-parent="other">
+                      <div class="form-group" data-target="#notes" data-parent="other">
                         <div class="col-xs-12">
                           <label class="control-label" for="notes">Additional Notes</label>
                         </div>

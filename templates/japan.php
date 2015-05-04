@@ -330,7 +330,7 @@ get_header(); ?>
         <div class="col-xs-12">
           <div id="form_alert"><?php echo $alert; ?></div>
           <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>" onsubmit="return steel_validate()">
-            <div class="form-group form-validate" data-target="first_name" data-required="true" data-type="text" data-title="First Name">
+            <div class="form-group form-validate" data-target="#first_name" data-required="true" data-type="text" data-title="First Name">
               <div class="col-xs-12">
                 <label class="control-label" for="first_name">First Name</label>
               </div>
@@ -338,7 +338,7 @@ get_header(); ?>
                 <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>" required>
               </div>
             </div>
-            <div class="form-group form-validate" data-target="last_name" data-required="true" data-type="text" data-title="Last Name">
+            <div class="form-group form-validate" data-target="#last_name" data-required="true" data-type="text" data-title="Last Name">
               <div class="col-xs-12">
                 <label class="control-label" for="last_name">Last Name</label>
               </div>
@@ -407,7 +407,7 @@ get_header(); ?>
                 </div>
               </div>
             </div>
-            <div class="form-group" data-target="notes" data-parent="other">
+            <div class="form-group" data-target="#notes" data-parent="other">
               <div class="col-xs-12">
                 <label class="control-label" for="notes">Additional Notes</label>
               </div>

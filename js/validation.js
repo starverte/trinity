@@ -4,10 +4,9 @@ function steel_validate() {
   var alert = '<div class="alert alert-danger"><ul>';
   jQuery('*').removeClass('has-error');
   jQuery('.form-validate').each(function () {
-    var _target = jQuery(this).data('target');
-    var target = '#' + _target;
+    var target = jQuery(this).data('target');
     var data = jQuery(target).val();
-    var title = _target;
+    var title = target.substr(1);
 
     if (jQuery(this).data('title')) {
       title = jQuery(this).data('title');
