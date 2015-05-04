@@ -3,7 +3,11 @@ function steel_validate() {
   var $success = true;
   var $alert = '<div class="alert alert-danger"><ul>';
 
-  function steel_validate_field() {
+  function steel_validate_field($required) {
+    if (undefined === $required) {
+      $required = jQuery(this).data('required');
+    }
+
     var $target = jQuery(this).data('target');
     var $data = jQuery($target).val();
     var $title = $target.substr(1);
@@ -13,7 +17,7 @@ function steel_validate() {
     }
 
     if (!$data) {
-      if (true === jQuery(this).data('required')) {
+      if (true === $required) {
         $success = false;
         jQuery(this).addClass('has-error');
         $alert += '<li>' + $title + ' is required.</li>';
@@ -22,7 +26,7 @@ function steel_validate() {
     else {
       if ('currency' === jQuery(this).data('type')) {
         var $amount = Number($data).toFixed(2);
-        if (true === jQuery(this).data('required') && 0 >= $amount) {
+        if (true === $required && 0 >= $amount) {
           $success = false;
           jQuery(this).addClass('has-error');
           $alert += '<li>' + $title + ' must be greater than $0.00.</li>';
@@ -30,6 +34,7 @@ function steel_validate() {
         else {
           jQuery($target).val($amount);
         }
+
       }
     }
   }
