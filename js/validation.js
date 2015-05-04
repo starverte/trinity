@@ -36,7 +36,7 @@ function steel_validate() {
 
   if (false === $success) {
     $alert += '</ul></div>';
-    jQuery('#form_alert').html(alert);
+    jQuery('#form_alert').html($alert);
     return false;
   }
   else {
