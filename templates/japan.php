@@ -266,12 +266,12 @@ get_header(); ?>
       </div>
 
       <div class="progress" id="jp-progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 24.66667%;">
-          24.7% <span class="hidden-xs">funds </span>raised
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width: 37.5%;">
+          37.5% <span class="hidden-xs">funds </span>raised
         </div>
       </div>
       <div class="row">
-        <small class="col-xs-12 text-right">Last updated: 4/27/2015</small>
+        <small class="col-xs-12 text-right">Last updated: 5/12/2015</small>
       </div>
       <div class="row">
         <div class="col-xs-12">
