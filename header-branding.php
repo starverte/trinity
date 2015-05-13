@@ -5,7 +5,7 @@
  * Displays the branding header element
  *
  * @package Flint/Trinity
- * @since 0.2.1
+ * @since 0.4.0
  */
 ?>
 
@@ -15,8 +15,8 @@
         <?php $header_image = get_header_image(); ?>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
             <!-- <img id="logo" src="<?php header_image(); ?>" alt="<?php echo get_bloginfo('name'); ?> Logo" /> -->
-            <img class="visible-xs visible-sm" id="logo" src="//sharethelife.org/wp-content/uploads/LifePointeChurch_Blue.svg" alt="LifePointe Church Logo" />
-            <img class="visible-md visible-lg" id="logo" src="//sharethelife.org/wp-content/uploads/LifePointeChurch_Negative.svg" alt="LifePointe Church Logo" />
+            <img class="visible-xs visible-sm" id="logo-xs" src="//sharethelife.org/wp-content/uploads/LifePointeChurch_Blue.svg" alt="LifePointe Church Logo" />
+            <img class="visible-md visible-lg" id="logo-md" src="//sharethelife.org/wp-content/uploads/LifePointeChurch_Negative.svg" alt="LifePointe Church Logo" />
           </a>
           <div class="col-lg-4 col-md-4 col-sm-2"></div>
           <div class="site-branding col-lg-5 col-md-5 col-sm-6 col-xs-6">
