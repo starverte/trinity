@@ -16,7 +16,7 @@ $benefactors = array(
   'matt'     => 'Matt Beall',
   'megan'    => 'Megan Spiegel',
   'whitney'  => 'Whitney Paxton',
-  'wiliawan' => 'Wiliawan Northrop',
+  'wilaiwan' => 'Wilaiwan Northrop',
 );
 
 if (!empty($_POST['session'])) {
@@ -178,9 +178,9 @@ get_header(); ?>
           </div>
         </div>
         <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_cover.jpg" alt="Wiliawan Northrop" id="jp15_wiliawan_cover">
+          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_cover.jpg" alt="Wilaiwan Northrop" id="jp15_wilaiwan_cover">
           <div class="carousel-caption">
-            <h3>Wiliawan Northrop</h3>
+            <h3>Wilaiwan Northrop</h3>
           </div>
         </div>
         <div class="item">
@@ -258,10 +258,10 @@ get_header(); ?>
         </div>
         <div class="jp-profile col-xs-12 col-md-6">
           <div class="row">
-            <h3 class="col-xs-12">Wiliawan Northrop</h3>
+            <h3 class="col-xs-12">Wilaiwan Northrop</h3>
             <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_profile.jpg" alt="Wiliawan Northrop">
-              <button class="btn btn-blue btn-block btn-support" data-support="wiliawan">Pledge support</button>
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_profile.jpg" alt="Wilaiwan Northrop">
+              <button class="btn btn-blue btn-block btn-support" data-support="wilaiwan">Pledge support</button>
             </div>
             <div class="jp-profile-content col-xs-7 col-sm-8">
               <p>Wilaiwan accepted Jesus Christ as her Savior in sixth grade, and loves teaching children about the gospel and serving the Lord. Her objective for Japan is to be obedient to God's calling, and learn to trust and depend on God.</p>
