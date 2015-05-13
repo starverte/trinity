@@ -16,7 +16,7 @@ $benefactors = array(
   'matt'     => 'Matt Beall',
   'megan'    => 'Megan Spiegel',
   'whitney'  => 'Whitney Paxton',
-  'wiliawan' => 'Wiliawan Northrop',
+  'wilaiwan' => 'Wilaiwan Northrop',
 );
 
 if (!empty($_POST['session'])) {
@@ -149,64 +149,7 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
 
-    <div id="carousel-jp15" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators hidden-xs">
-        <li data-target="#carousel-jp15" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-jp15" data-slide-to="1"></li>
-        <li data-target="#carousel-jp15" data-slide-to="2"></li>
-        <li data-target="#carousel-jp15" data-slide-to="3"></li>
-        <li data-target="#carousel-jp15" data-slide-to="4"></li>
-        <li data-target="#carousel-jp15" data-slide-to="5"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_title_cover.jpg" alt="Japan 2015" id="jp15_title_cover">
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_megan_cover.jpg" alt="Megan Spiegel" id="jp15_megan_cover">
-          <div class="carousel-caption">
-            <h3>Megan Spiegel</h3>
-          </div>
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_cover.jpg" alt="Whitney Paxton" id="jp15_whitney_cover">
-          <div class="carousel-caption">
-            <h3>Whitney Paxton</h3>
-          </div>
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_cover.jpg" alt="Wiliawan Northrop" id="jp15_wiliawan_cover">
-          <div class="carousel-caption">
-            <h3>Wiliawan Northrop</h3>
-          </div>
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_josiah_cover.jpg" alt="Josiah Burke" id="jp15_josiah_cover">
-          <div class="carousel-caption">
-            <h3>Josiah Burke</h3>
-          </div>
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_matt_cover.jpg" alt="Matt Beall" id="jp15_matt_cover">
-          <div class="carousel-caption">
-            <h3>Matt Beall</h3>
-          </div>
-        </div>
-      </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-jp15" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-jp15" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+    <?php echo steel_slideshow( 5098 ); ?>
 
     <div class="banner">
       <p>LifePointe Church is sending a team to Tokyo, Japan<br>to serve alongside Janet Brown and the local Zao Church</p>
@@ -258,10 +201,10 @@ get_header(); ?>
         </div>
         <div class="jp-profile col-xs-12 col-md-6">
           <div class="row">
-            <h3 class="col-xs-12">Wiliawan Northrop</h3>
+            <h3 class="col-xs-12">Wilaiwan Northrop</h3>
             <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_profile.jpg" alt="Wiliawan Northrop">
-              <button class="btn btn-blue btn-block btn-support" data-support="wiliawan">Pledge support</button>
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_profile.jpg" alt="Wilaiwan Northrop">
+              <button class="btn btn-blue btn-block btn-support" data-support="wilaiwan">Pledge support</button>
             </div>
             <div class="jp-profile-content col-xs-7 col-sm-8">
               <p>Wilaiwan accepted Jesus Christ as her Savior in sixth grade, and loves teaching children about the gospel and serving the Lord. Her objective for Japan is to be obedient to God's calling, and learn to trust and depend on God.</p>
@@ -278,7 +221,7 @@ get_header(); ?>
           <div class="row">
             <h3 class="col-xs-12">Whitney Paxton</h3>
             <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_profile.jpg" alt="Whitney Paxton">
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_whitney_profile.jpg" alt="Whitney Paxton">
               <button class="btn btn-blue btn-block btn-support" data-support="whitney">Pledge support</button>
             </div>
             <div class="jp-profile-content col-xs-7 col-sm-8">
@@ -323,12 +266,12 @@ get_header(); ?>
       </div>
 
       <div class="progress" id="jp-progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="25" aria-valuemin="0" aria-valuemax="100" style="width: 24.66667%;">
-          24.7% <span class="hidden-xs">funds </span>raised
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width: 37.5%;">
+          37.5% <span class="hidden-xs">funds </span>raised
         </div>
       </div>
       <div class="row">
-        <small class="col-xs-12 text-right">Last updated: 4/27/2015</small>
+        <small class="col-xs-12 text-right">Last updated: 5/12/2015</small>
       </div>
       <div class="row">
         <div class="col-xs-12">
@@ -435,8 +378,39 @@ get_header(); ?>
       <hr>
 
       <div class="row">
-        <h2 class="col-xs-12" id="follow">Follow Us</h2>
-        <p class="col-xs-12">Coming soon.</p>
+        <?php flint_get_widgets('left'); ?>
+
+        <div id="content" role="main" <?php flint_content_class(); ?>>
+
+          <div class="col-xs-12">
+
+            <h2 id="follow">Follow Us</h2>
+
+            <?php $japan_posts = new WP_Query( 'category_name=jp15' ); ?>
+
+            <?php if ( $japan_posts->have_posts() ) : ?>
+
+              <?php while ( $japan_posts->have_posts() ) : $japan_posts->the_post(); ?>
+
+                <?php get_template_part( 'format', get_post_format() ); ?>
+
+              <?php endwhile; ?>
+
+              <?php flint_content_nav( 'nav-below' ); ?>
+
+              <?php wp_reset_postdata(); ?>
+
+            <?php else : ?>
+
+              <?php get_template_part( 'no-results', 'archive' ); ?>
+
+            <?php endif; ?>
+
+          </div>
+
+        </div><!-- #content -->
+
+        <?php flint_get_widgets('right'); ?>
       </div>
     </div>
 
