@@ -5,7 +5,7 @@
  * Displays the branding header element
  *
  * @package Flint/Trinity
- * @since 0.2.1
+ * @since 0.4.0
  */
 ?>
 
