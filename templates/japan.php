@@ -149,64 +149,7 @@ get_header(); ?>
 
   <div id="primary" class="content-area">
 
-    <div id="carousel-jp15" class="carousel slide" data-ride="carousel">
-      <!-- Indicators -->
-      <ol class="carousel-indicators hidden-xs">
-        <li data-target="#carousel-jp15" data-slide-to="0" class="active"></li>
-        <li data-target="#carousel-jp15" data-slide-to="1"></li>
-        <li data-target="#carousel-jp15" data-slide-to="2"></li>
-        <li data-target="#carousel-jp15" data-slide-to="3"></li>
-        <li data-target="#carousel-jp15" data-slide-to="4"></li>
-        <li data-target="#carousel-jp15" data-slide-to="5"></li>
-      </ol>
-
-      <!-- Wrapper for slides -->
-      <div class="carousel-inner" role="listbox">
-        <div class="item active">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_title_cover.jpg" alt="Japan 2015" id="jp15_title_cover">
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_megan_cover.jpg" alt="Megan Spiegel" id="jp15_megan_cover">
-          <div class="carousel-caption">
-            <h3>Megan Spiegel</h3>
-          </div>
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_cover.jpg" alt="Whitney Paxton" id="jp15_whitney_cover">
-          <div class="carousel-caption">
-            <h3>Whitney Paxton</h3>
-          </div>
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_wilaiwan_cover.jpg" alt="Wilaiwan Northrop" id="jp15_wilaiwan_cover">
-          <div class="carousel-caption">
-            <h3>Wilaiwan Northrop</h3>
-          </div>
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_josiah_cover.jpg" alt="Josiah Burke" id="jp15_josiah_cover">
-          <div class="carousel-caption">
-            <h3>Josiah Burke</h3>
-          </div>
-        </div>
-        <div class="item">
-          <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_matt_cover.jpg" alt="Matt Beall" id="jp15_matt_cover">
-          <div class="carousel-caption">
-            <h3>Matt Beall</h3>
-          </div>
-        </div>
-      </div>
-
-      <!-- Controls -->
-      <a class="left carousel-control" href="#carousel-jp15" role="button" data-slide="prev">
-        <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
-        <span class="sr-only">Previous</span>
-      </a>
-      <a class="right carousel-control" href="#carousel-jp15" role="button" data-slide="next">
-        <span class="glyphicon glyphicon-chevron-right" aria-hidden="true"></span>
-        <span class="sr-only">Next</span>
-      </a>
-    </div>
+    <?php echo steel_slideshow( 5098 ); ?>
 
     <div class="banner">
       <p>LifePointe Church is sending a team to Tokyo, Japan<br>to serve alongside Janet Brown and the local Zao Church</p>
