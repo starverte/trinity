@@ -221,7 +221,7 @@ get_header(); ?>
           <div class="row">
             <h3 class="col-xs-12">Whitney Paxton</h3>
             <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_blank_profile.jpg" alt="Whitney Paxton">
+              <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_whitney_profile.jpg" alt="Whitney Paxton">
               <button class="btn btn-blue btn-block btn-support" data-support="whitney">Pledge support</button>
             </div>
             <div class="jp-profile-content col-xs-7 col-sm-8">
