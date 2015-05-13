@@ -378,8 +378,39 @@ get_header(); ?>
       <hr>
 
       <div class="row">
-        <h2 class="col-xs-12" id="follow">Follow Us</h2>
-        <p class="col-xs-12">Coming soon.</p>
+        <?php flint_get_widgets('left'); ?>
+
+        <div id="content" role="main" <?php flint_content_class(); ?>>
+
+          <div class="col-xs-12">
+
+            <h2 id="follow">Follow Us</h2>
+
+            <?php $japan_posts = new WP_Query( 'category_name=jp15' ); ?>
+
+            <?php if ( $japan_posts->have_posts() ) : ?>
+
+              <?php while ( $japan_posts->have_posts() ) : $japan_posts->the_post(); ?>
+
+                <?php get_template_part( 'format', get_post_format() ); ?>
+
+              <?php endwhile; ?>
+
+              <?php flint_content_nav( 'nav-below' ); ?>
+
+              <?php wp_reset_postdata(); ?>
+
+            <?php else : ?>
+
+              <?php get_template_part( 'no-results', 'archive' ); ?>
+
+            <?php endif; ?>
+
+          </div>
+
+        </div><!-- #content -->
+
+        <?php flint_get_widgets('right'); ?>
       </div>
     </div>
 
