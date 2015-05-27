@@ -163,8 +163,8 @@ a {
 }
 .ns:hover .ns-caption,
 .ns:focus .ns-caption {
-  background: #003e8d;
   text-decoration: none;
+  background: #003e8d;
 }
 #church_profile_overlay {
   color: #0055c0;
