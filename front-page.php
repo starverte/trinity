@@ -7,7 +7,7 @@
  * or a static page.
  *
  * @package Flint/Trinity
- * @since 0.3.0
+ * @since 0.4.1
  *
  */
 
