@@ -3,7 +3,7 @@ Theme Name: Trinity
 Theme URI: https://github.com/starverte/trinity.git
 Author: Star Verte LLC
 Description: Child theme of Flint. Theme developed for use with nonprofit organizations, particularly churches.
-Version: 0.4.0
+Version: 0.4.1
 License: GPLv3 or later
 License URI: LICENSE.md
 Tags:
@@ -163,8 +163,8 @@ a {
 }
 .ns:hover .ns-caption,
 .ns:focus .ns-caption {
-  background: #003e8d;
   text-decoration: none;
+  background: #003e8d;
 }
 #church_profile_overlay {
   color: #0055c0;
