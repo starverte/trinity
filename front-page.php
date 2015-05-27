@@ -7,7 +7,7 @@
  * or a static page.
  *
  * @package Flint/Trinity
- * @since 0.3.0
+ * @since 0.4.1
  *
  */
 
@@ -64,13 +64,31 @@ get_header(); ?>
     <div id="next-steps">
       <div class="container">
         <div class="col-sm-4">
-          <a class="ns" href="http://sharethelife.org/know-god/" title=""><img src="http://sharethelife.org/wp-content/uploads/Bible-with-Pen-S.jpg" alt="Become a Christian"><div class="ns-caption">Become a Christian</div></a>
+          <a class="ns" href="http://sharethelife.org/know-god/" title="" id="know-god-a">
+            <img id="know_god_img" src="http://sharethelife.org/wp-content/uploads/Bible-with-Pen-S.jpg" alt="Become a Christian">
+            <div class="ns-caption" data-img="#know_god_img" data-caption="#know_god_caption">
+              <span id="know_god_caption">Become a Christian</span>
+            </div>
+          </a>
+          <div class="clearfix"></div>
         </div>
         <div class="col-sm-4">
-          <a class="ns" href="http://sharethelife.org/get-connected/lifegroups/" title=""><img src="http://sharethelife.org/wp-content/uploads/lifegroups.png" alt="Join a LifeGroup"><div class="ns-caption">Join a LifeGroup</div></a>
+          <a class="ns" href="http://sharethelife.org/get-connected/lifegroups/" title="">
+            <img id="lifegroups_img" src="http://sharethelife.org/wp-content/uploads/lifegroups.png" alt="Join a LifeGroup">
+            <div class="ns-caption" data-img="#lifegroups_img" data-caption="#lifegroups_caption">
+              <span id="lifegroups_caption">Join a LifeGroup</span>
+            </div>
+          </a>
+          <div class="clearfix"></div>
         </div>
         <div class="col-sm-4">
-          <a class="ns" href="http://sharethelife.org/get-connected/serve/" title=""><img src="http://sharethelife.org/wp-content/uploads/serve.png" alt="Baptism2"><div class="ns-caption">Serve</div></a>
+          <a class="ns" href="http://sharethelife.org/get-connected/serve/" title="">
+          <img id="serve_img" src="http://sharethelife.org/wp-content/uploads/serve.png" alt="Baptism2">
+            <div class="ns-caption" data-img="#serve_img" data-caption="#serve_caption">
+              <span id="serve_caption">Serve</span>
+            </div>
+          </a>
+          <div class="clearfix"></div>
         </div>
       </div>
     </div>
