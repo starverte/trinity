@@ -29,9 +29,10 @@ if (!empty($_POST['session'])) {
     $general_fund   = !empty($_POST['general_fund'])   ? floatval($_POST['general_fund'])   : 0.00;
     $imagine        = !empty($_POST['imagine'])        ? floatval($_POST['imagine'])        : 0.00;
     $benevolence    = !empty($_POST['benevolence'])    ? floatval($_POST['benevolence'])    : 0.00;
+    $jp15           = !empty($_POST['jp15'])           ? floatval($_POST['jp15'])           : 0.00;
     $new            = !empty($_POST['new'])            ? floatval($_POST['new'])            : 0.00;
     $other          = !empty($_POST['other'])          ? floatval($_POST['other'])          : 0.00;
-    $total          = $general_fund + $imagine + $benevolence + $new + $other;
+    $total          = $general_fund + $imagine + $benevolence + $jp15 + $new + $other;
 
     $notes = !empty($_POST['notes']) ? sanitize_text_field($_POST['notes']) : '';
 
@@ -45,6 +46,7 @@ if (!empty($_POST['session'])) {
       $message .= 'General Fund: $'.number_format($general_fund,2)."\r\n"."\r\n";
       $message .= 'Building Fund (Imagine): $'.number_format($imagine,2)."\r\n"."\r\n";
       $message .= 'Benevolence Fund: $'.number_format($benevolence,2)."\r\n"."\r\n";
+      $message .= 'Japan Mission Trip: $'.number_format($jp15,2)."\r\n"."\r\n";
       $message .= 'New Ministries: $'.number_format($new,2)."\r\n"."\r\n";
       $message .= 'Other: $'.number_format($other,2)."\r\n"."\r\n";
       $message .= 'Total: $'.number_format($total,2);
@@ -199,6 +201,17 @@ get_header(); ?>
                           <div class="input-group">
                             <span class="input-group-addon">$</span>
                             <input class="form-control donation" type="number" name="benevolence" id="benevolence" value="<?php echo number_format($benevolence,2); ?>">
+                          </div>
+                        </div>
+                      </div>
+                      <div class="form-group form-validate" data-target="#jp15" data-type="currency">
+                        <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
+                          <label class="control-label" for="jp15">Japan Mission Trip</label>
+                        </div>
+                        <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
+                          <div class="input-group">
+                            <span class="input-group-addon">$</span>
+                            <input class="form-control donation" type="number" name="jp15" id="jp15" value="<?php echo number_format($jp15,2); ?>">
                           </div>
                         </div>
                       </div>
