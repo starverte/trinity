@@ -29,9 +29,9 @@
  - [x] Academy template
  - [x] Move toggle button for sermon list/sessions to above entry-content
  - [x] Hover link on panel should remain white
- - [ ] **Next Steps: Caption like concept sketch**
- - [ ] **Put church picture slide back in**
-    - [ ] **Leave map, but remove directions button**
+ - [x] Next Steps: Caption like concept sketch
+ - [x] Put church picture slide back in
+    - [x] Leave map, but remove directions button
  - [ ] **For Slider**
     - [ ] **If only title, center text**
     - [ ] **If title and description, title goes to left description goes to right**
@@ -42,14 +42,13 @@
 ## Low
 
  - [ ] **Add Logos and Graphics link to footer**
- - [ ] **Three front page featured events => select via “Customize”**
+ - [x] Three front page featured events => select via “Customize”
  - [ ] **Tighten up margin-bottom on sermon week titles**
  - [ ] **ChurchTeams CSS needs updated to match look**
- - [ ] **`[btn target=“_blank”]`**
+ - [x] `[btn target=“_blank”]`
  - [ ] **Getting all videos to use responsive code**
   - [x] Steve - first run through
   - [ ] **Matt - second run through**
  - [ ] **Background color for entry-content**
 
 **These items will be postponed and addressed by adding the Podcast module to Steel.
-
