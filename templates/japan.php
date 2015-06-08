@@ -56,7 +56,7 @@ if (!empty($_POST['session'])) {
     if (!empty($first_name) && !empty($last_name)) {
 
       if ($prayer_support) {
-        $recipient = 'matt.beall@me.com,missionsdirector@sharethelife.org';
+        $recipient = 'missionsdirector@sharethelife.org';
 
         $subject   = 'Japan 2015: ';
         $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
@@ -77,7 +77,7 @@ if (!empty($_POST['session'])) {
           $message .= $notes;
         }
 
-        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: mbeall@starverte.com'."\r\n".'X-Mailer: PHP/'.phpversion();
+        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: missionsdirector@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
         mail($recipient, $subject, $message, $headers);
 
         if (0.00 < $amt_dec) {
@@ -98,7 +98,7 @@ if (!empty($_POST['session'])) {
         }
       }
       elseif (0.00 < $amt_dec) {
-        $recipient = 'matt.beall@me.com,missionsdirector@sharethelife.org,stevepaxton@sharethelife.org';
+        $recipient = 'missionsdirector@sharethelife.org,stevepaxton@sharethelife.org';
 
         $subject   = 'Japan 2015: ';
         $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
@@ -111,7 +111,7 @@ if (!empty($_POST['session'])) {
           $message .= $notes;
         }
 
-        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: mbeall@starverte.com'."\r\n".'X-Mailer: PHP/'.phpversion();
+        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: missionsdirector@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
         mail($recipient, $subject, $message, $headers);
 
         if ('team' != $benefactor) {
