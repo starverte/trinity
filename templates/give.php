@@ -3,7 +3,7 @@
  * Template Name: Give
  *
  * @package Flint/Trinity
- * @since 0.4.2
+ * @since 0.4.3
  */
 
 session_start();
@@ -56,7 +56,7 @@ if (!empty($_POST['session'])) {
         $message .= $notes;
       }
 
-      $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: mbeall@starverte.com'."\r\n".'X-Mailer: PHP/'.phpversion();
+      $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: stevepaxton@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
       mail($recipient, $subject, $message, $headers);
 
       if ($paypal_account == true) {

@@ -3,7 +3,7 @@
  * Template Name: Japan
  *
  * @package Flint/Trinity
- * @since 0.4.0
+ * @since 0.4.3
  */
 
 session_start();
@@ -56,7 +56,7 @@ if (!empty($_POST['session'])) {
     if (!empty($first_name) && !empty($last_name)) {
 
       if ($prayer_support) {
-        $recipient = 'matt.beall@me.com,missionsdirector@sharethelife.org';
+        $recipient = 'missionsdirector@sharethelife.org';
 
         $subject   = 'Japan 2015: ';
         $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
@@ -77,7 +77,7 @@ if (!empty($_POST['session'])) {
           $message .= $notes;
         }
 
-        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: mbeall@starverte.com'."\r\n".'X-Mailer: PHP/'.phpversion();
+        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: missionsdirector@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
         mail($recipient, $subject, $message, $headers);
 
         if (0.00 < $amt_dec) {
@@ -98,7 +98,7 @@ if (!empty($_POST['session'])) {
         }
       }
       elseif (0.00 < $amt_dec) {
-        $recipient = 'matt.beall@me.com,missionsdirector@sharethelife.org,stevepaxton@sharethelife.org';
+        $recipient = 'missionsdirector@sharethelife.org,stevepaxton@sharethelife.org';
 
         $subject   = 'Japan 2015: ';
         $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
@@ -111,7 +111,7 @@ if (!empty($_POST['session'])) {
           $message .= $notes;
         }
 
-        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: mbeall@starverte.com'."\r\n".'X-Mailer: PHP/'.phpversion();
+        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: missionsdirector@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
         mail($recipient, $subject, $message, $headers);
 
         if ('team' != $benefactor) {
@@ -265,13 +265,19 @@ get_header(); ?>
         <h2 class="col-xs-12" id="pledge-support">Pledge Support</h2>
       </div>
 
+      <?php
+        $options = flint_get_options();
+        $raised  = $options['trinity_japan_raised'];
+        $raised_percent = floatval($raised) / 15000 * 100;
+      ?>
+
       <div class="progress" id="jp-progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="38" aria-valuemin="0" aria-valuemax="100" style="width: 37.5%;">
-          37.5% <span class="hidden-xs">funds </span>raised
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round($raised_percent); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
+          <?php echo round($raised_percent, 1); ?>% <span class="hidden-xs">funds </span>raised
         </div>
       </div>
       <div class="row">
-        <small class="col-xs-12 text-right">Last updated: 5/12/2015</small>
+        <small class="col-xs-12 text-right">Last updated: <?php echo $options['trinity_japan_raised_updated']; ?></small>
       </div>
       <div class="row">
         <div class="col-xs-12">
@@ -390,19 +396,67 @@ get_header(); ?>
 
             <?php if ( $japan_posts->have_posts() ) : ?>
 
-              <?php while ( $japan_posts->have_posts() ) : $japan_posts->the_post(); ?>
+              <div class="row">
 
-                <?php get_template_part( 'format', get_post_format() ); ?>
+                <?php while ( $japan_posts->have_posts() ) : $japan_posts->the_post(); ?>
 
-              <?php endwhile; ?>
+                  <div class="col-md-4">
 
-              <?php flint_content_nav( 'nav-below' ); ?>
+                      <?php flint_post_thumbnail(); ?>
+                      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
+                        <header class="entry-header">
+                          <?php $type = get_post_type(); ?>
+                          <?php do_action('flint_open_entry_header_'.$type); ?>
 
-              <?php wp_reset_postdata(); ?>
+                          <h2><?php if (is_single()) { echo the_title(); } else { echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>'; } ?></h2>
+
+                          <div class="entry-meta">
+                            <?php do_action('flint_entry_meta_above_'.$type); ?>
+                          </div><!-- .entry-meta -->
+
+                          <?php do_action('flint_close_entry_header_'.$type); ?>
+
+                        </header><!-- .entry-header -->
+
+                        <?php if ( is_search() ) : ?>
+                        <div class="entry-summary">
+                          <?php the_excerpt(); ?>
+                        </div><!-- .entry-summary -->
+                        <?php else : ?>
+                        <div class="entry-content">
+                          <?php flint_the_content(); ?>
+                          <?php
+                          flint_link_pages( array(
+                            'before' => '<ul class="pagination">',
+                            'after'  => '</ul>',
+                          ) ); ?>
+                        </div><!-- .entry-content -->
+                        <?php endif; ?>
+
+                        <div class="clearfix"></div>
+
+                        <footer class="entry-meta clearfix">
+                          <?php do_action('flint_entry_meta_below_post'); ?>
+                        </footer><!-- .entry-meta -->
+                      </article><!-- #post-<?php the_ID(); ?> -->
+
+                    </div><!-- .col-md-4 -->
+
+                <?php endwhile; ?>
+
+                <?php flint_content_nav( 'nav-below' ); ?>
+
+                <?php wp_reset_postdata(); ?>
+
+              </div><!-- .row -->
 
             <?php else : ?>
 
-              <?php get_template_part( 'no-results', 'archive' ); ?>
+              <div class="row">
+
+                <?php get_template_part( 'no-results', 'archive' ); ?>
+
+              </div><!-- .row -->
 
             <?php endif; ?>
 

@@ -3,7 +3,7 @@
  * Trinity functions and definitions
  *
  * @package Flint/Trinity
- * @since 0.4.0
+ * @since 0.4.3
  */
 
 /**
@@ -48,6 +48,8 @@ function trinity_option_defaults( $flint_defaults ) {
   $defaults = array(
     'trinity_front_page_featured' => 0,
     'trinity_front_page_hero'     => 0,
+    'trinity_japan_raised'        => 0,
+    'trinity_japan_raised_update' => '',
   );
 
   return wp_parse_args( $flint_defaults, $defaults );
@@ -100,6 +102,49 @@ function trinity_customize_register( $wp_customize ) {
       'priority' => 30,
       'type'     => 'select',
       'choices'  => $slideshows,
+    )));
+
+  /**
+   * Japan section
+   */
+  $wp_customize->add_section( 'trinity_section_japan' , array(
+    'title'       => __( 'Japan', 'flint' ),
+    'description' => 'Japan 2015 page',
+    'priority'    => 200,
+  ));
+
+    /**
+     * Amount raised setting
+     */
+    $wp_customize->add_setting('flint_options[trinity_japan_raised]', array(
+      'default'           => $defaults['trinity_japan_raised'],
+      'capability'        => 'edit_theme_options',
+      'type'              => 'option',
+      'transport'         => 'postMessage',
+    ));
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_japan_raised', array(
+      'label'    => __('Amount Raised', 'flint'),
+      'section'  => 'trinity_section_japan',
+      'settings' => 'flint_options[trinity_japan_raised]',
+      'priority' => 30,
+      'type'     => 'text',
+    )));
+
+    /**
+     * Last updated setting
+     */
+    $wp_customize->add_setting('flint_options[trinity_japan_raised_updated]', array(
+      'default'           => $defaults['trinity_japan_raised_updated'],
+      'capability'        => 'edit_theme_options',
+      'type'              => 'option',
+      'transport'         => 'postMessage',
+    ));
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_japan_raised_updated', array(
+      'label'    => __('Last updated', 'flint'),
+      'section'  => 'trinity_section_japan',
+      'settings' => 'flint_options[trinity_japan_raised_updated]',
+      'priority' => 40,
+      'type'     => 'text',
     )));
 }
 add_action( 'customize_register', 'trinity_customize_register', 20 );
