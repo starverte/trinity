@@ -3,7 +3,7 @@
  * Template Name: Give
  *
  * @package Flint/Trinity
- * @since 0.4.3
+ * @since 0.4.4
  */
 
 session_start();
@@ -38,7 +38,7 @@ if (!empty($_POST['session'])) {
 
     if (!empty($first_name) && !empty($last_name) && $total > 0) {
 
-      $recipient = 'stevepaxton@sharethelife.org';
+      $recipient = 'donations@sharethelife.org';
       $subject   = $first_name . ' ' . $last_name . ' pledged to donate $' . $total;
       $subject  .= $paypal_account == true ? ' through the PayPal Giving Fund' : ' with PayPal';
 
@@ -56,7 +56,7 @@ if (!empty($_POST['session'])) {
         $message .= $notes;
       }
 
-      $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: stevepaxton@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
+      $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: donations@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
       mail($recipient, $subject, $message, $headers);
 
       if ($paypal_account == true) {

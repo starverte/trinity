@@ -3,7 +3,7 @@
  * Template Name: Japan
  *
  * @package Flint/Trinity
- * @since 0.4.3
+ * @since 0.4.4
  */
 
 session_start();
@@ -66,7 +66,7 @@ if (!empty($_POST['session'])) {
 
         if (0.00 < $amt_dec) {
           $message   .= ' and with a one-time gift of $'.number_format($amt_dec,2);
-          $recipient .= ',stevepaxton@sharethelife.org';
+          $recipient .= ',donations@sharethelife.org';
         }
         else {
           $message .= '.';
@@ -98,7 +98,7 @@ if (!empty($_POST['session'])) {
         }
       }
       elseif (0.00 < $amt_dec) {
-        $recipient = 'missionsdirector@sharethelife.org,stevepaxton@sharethelife.org';
+        $recipient = 'missionsdirector@sharethelife.org,donations@sharethelife.org';
 
         $subject   = 'Japan 2015: ';
         $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
