@@ -1,4 +1,4 @@
-Trinity 0.4.3
+Trinity 0.4.4
 =====
 Child theme of Flint. Theme developed for use with nonprofit organizations, particularly churches.
 
