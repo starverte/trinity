@@ -281,6 +281,7 @@ get_header(); ?>
       </div>
       <div class="row">
         <div class="col-xs-12">
+          <p><strong>This form is still under development. It requires JavaScript and will not work if pop-ups are blocked</strong>. If you have any problems, please <a href="http://sharethelife.org/im-new/contact-us/">let us know</a> with as much detail as possible.</p>
           <div id="form_alert"><?php echo $alert; ?></div>
           <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>#pledge-support" onsubmit="return steel_validate()">
             <div class="form-group form-validate" data-target="#first_name" data-required="true" data-type="text" data-title="First Name">
