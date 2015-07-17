@@ -3,7 +3,7 @@
  * Template Name: Japan
  *
  * @package Flint/Trinity
- * @since 0.4.4
+ * @since 0.5
  */
 
 session_start();
