@@ -3,7 +3,7 @@
  * Template Name: Give
  *
  * @package Flint/Trinity
- * @since 0.4.4
+ * @since 0.5
  */
 
 session_start();
@@ -129,6 +129,7 @@ get_header(); ?>
                   <div class="col-md-8">
                     <h4>We utilize PayPal for online donations, but you do not have to have a PayPal account to make a donation.</h4>
                     <p>Please fill out the following form. Upon submission, you will be taken to PayPal and will need to enter the total donation on the PayPal page.</p>
+                    <p><strong>This form is still under development. It requires JavaScript and will not work if pop-ups are blocked</strong>. If you have any problems, please <a href="http://sharethelife.org/im-new/contact-us/">let us know</a> with as much detail as possible.</p>
                     <div id="form_alert"><?php echo $alert; ?></div>
                     <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>" onsubmit="return steel_validate()">
                       <div class="form-group form-validate" data-target="#first_name" data-required="true" data-type="text" data-title="First Name">
