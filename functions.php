@@ -50,6 +50,7 @@ function trinity_option_defaults( $flint_defaults ) {
     'trinity_front_page_hero'     => 0,
     'trinity_japan_raised'        => 0,
     'trinity_japan_raised_update' => '',
+    'trinity_japan_up_next'       => '',
   );
 
   return wp_parse_args( $flint_defaults, $defaults );
@@ -145,6 +146,23 @@ function trinity_customize_register( $wp_customize ) {
       'settings' => 'flint_options[trinity_japan_raised_updated]',
       'priority' => 40,
       'type'     => 'text',
+    )));
+
+    /**
+     * Up Next setting
+     */
+    $wp_customize->add_setting('flint_options[trinity_japan_up_next]', array(
+      'default'           => $defaults['trinity_japan_up_next'],
+      'capability'        => 'edit_theme_options',
+      'type'              => 'option',
+      'transport'         => 'postMessage',
+    ));
+    $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_japan_up_next', array(
+      'label'    => __('Up Next', 'flint'),
+      'section'  => 'trinity_section_japan',
+      'settings' => 'flint_options[trinity_japan_up_next]',
+      'priority' => 40,
+      'type'     => 'textarea',
     )));
 }
 add_action( 'customize_register', 'trinity_customize_register', 20 );
