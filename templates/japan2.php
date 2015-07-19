@@ -56,13 +56,12 @@ flint_get_widgets('header');
         <?php endif; ?>
       </div><!-- #content -->
 
+      <?php $options = flint_get_options(); ?>
+
       <h2 class="col-xs-12 col-sm-4 col-md-3 col-lg-2" id="events">Up Next</h2>
 
       <div class="jp-profile col-xs-12 col-sm-4 col-md-3 col-lg-2">
-        <h4>Sunday, July 19</h4>
-        <p>During the worship service, the LifePointe Church congregation will send-off Japan team</p>
-        <h4>Monday, July 20</h4>
-        <p>At 2:45am, the Japan team will meet at LifePointe Church and drive down to Denver International Airport</p>
+        <?php echo $options['trinity_japan_up_next']; ?>
       </div>
 
       <h2 class="col-xs-12 col-sm-4 col-md-3 col-lg-2" id="meet-the-team">Meet the Team</h2>
