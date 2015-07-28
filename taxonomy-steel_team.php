@@ -3,7 +3,7 @@
  * The template for displaying Staff and Elder pages
  *
  * @package Flint/Trinity
- * @since 0.2
+ * @since 0.5.1
  */
 
 get_header(); ?>
@@ -76,7 +76,7 @@ get_header(); ?>
         query_posts( $args ); ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'type', 'steel_profile' ); ?>
+        <?php get_template_part( 'templates/full', 'content' ); ?>
 
       <?php endwhile; ?>
 
