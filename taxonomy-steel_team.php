@@ -3,7 +3,7 @@
  * The template for displaying Staff and Elder pages
  *
  * @package Flint/Trinity
- * @since 0.2
+ * @since 0.5.1
  */
 
 get_header(); ?>

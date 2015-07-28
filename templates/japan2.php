@@ -3,7 +3,7 @@
 * Template Name: Japan 2
 *
 * @package Flint\Trinity
-* @since 0.5
+* @since 0.5.1
 */
 get_header();
 flint_get_widgets('header');

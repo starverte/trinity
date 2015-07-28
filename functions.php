@@ -3,7 +3,7 @@
  * Trinity functions and definitions
  *
  * @package Flint/Trinity
- * @since 0.4.3
+ * @since 0.5.1
  */
 
 /**
