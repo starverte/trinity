@@ -76,7 +76,7 @@ get_header(); ?>
         query_posts( $args ); ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'type', 'steel_profile' ); ?>
+        <?php get_template_part( 'templates/full', 'content' ); ?>
 
       <?php endwhile; ?>
 
