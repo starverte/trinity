@@ -13,7 +13,6 @@ flint_get_widgets('header');
     <div class="row">
       <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10" id="content" role="main">
         <img src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_banner_online_japan.png" alt="Japan 2015">
-        <h2 class="jumbotron">LifePointe Church is sending a team to Yamagata, Japan to serve alongside Janet Brown and the local Zao Church</h2>
         <?php $japan_posts = new WP_Query( 'category_name=jp15' ); ?>
         <?php if ( $japan_posts->have_posts() ) : ?>
           <?php while ( $japan_posts->have_posts() ) : $japan_posts->the_post(); ?>
@@ -72,8 +71,8 @@ flint_get_widgets('header');
       </div>
 
       <div class="jp-profile col-xs-6 col-md-3 col-lg-2">
-        <h3>Josiah Burke</h3>
-        <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_josiah_profile.jpg" alt="Josiah Burke">
+        <h3>Josiah Burk</h3>
+        <img class="jp-profile-img" src="//lifepointe.starvertellc.netdna-cdn.com/wp-content/uploads/jp15_josiah_profile.jpg" alt="Josiah Burk">
       </div>
 
       <div class="jp-profile col-xs-6 col-md-3 col-lg-2">
