@@ -38,9 +38,6 @@
       <div class="col-xs-6 col-sm-2">
         <h3>Affiliations</h3>
         <p class="affiliated">
-          <a href="http://thegospelcoalition.org"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/tgclogo.jpg" alt="The Gospel Coalition"></a>
-        </p>
-        <p class="affiliated">
           <a href="http://rmcn.org"><img src="<?php echo get_stylesheet_directory_uri() ?>/img/rmcnlogo.png" alt="Rocky Mountain Church Network"></a>
         </p>
         <p class="affiliated">
