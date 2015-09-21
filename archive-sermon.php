@@ -3,7 +3,7 @@
  * The template for displaying sermon "archive" pages
  *
  * @package Flint/Trinity
- * @since 0.2
+ * @since 0.5.2
  */
 
 get_header(); ?>
@@ -46,7 +46,7 @@ get_header(); ?>
                 array(
                   'taxonomy' => 'sermon_topics',
                   'field' => 'slug',
-                  'terms' => 'academy',
+                  'terms' => array('academy','lifegroups'),
                   'operator' => 'NOT IN'
                 )
               )));
