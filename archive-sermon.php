@@ -46,7 +46,7 @@ get_header(); ?>
                 array(
                   'taxonomy' => 'sermon_topics',
                   'field' => 'slug',
-                  'terms' => 'academy',
+                  'terms' => array('academy','lifegroups'),
                   'operator' => 'NOT IN'
                 )
               )));
