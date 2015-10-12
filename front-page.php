@@ -30,7 +30,7 @@ get_header(); ?>
 
       <?php echo steel_slideshow( $options['trinity_front_page_featured'] ); ?>
 
-      <div id="content" class="<?php echo $content_class; ?>" role="main">
+      <div id="content" role="main" <?php flint_content_class(); ?>>
 
         <?php while ( have_posts() ) : the_post(); ?>
 
