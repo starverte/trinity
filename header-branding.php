@@ -28,7 +28,7 @@ if ( function_exists( 'flint_options' ) ) {
           <div class="site-branding col-lg-5 col-md-5 col-sm-6 col-xs-6">
             <h2 class="site-description"><?php bloginfo( 'description' ); ?></h2>
             <h3 class="hidden-xs address"><?php flint_get_address(); ?></h3>
-            <h3 class="hidden-xs phone"><?php echo $options['tel'][0]; ?></h3>
+            <h3 class="hidden-xs phone"><?php echo $options['org_tel']; ?></h3>
           </div><!-- .site-branding -->
       </div><!-- .container -->
     <?php } /* if (current_theme_supports('custom-header')) */ ?>
