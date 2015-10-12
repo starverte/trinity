@@ -46,11 +46,11 @@ add_action( 'wp_enqueue_scripts', 'trinity_enqueue_scripts' );
 
 function trinity_option_defaults( $flint_defaults ) {
   $defaults = array(
-    'trinity_front_page_featured' => 0,
-    'trinity_front_page_hero'     => 0,
-    'trinity_japan_raised'        => 0,
-    'trinity_japan_raised_update' => '',
-    'trinity_japan_up_next'       => '',
+    'trinity_front_page_featured'  => 0,
+    'trinity_front_page_hero'      => 0,
+    'trinity_japan_raised'         => 0,
+    'trinity_japan_raised_updated' => '',
+    'trinity_japan_up_next'        => '',
   );
 
   return wp_parse_args( $flint_defaults, $defaults );
