@@ -6,7 +6,7 @@
 * @since 0.5.1
 */
 get_header();
-flint_get_widgets('header');
+flint_get_sidebar('header');
 ?>
 
   <div id="primary" class="content-area container">
@@ -96,5 +96,5 @@ flint_get_widgets('header');
 
 </div><!-- #page -->
 
-<?php flint_get_widgets('footer'); ?>
+<?php flint_get_sidebar('footer'); ?>
 <?php get_footer(); ?>

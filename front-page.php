@@ -12,7 +12,7 @@
  */
 
 get_header(); ?>
-<?php flint_get_widgets('header'); ?>
+<?php flint_get_sidebar('header'); ?>
 
   <div id="primary" class="content-area">
 
@@ -107,5 +107,5 @@ get_header(); ?>
 
   </div><!-- #primary -->
 
-<?php flint_get_widgets('footer'); ?>
+<?php flint_get_sidebar('footer'); ?>
 <?php get_footer(); ?>
