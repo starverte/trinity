@@ -6,7 +6,7 @@
 * @since 0.5.1
 */
 get_header();
-flint_get_widgets('header');
+flint_get_sidebar('header');
 ?>
 
   <div id="primary" class="content-area container">
@@ -55,7 +55,13 @@ flint_get_widgets('header');
         <?php endif; ?>
       </div><!-- #content -->
 
-      <?php $options = flint_get_options(); ?>
+      <?php
+        if ( function_exists( 'flint_options' ) ) {
+          $options = flint_options();
+        } else {
+          $options = flint_get_options();
+        }
+      ?>
 
       <h2 class="col-xs-12 col-sm-4 col-md-3 col-lg-2" id="events">Up Next</h2>
 
@@ -96,5 +102,5 @@ flint_get_widgets('header');
 
 </div><!-- #page -->
 
-<?php flint_get_widgets('footer'); ?>
+<?php flint_get_sidebar('footer'); ?>
 <?php get_footer(); ?>
