@@ -17,7 +17,12 @@ get_header(); ?>
   <div id="primary" class="content-area">
 
     <?php
-    $options = flint_get_options();
+    if ( function_exists( 'flint_options' ) ) {
+      $options = flint_options();
+    } else {
+      $options = flint_get_options();
+    }
+
     echo steel_slideshow( $options['trinity_front_page_hero'], 'front-slides' );
     ?>
 

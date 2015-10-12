@@ -266,7 +266,12 @@ get_header(); ?>
       </div>
 
       <?php
-        $options = flint_get_options();
+        if ( function_exists( 'flint_options' ) ) {
+          $options = flint_options();
+        } else {
+          $options = flint_get_options();
+        }
+
         $raised  = $options['trinity_japan_raised'];
         $raised_percent = floatval($raised) / 15000 * 100;
       ?>

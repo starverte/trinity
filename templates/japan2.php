@@ -55,7 +55,13 @@ flint_get_sidebar('header');
         <?php endif; ?>
       </div><!-- #content -->
 
-      <?php $options = flint_get_options(); ?>
+      <?php
+        if ( function_exists( 'flint_options' ) ) {
+          $options = flint_options();
+        } else {
+          $options = flint_get_options();
+        }
+      ?>
 
       <h2 class="col-xs-12 col-sm-4 col-md-3 col-lg-2" id="events">Up Next</h2>
 

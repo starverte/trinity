@@ -59,7 +59,11 @@ add_filter('flint_option_defaults','trinity_option_defaults');
 
 function trinity_customize_register( $wp_customize ) {
 
-  $defaults = flint_get_option_defaults();
+  if ( function_exists( 'flint_options_defaults' ) ) {
+    $defaults = flint_options_defaults();
+  } else {
+    $defaults = flint_get_option_defaults();
+  }
 
   $slideshows = steel_get_slides('options');
 
