@@ -12,12 +12,17 @@
  */
 
 get_header(); ?>
-<?php flint_get_widgets('header'); ?>
+<?php flint_get_sidebar('header'); ?>
 
   <div id="primary" class="content-area">
 
     <?php
-    $options = flint_get_options();
+    if ( function_exists( 'flint_options' ) ) {
+      $options = flint_options();
+    } else {
+      $options = flint_get_options();
+    }
+
     echo steel_slideshow( $options['trinity_front_page_hero'], 'front-slides' );
     ?>
 
@@ -25,11 +30,17 @@ get_header(); ?>
 
       <?php echo steel_slideshow( $options['trinity_front_page_featured'] ); ?>
 
-      <div id="content" class="<?php echo $content_class; ?>" role="main">
+      <div id="content" role="main" <?php flint_content_class(); ?>>
 
         <?php while ( have_posts() ) : the_post(); ?>
 
-          <?php get_template_part( 'templates/' . flint_get_template(), 'content' ); ?>
+          <?php
+            if ( function_exists( 'flint_post_width' ) ) {
+              get_template_part( 'templates/' . flint_post_width(), 'content' );
+            } else {
+              get_template_part( 'templates/' . flint_get_template(), 'content' );
+            }
+          ?>
 
           <?php if ( comments_open() || '0' != get_comments_number() ) { comments_template(); } ?>
 
@@ -107,5 +118,5 @@ get_header(); ?>
 
   </div><!-- #primary -->
 
-<?php flint_get_widgets('footer'); ?>
+<?php flint_get_sidebar('footer'); ?>
 <?php get_footer(); ?>
