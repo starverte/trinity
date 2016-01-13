@@ -17,7 +17,7 @@
         <p><?php echo steel_profile_meta( 'email' ); ?><br>
            <?php echo steel_profile_phone(); ?></p>
       </header><!-- .entry-header -->
-      
+
       <?php if ( is_search() ) : // Only display Excerpts for Search ?>
       <div class="entry-summary">
         <?php the_excerpt(); ?>
@@ -32,7 +32,7 @@
         ) ); ?>
       </div><!-- .entry-content -->
       <?php endif; ?>
-      
+
     </article><!-- #page-<?php the_ID(); ?> -->
     <div class="col-lg-1 col-md-1 col-sm-1"></div>
     <?php if ( current_user_can('edit_posts') ) { ?><a class="btn btn-default btn-sm col-lg-1 col-md-1 col-sm-1" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>

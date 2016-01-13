@@ -122,6 +122,10 @@ a {
   padding-top: 0;
   padding-bottom: 0;
 }
+.msx-card-deck-featured ul {
+  padding-left: 0;
+  list-style: none;
+}
 .sermons .title {
   margin-top: 5px;
   margin-bottom: 5px;
