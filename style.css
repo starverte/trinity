@@ -35,6 +35,10 @@ body {
   padding-top: 0;
   color: #333;
 }
+#page {
+  padding: 0 0 400px;
+  margin: 0 auto -400px;
+}
 a {
   font-weight: 400;
 }
