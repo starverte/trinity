@@ -13,7 +13,7 @@
   <div class="container">
     <div class="row">
       <div class="col-xs-12 col-sm-6 text-center">
-        <img src="https://cdn.sharethelife.org/wp-content/themes/trinity/img/lifepointe-church-front.png">
+        <img src="https://sharethelife.org/wp-content/themes/trinity/img/lifepointe-church-front.png">
         <h3>Sunday Worship @ 9:30am</h3>
         <p>900 E Prospect Rd<br>
         Fort Collins, CO 80524<br>
