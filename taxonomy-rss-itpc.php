@@ -49,7 +49,11 @@ $settings = get_option('lifepointe_podcast');
 
   <?php if ( have_posts() ) : ?>
 
-    <?php global $wp_query; $args = array_merge( $wp_query->query, array( 'post_type' => 'sermon', 'posts_per_page' => 999, 'orderby' => 'date', 'order' => 'DESC' ) ); query_posts( $args ); ?>
+    <?php
+    global $wp_query;
+    $args = array_merge( $wp_query->query, array( 'post_type' => 'sermon', 'posts_per_page' => 999, 'orderby' => 'date', 'order' => 'DESC' ) );
+    query_posts( $args );
+    ?>
     <?php while ( have_posts() ) : the_post(); ?>
 
       <?php if ( has_post_thumbnail() ) {

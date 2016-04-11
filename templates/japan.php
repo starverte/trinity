@@ -73,11 +73,11 @@ if (!empty($_POST['session'])) {
         }
 
         if (!empty($notes)) {
-          $message .= "\r\n"."\r\n".'Additional Notes:'."\r\n";
+          $message .= "\r\n\r\nAdditional Notes:\r\n";
           $message .= $notes;
         }
 
-        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: missionsdirector@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
+        $headers = "From: wp@fortcollinscreative.com\r\nReply-To: missionsdirector@sharethelife.org\r\nX-Mailer: PHP/".phpversion();
         mail($recipient, $subject, $message, $headers);
 
         if (0.00 < $amt_dec) {
@@ -107,11 +107,11 @@ if (!empty($_POST['session'])) {
         $message .= ' with a one-time gift of $'.number_format($amt_dec,2);
 
         if (!empty($notes)) {
-          $message .= "\r\n"."\r\n".'Additional Notes:'."\r\n";
+          $message .= "\r\n\r\nAdditional Notes:\r\n";
           $message .= $notes;
         }
 
-        $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: missionsdirector@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
+        $headers = "From: wp@fortcollinscreative.com\r\nReply-To: missionsdirector@sharethelife.org\r\nX-Mailer: PHP/".phpversion();
         mail($recipient, $subject, $message, $headers);
 
         if ('team' != $benefactor) {
@@ -414,7 +414,13 @@ get_header(); ?>
                           <?php $type = get_post_type(); ?>
                           <?php do_action('flint_open_entry_header_'.$type); ?>
 
-                          <h2><?php if (is_single()) { echo the_title(); } else { echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>'; } ?></h2>
+                          <h2><?php
+                            if (is_single()) {
+                              echo the_title();
+                            } else {
+                              echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>';
+                            }
+                          ?></h2>
 
                           <div class="entry-meta">
                             <?php do_action('flint_entry_meta_above_'.$type); ?>

@@ -8,11 +8,10 @@
  *
  * @package Flint/Trinity
  * @since 0.4.1
- *
  */
 
-get_header(); ?>
-<?php flint_get_sidebar('header'); ?>
+get_header();
+flint_get_sidebar('header'); ?>
 
   <div id="primary" class="content-area">
 

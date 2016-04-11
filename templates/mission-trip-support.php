@@ -352,7 +352,13 @@ BEGIN OLD TEMPLATE
                           <?php $type = get_post_type(); ?>
                           <?php do_action('flint_open_entry_header_'.$type); ?>
 
-                          <h2><?php if (is_single()) { echo the_title(); } else { echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>'; } ?></h2>
+                          <h2><?php
+                            if (is_single()) {
+                              echo the_title();
+                            } else {
+                              echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>';
+                            }
+                          ?></h2>
 
                           <div class="entry-meta">
                             <?php do_action('flint_entry_meta_above_'.$type); ?>

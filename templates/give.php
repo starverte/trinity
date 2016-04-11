@@ -17,10 +17,11 @@ if (!empty($_POST['session'])) {
     $last_name  = !empty($_POST['last_name'])  ? sanitize_text_field($_POST['last_name'])  : '';
 
     if (!empty($_POST['paypal_account'])) {
-      if ($_POST['paypal_account'] == 'true')
+      if ($_POST['paypal_account'] == 'true') {
         $paypal_account = true;
-      else
+      } else {
         $paypal_account = false;
+      }
     }
     else {
       $paypal_account = false;
@@ -42,21 +43,21 @@ if (!empty($_POST['session'])) {
       $subject   = $first_name . ' ' . $last_name . ' pledged to donate $' . $total;
       $subject  .= $paypal_account == true ? ' through the PayPal Giving Fund' : ' with PayPal';
 
-      $message  = $subject.'.'."\r\n"."\r\n";
-      $message .= 'General Fund: $'.number_format($general_fund,2)."\r\n"."\r\n";
-      $message .= 'Building Fund (Imagine): $'.number_format($imagine,2)."\r\n"."\r\n";
-      $message .= 'Benevolence Fund: $'.number_format($benevolence,2)."\r\n"."\r\n";
-      $message .= 'Japan Mission Trip: $'.number_format($jp15,2)."\r\n"."\r\n";
-      $message .= 'New Ministries: $'.number_format($new,2)."\r\n"."\r\n";
-      $message .= 'Other: $'.number_format($other,2)."\r\n"."\r\n";
+      $message  = $subject . ".\r\n\r\n";
+      $message .= 'General Fund: $'.number_format($general_fund,2) . "\r\n\r\n";
+      $message .= 'Building Fund (Imagine): $'.number_format($imagine,2) . "\r\n\r\n";
+      $message .= 'Benevolence Fund: $'.number_format($benevolence,2) . "\r\n\r\n";
+      $message .= 'Japan Mission Trip: $'.number_format($jp15,2) . "\r\n\r\n";
+      $message .= 'New Ministries: $'.number_format($new,2) . "\r\n\r\n";
+      $message .= 'Other: $'.number_format($other,2) . "\r\n\r\n";
       $message .= 'Total: $'.number_format($total,2);
 
       if (!empty($notes)) {
-        $message .= "\r\n"."\r\n".'Additional Notes:'."\r\n";
+        $message .= "\r\n\r\nAdditional Notes:\r\n";
         $message .= $notes;
       }
 
-      $headers = 'From: wp@fortcollinscreative.com'."\r\n".'Reply-To: donations@sharethelife.org'."\r\n".'X-Mailer: PHP/'.phpversion();
+      $headers = "From: wp@fortcollinscreative.com\r\nReply-To: donations@sharethelife.org\r\nX-Mailer: PHP/".phpversion();
       mail($recipient, $subject, $message, $headers);
 
       if ($paypal_account == true) {
@@ -106,7 +107,13 @@ get_header(); ?>
               <header class="entry-header">
                 <?php do_action('flint_open_entry_header_page'); ?>
 
-                <h1 class="entry-title"><?php if (is_singular()) { echo the_title(); } else { echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>'; } ?></h1>
+                <h1 class="entry-title"><?php
+                  if (is_singular()) {
+                    echo the_title();
+                  } else {
+                    echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>';
+                  }
+                ?></h1>
                 <?php if ( current_user_can('edit_pages') ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
 
                 <div class="entry-meta">

@@ -101,7 +101,15 @@ if ( get_post_meta($post->ID, 'week21_date', true) ) {
       <header class="entry-header">
         <?php do_action('flint_open_entry_header_sermon'); ?>
 
-        <h1 class="entry-title"><?php if (is_singular()) { echo the_title(); } else { $permalink = get_permalink(); $title = get_the_title(); echo '<a href="' . $permalink .'" rel="bookmark">' . $title . '</a>'; } ?></h1>
+        <h1 class="entry-title"><?php
+          if (is_singular()) {
+            echo the_title();
+          } else {
+            $permalink = get_permalink();
+            $title = get_the_title();
+            echo '<a href="' . $permalink .'" rel="bookmark">' . $title . '</a>';
+          }
+        ?></h1>
         <?php if ( current_user_can('edit_posts') ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
 
         <div class="entry-meta">
