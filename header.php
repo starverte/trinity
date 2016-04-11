@@ -7,6 +7,7 @@
  * @package Flint/Trinity
  * @since 0.1
  */
+
 get_header( 'head' );
 get_header( 'branding' );
 get_header( 'nav' ); ?>
