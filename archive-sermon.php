@@ -18,17 +18,14 @@ get_header(); ?>
       if ( is_active_sidebar( 'left' ) | is_active_sidebar( 'right' ) ) {
         if ( is_active_sidebar( 'left' ) && is_active_sidebar( 'right' ) ) {
           $content_class .= ' col-lg-6 col-md-6 wa-both';
-        }
-        else {
+        } else {
           if ( is_active_sidebar( 'left' ) ) {
             $content_class .= ' col-lg-9 col-md-9 wa-left';
-          }
-          elseif ( is_active_sidebar( 'right' ) ) {
+          } elseif ( is_active_sidebar( 'right' ) ) {
             $content_class .= ' col-lg-9 col-md-9 wa-right';
           }
         }
-      }
-      else {
+      } else {
         $content_class .= ' col-lg-12 col-md-12';
       }
     ?>
@@ -41,16 +38,27 @@ get_header(); ?>
         <h1 class="page-title">Sermons</h1>
       </header><!-- .page-header -->
 
-        <?php global $wp_query;
-              $args = array_merge( $wp_query->query, array( 'post_type' => 'sermon', 'posts_per_page' => 99, 'orderby' => 'date', 'order' => 'DESC', 'tax_query' => array(
-                array(
-                  'taxonomy' => 'sermon_topics',
-                  'field' => 'slug',
-                  'terms' => array('academy','lifegroups'),
-                  'operator' => 'NOT IN'
-                )
-              )));
-              query_posts( $args ); ?>
+      <?php
+      global $wp_query;
+      $args = array_merge(
+        $wp_query->query,
+        array(
+          'post_type' => 'sermon',
+          'posts_per_page' => 99,
+          'orderby' => 'date',
+          'order' => 'DESC',
+          'tax_query' => array(
+            array(
+              'taxonomy' => 'sermon_topics',
+              'field' => 'slug',
+              'terms' => array('academy','lifegroups'),
+              'operator' => 'NOT IN'
+            )
+          )
+        )
+      );
+      query_posts( $args );
+      ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
         <?php get_template_part( 'type', 'sermon' ); ?>

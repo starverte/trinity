@@ -7,6 +7,7 @@
  * @package Flint/Trinity
  * @since 0.1
  */
+
 ?>
 
   <nav class="navbar navbar-trinity" role="navigation">

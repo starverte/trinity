@@ -34,23 +34,23 @@ if ( ! empty( $post_custom['item_list'][0] ) ) {
           } else {
             $permalink = get_permalink();
             $title = get_the_title();
-            echo '<a href="' . $permalink .'" rel="bookmark">' . $title . '</a>';
+            echo '<a href="' . $permalink . '" rel="bookmark">' . $title . '</a>';
           }
         ?></h1>
         <?php if ( current_user_can( 'edit_posts' ) ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
 
         <div class="entry-meta">
-          <?php
-            if ( 0 !== $item_list ) {
-              if ( 1 < count( $items ) ) {
-                printf( 
-                  '%s through %s',
-                  get_the_date( 'F j', reset( $items ) ),
-                  get_the_date( 'F j, Y', end( $items ) )
-                );
-              }
+        <?php
+          if ( 0 !== $item_list ) {
+            if ( 1 < count( $items ) ) {
+              printf(
+                '%s through %s',
+                get_the_date( 'F j', reset( $items ) ),
+                get_the_date( 'F j, Y', end( $items ) )
+              );
             }
-          ?>
+          }
+        ?>
           <?php do_action( 'flint_entry_meta_above_sermon' ); ?>
         </div><!-- .entry-meta -->
 

@@ -7,6 +7,7 @@
  * @package Flint/Trinity
  * @since 0.5.2
  */
+
 ?>
 
 <div class="footer-row">

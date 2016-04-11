@@ -46,6 +46,13 @@ function trinity_enqueue_scripts() {
 }
 add_action( 'wp_enqueue_scripts', 'trinity_enqueue_scripts' );
 
+/**
+ * Get option defaults
+ *
+ * @since 0.4.4
+ *
+ * @param array $flint_defaults The option defaults for the parent theme.
+ */
 function trinity_option_defaults( $flint_defaults ) {
   $defaults = array(
     'trinity_front_page_featured'  => 0,
@@ -59,6 +66,13 @@ function trinity_option_defaults( $flint_defaults ) {
 }
 add_filter( 'flint_option_defaults','trinity_option_defaults' );
 
+/**
+ * Register customization options for Trinity
+ *
+ * @since 0.4.4
+ *
+ * @param object $wp_customize An instance of the WP_Customize_Manager class.
+ */
 function trinity_customize_register( $wp_customize ) {
 
   if ( function_exists( 'flint_options_defaults' ) ) {

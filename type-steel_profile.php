@@ -4,6 +4,7 @@
  *
  * @package Flint\Trinity
  */
+
 ?>
 
   <div class="row">
@@ -18,7 +19,7 @@
           } else {
             $permalink = get_permalink();
             $title = get_the_title();
-            echo '<a href="' . $permalink .'" rel="bookmark">' . $title . '</a>';
+            echo '<a href="' . $permalink . '" rel="bookmark">' . $title . '</a>';
           }
         ?></h1>
         <h4><?php echo steel_profile_meta( 'title' ); ?></h4>
@@ -26,7 +27,7 @@
            <?php echo steel_profile_phone(); ?></p>
       </header><!-- .entry-header -->
 
-      <?php if ( is_search() ) : // Only display Excerpts for Search ?>
+      <?php if ( is_search() ) : ?>
       <div class="entry-summary">
         <?php the_excerpt(); ?>
       </div><!-- .entry-summary -->

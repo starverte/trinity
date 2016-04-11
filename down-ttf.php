@@ -6,23 +6,22 @@
  * @since 0.1
  */
 
-// Define the path to file
+// Define the path to file.
 $file = $_GET['file'];
 $filename = basename( $file );
 
-if(!file) {
-  // File doesn't exist, output error
+if (!file) {
+  // File doesn't exist, output error.
   die( 'file not found' );
-}
-else {
-  // Set headers
-  header( "Cache-Control: public" );
-  header( "Content-Description: File Transfer" );
+} else {
+  // Set headers.
+  header( 'Cache-Control: public' );
+  header( 'Content-Description: File Transfer' );
   header( "Content-Disposition: attachment; filename=$filename" );
-  header( "Content-Type: application/x-font-ttf" );
-  header( "Content-Transfer-Encoding: binary" );
+  header( 'Content-Type: application/x-font-ttf' );
+  header( 'Content-Transfer-Encoding: binary' );
 
-  // Read the file from disk
+  // Read the file from disk.
   readfile( $file );
 }
  ?>

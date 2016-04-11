@@ -249,7 +249,7 @@ BEGIN OLD TEMPLATE
               </div>
               <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
                 <select class="form-control" id="benefactor" name="benefactor" required>
-                <?php foreach( $benefactors as $key => $value ) { ?>
+                <?php foreach ( $benefactors as $key => $value ) { ?>
                   <option value="<?php echo $key; ?>" <?php selected( $benefactor, $key ) ?>><?php echo $value; ?></option>
                 <?php } ?>
                 </select>
@@ -350,21 +350,21 @@ BEGIN OLD TEMPLATE
                       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="entry-header">
                           <?php $type = get_post_type(); ?>
-                          <?php do_action( 'flint_open_entry_header_'.$type ); ?>
+                          <?php do_action( 'flint_open_entry_header_' . $type ); ?>
 
                           <h2><?php
                             if ( is_single() ) {
                               echo the_title();
                             } else {
-                              echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>';
+                              echo '<a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a>';
                             }
                           ?></h2>
 
                           <div class="entry-meta">
-                            <?php do_action( 'flint_entry_meta_above_'.$type ); ?>
+                            <?php do_action( 'flint_entry_meta_above_' . $type ); ?>
                           </div><!-- .entry-meta -->
 
-                          <?php do_action( 'flint_close_entry_header_'.$type ); ?>
+                          <?php do_action( 'flint_close_entry_header_' . $type ); ?>
 
                         </header><!-- .entry-header -->
 
@@ -376,7 +376,7 @@ BEGIN OLD TEMPLATE
                         <div class="entry-content">
                           <?php flint_the_content(); ?>
                           <?php
-                          flint_link_pages( array( 
+                          flint_link_pages( array(
                             'before' => '<ul class="pagination">',
                             'after'  => '</ul>',
                           ) ); ?>

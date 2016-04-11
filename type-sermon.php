@@ -107,7 +107,7 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
           } else {
             $permalink = get_permalink();
             $title = get_the_title();
-            echo '<a href="' . $permalink .'" rel="bookmark">' . $title . '</a>';
+            echo '<a href="' . $permalink . '" rel="bookmark">' . $title . '</a>';
           }
         ?></h1>
         <?php if ( current_user_can( 'edit_posts' ) ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
@@ -117,84 +117,64 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
             <?php if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta21 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week20_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week20_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta20 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week19_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week19_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta19 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week18_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week18_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta18 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week17_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week17_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta17 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week16_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week16_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta16 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week15_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week15_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta15 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week14_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week14_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta14 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week13_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week13_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta13 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week12_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week12_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta12 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week11_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week11_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta11 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week10_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week10_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta10 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week9_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week9_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta9 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week8_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week8_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta8 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week7_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week7_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta7 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week6_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week6_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta6 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week5_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week5_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta5 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week4_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week4_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta4 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week3_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week3_date', true ) ) {
                     echo ' through ';
                     echo date( 'F j, Y', $dateMeta3 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week2_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week2_date', true ) ) {
                     echo ' and ';
                     echo date( 'F j, Y', $dateMeta2 );
-                  }
-                  elseif ( get_post_meta( $post->ID, 'week1_date', true ) ) {
+                  } elseif ( get_post_meta( $post->ID, 'week1_date', true ) ) {
                     echo date( ', Y', $dateMeta1 );
                   } ?>
           <?php do_action( 'flint_entry_meta_above_sermon' ); ?>
