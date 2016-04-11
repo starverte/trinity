@@ -52,9 +52,9 @@ flint_get_sidebar( 'header' ); ?>
                 'taxonomy' => 'sermon_topics',
                 'field' => 'slug',
                 'terms' => 'academy',
-                'operator' => 'IN'
-              )
-            )
+                'operator' => 'IN',
+              ),
+            ),
           )
         );
         query_posts( $args ); ?>

@@ -10,7 +10,7 @@
 $file = $_GET['file'];
 $filename = basename( $file );
 
-if (!file) {
+if ( ! file ) {
   // File doesn't exist, output error.
   die( 'file not found' );
 } else {

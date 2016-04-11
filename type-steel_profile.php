@@ -9,12 +9,12 @@
 
   <div class="row">
     <div class="col-lg-2 col-md-2 col-sm-2">
-      <?php if (has_post_thumbnail()) { the_post_thumbnail(); } ?>
+      <?php if ( has_post_thumbnail() ) { the_post_thumbnail(); } ?>
     </div>
     <article id="post-<?php the_ID(); ?>" <?php post_class( 'col-lg-8 col-md-8 col-sm-8' ); ?>>
       <header class="entry-header">
         <h1 class="entry-title"><?php
-          if (is_singular()) {
+          if ( is_singular() ) {
             echo the_title();
           } else {
             $permalink = get_permalink();

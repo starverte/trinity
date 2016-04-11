@@ -19,20 +19,20 @@ $benefactors = array(
   'wilaiwan' => 'Wilaiwan Northrop',
 );
 
-if ( !empty( $_POST['session'] ) ) {
+if ( ! empty( $_POST['session'] ) ) {
   if ( $_POST['session'] == $_SESSION['session'] ) {
 
-		$first_name = !empty( $_POST['first_name'] ) ? sanitize_text_field( $_POST['first_name'] ) : null;
-		$last_name  = !empty( $_POST['last_name'] )  ? sanitize_text_field( $_POST['last_name'] )  : '';
+		$first_name = ! empty( $_POST['first_name'] ) ? sanitize_text_field( $_POST['first_name'] ) : null;
+		$last_name  = ! empty( $_POST['last_name'] )  ? sanitize_text_field( $_POST['last_name'] )  : '';
 
-		if ( !empty( $_POST['benefactor'] ) && array_key_exists( $_POST['benefactor'], $benefactors ) ) {
+		if ( ! empty( $_POST['benefactor'] ) && array_key_exists( $_POST['benefactor'], $benefactors ) ) {
 			$benefactor = $_POST['benefactor'];
 			} else {
 			$benefactor = 'team';
 			}
 
-		  if ( !empty( $_POST['paypal_account'] ) ) {
-			if ( $_POST['paypal_account'] == 'true' ) {
+		  if ( ! empty( $_POST['paypal_account'] ) ) {
+			if ( 'true' == $_POST['paypal_account'] ) {
 				  $paypal_account = true;
 				  $paypal_link = 'https://www.paypal-donations.com/pp-charity/web.us/charity_i.jsp?id=72286&s=3';
 				} else {
@@ -44,14 +44,14 @@ if ( !empty( $_POST['session'] ) ) {
 		  $paypal_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE';
 			}
 
-		  $amt_dec = !empty( $_POST['amt_dec'] ) ? floatval( $_POST['amt_dec'] ) : 0.00;
+		  $amt_dec = ! empty( $_POST['amt_dec'] ) ? floatval( $_POST['amt_dec'] ) : 0.00;
 
-		  $notes = !empty( $_POST['notes'] ) ? sanitize_text_field( $_POST['notes'] ) : '';
+		  $notes = ! empty( $_POST['notes'] ) ? sanitize_text_field( $_POST['notes'] ) : '';
 
-		  $prayer_support    = !empty( $_POST['prayer_support'] )    ? true : false;
-		  $financial_support = !empty( $_POST['financial_support'] ) ? true : false;
+		  $prayer_support    = ! empty( $_POST['prayer_support'] )    ? true : false;
+		  $financial_support = ! empty( $_POST['financial_support'] ) ? true : false;
 
-		  if ( !empty( $first_name ) && !empty( $last_name ) ) {
+		  if ( ! empty( $first_name ) && ! empty( $last_name ) ) {
 
 			if ( $prayer_support ) {
 				$recipient = 'missionsdirector@sharethelife.org';
@@ -69,7 +69,7 @@ if ( !empty( $_POST['session'] ) ) {
 					$message .= '.';
 					}
 
-				if ( !empty( $notes ) ) {
+				if ( ! empty( $notes ) ) {
 					$message .= "\r\n\r\nAdditional Notes:\r\n";
 					$message .= $notes;
 					}
@@ -99,7 +99,7 @@ if ( !empty( $_POST['session'] ) ) {
 				$message  = $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst( $benefactor );
 				$message .= ' with a one-time gift of $' . number_format( $amt_dec,2 );
 
-				if ( !empty( $notes ) ) {
+				if ( ! empty( $notes ) ) {
 					$message .= "\r\n\r\nAdditional Notes:\r\n";
 					$message .= $notes;
 					}

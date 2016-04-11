@@ -16,7 +16,7 @@ if ( function_exists( 'flint_options' ) ) {
 ?>
 
   <div id="masthead" class="site-header" role="banner">
-    <?php if (current_theme_supports( 'custom-header' )) { ?>
+    <?php if ( current_theme_supports( 'custom-header' ) ) { ?>
       <div class="paper container">
         <?php $header_image = get_header_image(); ?>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">

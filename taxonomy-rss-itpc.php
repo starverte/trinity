@@ -15,27 +15,27 @@ $settings = get_option( 'lifepointe_podcast' );
 
 <channel>
 
-  <title><?php if ( !empty( $settings['pod_title'] ) ) { echo $settings['pod_title']; } ?></title>
+  <title><?php if ( ! empty( $settings['pod_title'] ) ) { echo $settings['pod_title']; } ?></title>
 
   <link>http://www.sharethelife.org/series/</link>
 
   <language>en-us</language>
 
-  <copyright><?php if ( !empty( $settings['pod_copy'] ) ) { echo $settings['pod_copy']; } ?></copyright>
+  <copyright><?php if ( ! empty( $settings['pod_copy'] ) ) { echo $settings['pod_copy']; } ?></copyright>
 
-  <itunes:subtitle><?php if ( !empty( $settings['pod_subtitle'] ) ) { echo $settings['pod_subtitle']; } ?></itunes:subtitle>
+  <itunes:subtitle><?php if ( ! empty( $settings['pod_subtitle'] ) ) { echo $settings['pod_subtitle']; } ?></itunes:subtitle>
 
-  <itunes:author><?php if ( !empty( $settings['pod_author'] ) ) { echo $settings['pod_author']; } ?></itunes:author>
+  <itunes:author><?php if ( ! empty( $settings['pod_author'] ) ) { echo $settings['pod_author']; } ?></itunes:author>
 
-  <itunes:summary><?php if ( !empty( $settings['pod_summary'] ) ) { echo $settings['pod_summary']; } ?></itunes:summary>
+  <itunes:summary><?php if ( ! empty( $settings['pod_summary'] ) ) { echo $settings['pod_summary']; } ?></itunes:summary>
 
-  <description><?php if ( !empty( $settings['pod_desc'] ) ) { echo $settings['pod_desc']; } ?></description>
+  <description><?php if ( ! empty( $settings['pod_desc'] ) ) { echo $settings['pod_desc']; } ?></description>
 
   <itunes:owner>
 
-    <itunes:name><?php if ( !empty( $settings['pod_owner'] ) ) { echo $settings['pod_owner']; } ?></itunes:name>
+    <itunes:name><?php if ( ! empty( $settings['pod_owner'] ) ) { echo $settings['pod_owner']; } ?></itunes:name>
 
-    <itunes:email><?php if ( !empty( $settings['pod_owner_email'] ) ) { echo $settings['pod_owner_email']; } ?></itunes:email>
+    <itunes:email><?php if ( ! empty( $settings['pod_owner_email'] ) ) { echo $settings['pod_owner_email']; } ?></itunes:email>
 
   </itunes:owner>
 
@@ -58,100 +58,100 @@ $settings = get_option( 'lifepointe_podcast' );
 
       <?php
       if ( has_post_thumbnail() ) {
-              $id = get_post_thumbnail_id();
-              $series_img = wp_get_attachment_image_src( $id, 'podcast' );
+        $id = get_post_thumbnail_id();
+        $series_img = wp_get_attachment_image_src( $id, 'podcast' );
       }
 
       // Define keys.
       if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
-        $dateMeta21 = get_post_meta( $post->ID, 'week21_date', true );
-        $week21_date = date( 'D, j M Y', $dateMeta21 );
+        $date_meta_21 = get_post_meta( $post->ID, 'week21_date', true );
+        $week21_date = date( 'D, j M Y', $date_meta_21 );
       }
       if ( get_post_meta( $post->ID, 'week20_date', true ) ) {
-        $dateMeta20 = get_post_meta( $post->ID, 'week20_date', true );
-        $week20_date = date( 'D, j M Y', $dateMeta20 );
+        $date_meta_20 = get_post_meta( $post->ID, 'week20_date', true );
+        $week20_date = date( 'D, j M Y', $date_meta_20 );
       }
       if ( get_post_meta( $post->ID, 'week19_date', true ) ) {
-        $dateMeta19 = get_post_meta( $post->ID, 'week19_date', true );
-        $week19_date = date( 'D, j M Y', $dateMeta19 );
+        $date_meta_19 = get_post_meta( $post->ID, 'week19_date', true );
+        $week19_date = date( 'D, j M Y', $date_meta_19 );
       }
       if ( get_post_meta( $post->ID, 'week18_date', true ) ) {
-        $dateMeta18 = get_post_meta( $post->ID, 'week18_date', true );
-        $week18_date = date( 'D, j M Y', $dateMeta18 );
+        $date_meta_18 = get_post_meta( $post->ID, 'week18_date', true );
+        $week18_date = date( 'D, j M Y', $date_meta_18 );
       }
       if ( get_post_meta( $post->ID, 'week17_date', true ) ) {
-        $dateMeta17 = get_post_meta( $post->ID, 'week17_date', true );
-        $week17_date = date( 'D, j M Y', $dateMeta17 );
+        $date_meta_17 = get_post_meta( $post->ID, 'week17_date', true );
+        $week17_date = date( 'D, j M Y', $date_meta_17 );
       }
       if ( get_post_meta( $post->ID, 'week16_date', true ) ) {
-        $dateMeta16 = get_post_meta( $post->ID, 'week16_date', true );
-        $week16_date = date( 'D, j M Y', $dateMeta16 );
+        $date_meta_16 = get_post_meta( $post->ID, 'week16_date', true );
+        $week16_date = date( 'D, j M Y', $date_meta_16 );
       }
       if ( get_post_meta( $post->ID, 'week15_date', true ) ) {
-        $dateMeta15 = get_post_meta( $post->ID, 'week15_date', true );
-        $week15_date = date( 'D, j M Y', $dateMeta15 );
+        $date_meta_15 = get_post_meta( $post->ID, 'week15_date', true );
+        $week15_date = date( 'D, j M Y', $date_meta_15 );
       }
       if ( get_post_meta( $post->ID, 'week14_date', true ) ) {
-        $dateMeta14 = get_post_meta( $post->ID, 'week14_date', true );
-        $week14_date = date( 'D, j M Y', $dateMeta14 );
+        $date_meta_14 = get_post_meta( $post->ID, 'week14_date', true );
+        $week14_date = date( 'D, j M Y', $date_meta_14 );
       }
       if ( get_post_meta( $post->ID, 'week13_date', true ) ) {
-        $dateMeta13 = get_post_meta( $post->ID, 'week13_date', true );
-        $week13_date = date( 'D, j M Y', $dateMeta13 );
+        $date_meta_13 = get_post_meta( $post->ID, 'week13_date', true );
+        $week13_date = date( 'D, j M Y', $date_meta_13 );
       }
       if ( get_post_meta( $post->ID, 'week12_date', true ) ) {
-        $dateMeta12 = get_post_meta( $post->ID, 'week12_date', true );
-        $week12_date = date( 'D, j M Y', $dateMeta12 );
+        $date_meta_12 = get_post_meta( $post->ID, 'week12_date', true );
+        $week12_date = date( 'D, j M Y', $date_meta_12 );
       }
       if ( get_post_meta( $post->ID, 'week11_date', true ) ) {
-        $dateMeta11 = get_post_meta( $post->ID, 'week11_date', true );
-        $week11_date = date( 'D, j M Y', $dateMeta11 );
+        $date_meta_11 = get_post_meta( $post->ID, 'week11_date', true );
+        $week11_date = date( 'D, j M Y', $date_meta_11 );
       }
       if ( get_post_meta( $post->ID, 'week10_date', true ) ) {
-        $dateMeta10 = get_post_meta( $post->ID, 'week10_date', true );
-        $week10_date = date( 'D, j M Y', $dateMeta10 );
+        $date_meta_10 = get_post_meta( $post->ID, 'week10_date', true );
+        $week10_date = date( 'D, j M Y', $date_meta_10 );
       }
       if ( get_post_meta( $post->ID, 'week9_date', true ) ) {
-        $dateMeta9 = get_post_meta( $post->ID, 'week9_date', true );
-        $week9_date = date( 'D, j M Y', $dateMeta9 );
+        $date_meta_9 = get_post_meta( $post->ID, 'week9_date', true );
+        $week9_date = date( 'D, j M Y', $date_meta_9 );
       }
       if ( get_post_meta( $post->ID, 'week8_date', true ) ) {
-        $dateMeta8 = get_post_meta( $post->ID, 'week8_date', true );
-        $week8_date = date( 'D, j M Y', $dateMeta8 );
+        $date_meta_8 = get_post_meta( $post->ID, 'week8_date', true );
+        $week8_date = date( 'D, j M Y', $date_meta_8 );
       }
       if ( get_post_meta( $post->ID, 'week7_date', true ) ) {
-        $dateMeta7 = get_post_meta( $post->ID, 'week7_date', true );
-        $week7_date = date( 'D, j M Y', $dateMeta7 );
+        $date_meta_7 = get_post_meta( $post->ID, 'week7_date', true );
+        $week7_date = date( 'D, j M Y', $date_meta_7 );
       }
       if ( get_post_meta( $post->ID, 'week6_date', true ) ) {
-        $dateMeta6 = get_post_meta( $post->ID, 'week6_date', true );
-        $week6_date = date( 'D, j M Y', $dateMeta6 );
+        $date_meta_6 = get_post_meta( $post->ID, 'week6_date', true );
+        $week6_date = date( 'D, j M Y', $date_meta_6 );
       }
       if ( get_post_meta( $post->ID, 'week5_date', true ) ) {
-        $dateMeta5 = get_post_meta( $post->ID, 'week5_date', true );
-        $week5_date = date( 'D, j M Y', $dateMeta5 );
+        $date_meta_5 = get_post_meta( $post->ID, 'week5_date', true );
+        $week5_date = date( 'D, j M Y', $date_meta_5 );
       }
       if ( get_post_meta( $post->ID, 'week4_date', true ) ) {
-        $dateMeta4 = get_post_meta( $post->ID, 'week4_date', true );
-        $week4_date = date( 'D, j M Y', $dateMeta4 );
+        $date_meta_4 = get_post_meta( $post->ID, 'week4_date', true );
+        $week4_date = date( 'D, j M Y', $date_meta_4 );
       }
       if ( get_post_meta( $post->ID, 'week3_date', true ) ) {
-        $dateMeta3 = get_post_meta( $post->ID, 'week3_date', true );
-        $week3_date = date( 'D, j M Y', $dateMeta3 );
+        $date_meta_3 = get_post_meta( $post->ID, 'week3_date', true );
+        $week3_date = date( 'D, j M Y', $date_meta_3 );
       }
       if ( get_post_meta( $post->ID, 'week2_date', true ) ) {
-        $dateMeta2 = get_post_meta( $post->ID, 'week2_date', true );
-        $week2_date = date( 'D, j M Y', $dateMeta2 );
+        $date_meta_2 = get_post_meta( $post->ID, 'week2_date', true );
+        $week2_date = date( 'D, j M Y', $date_meta_2 );
       }
       if ( get_post_meta( $post->ID, 'week1_date', true ) ) {
-        $dateMeta1 = get_post_meta( $post->ID, 'week1_date', true );
-        $week1_date = date( 'D, j M Y', $dateMeta1 );
+        $date_meta_1 = get_post_meta( $post->ID, 'week1_date', true );
+        $week1_date = date( 'D, j M Y', $date_meta_1 );
       }
       ?>
             <?php if ( get_post_meta( $post->ID, 'week21_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta21 = get_post_meta( $post->ID, 'week21_audio', true );
-                    $week21_id = url_to_postid( $audioMeta21 );
+              <?php $audio_meta_21 = get_post_meta( $post->ID, 'week21_audio', true );
+                    $week21_id = url_to_postid( $audio_meta_21 );
                     $week21_file = wp_get_attachment_url( $week21_id );
                     $week21_length = filesize( get_attached_file( $week21_id ) );
                     $week21_duration = get_post_meta( $week21_id , '_duration', true );
@@ -170,7 +170,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week21_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week21_file; ?>" length="<?php echo $week21_length; ?>" type="audio/mpeg" />
 
@@ -186,8 +186,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week20_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta20 = get_post_meta( $post->ID, 'week20_audio', true );
-                    $week20_id = url_to_postid( $audioMeta20 );
+              <?php $audio_meta_20 = get_post_meta( $post->ID, 'week20_audio', true );
+                    $week20_id = url_to_postid( $audio_meta_20 );
                     $week20_file = wp_get_attachment_url( $week20_id );
                     $week20_length = filesize( get_attached_file( $week20_id ) );
                     $week20_duration = get_post_meta( $week20_id , '_duration', true );
@@ -206,7 +206,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week20_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week20_file; ?>" length="<?php echo $week20_length; ?>" type="audio/mpeg" />
 
@@ -222,8 +222,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week19_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta19 = get_post_meta( $post->ID, 'week19_audio', true );
-                    $week19_id = url_to_postid( $audioMeta19 );
+              <?php $audio_meta_19 = get_post_meta( $post->ID, 'week19_audio', true );
+                    $week19_id = url_to_postid( $audio_meta_19 );
                     $week19_file = wp_get_attachment_url( $week19_id );
                     $week19_length = filesize( get_attached_file( $week19_id ) );
                     $week19_duration = get_post_meta( $week19_id , '_duration', true );
@@ -242,7 +242,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week19_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week19_file; ?>" length="<?php echo $week19_length; ?>" type="audio/mpeg" />
 
@@ -258,8 +258,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week18_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta18 = get_post_meta( $post->ID, 'week18_audio', true );
-                    $week18_id = url_to_postid( $audioMeta18 );
+              <?php $audio_meta_18 = get_post_meta( $post->ID, 'week18_audio', true );
+                    $week18_id = url_to_postid( $audio_meta_18 );
                     $week18_file = wp_get_attachment_url( $week18_id );
                     $week18_length = filesize( get_attached_file( $week18_id ) );
                     $week18_duration = get_post_meta( $week18_id , '_duration', true );
@@ -278,7 +278,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week18_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week18_file; ?>" length="<?php echo $week18_length; ?>" type="audio/mpeg" />
 
@@ -294,8 +294,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week17_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta17 = get_post_meta( $post->ID, 'week17_audio', true );
-                    $week17_id = url_to_postid( $audioMeta17 );
+              <?php $audio_meta_17 = get_post_meta( $post->ID, 'week17_audio', true );
+                    $week17_id = url_to_postid( $audio_meta_17 );
                     $week17_file = wp_get_attachment_url( $week17_id );
                     $week17_length = filesize( get_attached_file( $week17_id ) );
                     $week17_duration = get_post_meta( $week17_id , '_duration', true );
@@ -314,7 +314,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week17_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week17_file; ?>" length="<?php echo $week17_length; ?>" type="audio/mpeg" />
 
@@ -330,8 +330,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week16_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta16 = get_post_meta( $post->ID, 'week16_audio', true );
-                    $week16_id = url_to_postid( $audioMeta16 );
+              <?php $audio_meta_16 = get_post_meta( $post->ID, 'week16_audio', true );
+                    $week16_id = url_to_postid( $audio_meta_16 );
                     $week16_file = wp_get_attachment_url( $week16_id );
                     $week16_length = filesize( get_attached_file( $week16_id ) );
                     $week16_duration = get_post_meta( $week16_id , '_duration', true );
@@ -350,7 +350,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week16_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week16_file; ?>" length="<?php echo $week16_length; ?>" type="audio/mpeg" />
 
@@ -366,8 +366,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week15_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta15 = get_post_meta( $post->ID, 'week15_audio', true );
-                    $week15_id = url_to_postid( $audioMeta15 );
+              <?php $audio_meta_15 = get_post_meta( $post->ID, 'week15_audio', true );
+                    $week15_id = url_to_postid( $audio_meta_15 );
                     $week15_file = wp_get_attachment_url( $week15_id );
                     $week15_length = filesize( get_attached_file( $week15_id ) );
                     $week15_duration = get_post_meta( $week15_id , '_duration', true );
@@ -386,7 +386,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week15_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week15_file; ?>" length="<?php echo $week15_length; ?>" type="audio/mpeg" />
 
@@ -402,8 +402,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week14_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta14 = get_post_meta( $post->ID, 'week14_audio', true );
-                    $week14_id = url_to_postid( $audioMeta14 );
+              <?php $audio_meta_14 = get_post_meta( $post->ID, 'week14_audio', true );
+                    $week14_id = url_to_postid( $audio_meta_14 );
                     $week14_file = wp_get_attachment_url( $week14_id );
                     $week14_length = filesize( get_attached_file( $week14_id ) );
                     $week14_duration = get_post_meta( $week14_id , '_duration', true );
@@ -422,7 +422,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week14_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week14_file; ?>" length="<?php echo $week14_length; ?>" type="audio/mpeg" />
 
@@ -438,8 +438,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week13_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta13 = get_post_meta( $post->ID, 'week13_audio', true );
-                    $week13_id = url_to_postid( $audioMeta13 );
+              <?php $audio_meta_13 = get_post_meta( $post->ID, 'week13_audio', true );
+                    $week13_id = url_to_postid( $audio_meta_13 );
                     $week13_file = wp_get_attachment_url( $week13_id );
                     $week13_length = filesize( get_attached_file( $week13_id ) );
                     $week13_duration = get_post_meta( $week13_id , '_duration', true );
@@ -458,7 +458,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week13_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week13_file; ?>" length="<?php echo $week13_length; ?>" type="audio/mpeg" />
 
@@ -474,8 +474,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week12_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta12 = get_post_meta( $post->ID, 'week12_audio', true );
-                    $week12_id = url_to_postid( $audioMeta12 );
+              <?php $audio_meta_12 = get_post_meta( $post->ID, 'week12_audio', true );
+                    $week12_id = url_to_postid( $audio_meta_12 );
                     $week12_file = wp_get_attachment_url( $week12_id );
                     $week12_length = filesize( get_attached_file( $week12_id ) );
                     $week12_duration = get_post_meta( $week12_id , '_duration', true );
@@ -494,7 +494,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week12_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week12_file; ?>" length="<?php echo $week12_length; ?>" type="audio/mpeg" />
 
@@ -510,8 +510,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week11_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta11 = get_post_meta( $post->ID, 'week11_audio', true );
-                    $week11_id = url_to_postid( $audioMeta11 );
+              <?php $audio_meta_11 = get_post_meta( $post->ID, 'week11_audio', true );
+                    $week11_id = url_to_postid( $audio_meta_11 );
                     $week11_file = wp_get_attachment_url( $week11_id );
                     $week11_length = filesize( get_attached_file( $week11_id ) );
                     $week11_duration = get_post_meta( $week11_id , '_duration', true );
@@ -530,7 +530,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week11_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week11_file; ?>" length="<?php echo $week11_length; ?>" type="audio/mpeg" />
 
@@ -546,8 +546,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week10_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta10 = get_post_meta( $post->ID, 'week10_audio', true );
-                    $week10_id = url_to_postid( $audioMeta10 );
+              <?php $audio_meta_10 = get_post_meta( $post->ID, 'week10_audio', true );
+                    $week10_id = url_to_postid( $audio_meta_10 );
                     $week10_file = wp_get_attachment_url( $week10_id );
                     $week10_length = filesize( get_attached_file( $week10_id ) );
                     $week10_duration = get_post_meta( $week10_id , '_duration', true );
@@ -566,7 +566,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week10_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week10_file; ?>" length="<?php echo $week10_length; ?>" type="audio/mpeg" />
 
@@ -582,8 +582,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week9_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta9 = get_post_meta( $post->ID, 'week9_audio', true );
-                    $week9_id = url_to_postid( $audioMeta9 );
+              <?php $audio_meta_9 = get_post_meta( $post->ID, 'week9_audio', true );
+                    $week9_id = url_to_postid( $audio_meta_9 );
                     $week9_file = wp_get_attachment_url( $week9_id );
                     $week9_length = filesize( get_attached_file( $week9_id ) );
                     $week9_duration = get_post_meta( $week9_id , '_duration', true );
@@ -602,7 +602,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week9_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week9_file; ?>" length="<?php echo $week9_length; ?>" type="audio/mpeg" />
 
@@ -618,8 +618,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week8_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta8 = get_post_meta( $post->ID, 'week8_audio', true );
-                    $week8_id = url_to_postid( $audioMeta8 );
+              <?php $audio_meta_8 = get_post_meta( $post->ID, 'week8_audio', true );
+                    $week8_id = url_to_postid( $audio_meta_8 );
                     $week8_file = wp_get_attachment_url( $week8_id );
                     $week8_length = filesize( get_attached_file( $week8_id ) );
                     $week8_duration = get_post_meta( $week8_id , '_duration', true );
@@ -638,7 +638,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week8_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week8_file; ?>" length="<?php echo $week8_length; ?>" type="audio/mpeg" />
 
@@ -654,8 +654,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week7_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta7 = get_post_meta( $post->ID, 'week7_audio', true );
-                    $week7_id = url_to_postid( $audioMeta7 );
+              <?php $audio_meta_7 = get_post_meta( $post->ID, 'week7_audio', true );
+                    $week7_id = url_to_postid( $audio_meta_7 );
                     $week7_file = wp_get_attachment_url( $week7_id );
                     $week7_length = filesize( get_attached_file( $week7_id ) );
                     $week7_duration = get_post_meta( $week7_id , '_duration', true );
@@ -674,7 +674,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week7_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week7_file; ?>" length="<?php echo $week7_length; ?>" type="audio/mpeg" />
 
@@ -690,8 +690,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week6_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta6 = get_post_meta( $post->ID, 'week6_audio', true );
-                    $week6_id = url_to_postid( $audioMeta6 );
+              <?php $audio_meta_6 = get_post_meta( $post->ID, 'week6_audio', true );
+                    $week6_id = url_to_postid( $audio_meta_6 );
                     $week6_file = wp_get_attachment_url( $week6_id );
                     $week6_length = filesize( get_attached_file( $week6_id ) );
                     $week6_duration = get_post_meta( $week6_id , '_duration', true );
@@ -710,7 +710,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week6_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week6_file; ?>" length="<?php echo $week6_length; ?>" type="audio/mpeg" />
 
@@ -726,8 +726,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week5_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta5 = get_post_meta( $post->ID, 'week5_audio', true );
-                    $week5_id = url_to_postid( $audioMeta5 );
+              <?php $audio_meta_5 = get_post_meta( $post->ID, 'week5_audio', true );
+                    $week5_id = url_to_postid( $audio_meta_5 );
                     $week5_file = wp_get_attachment_url( $week5_id );
                     $week5_length = filesize( get_attached_file( $week5_id ) );
                     $week5_duration = get_post_meta( $week5_id , '_duration', true );
@@ -746,7 +746,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week5_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week5_file; ?>" length="<?php echo $week5_length; ?>" type="audio/mpeg" />
 
@@ -762,8 +762,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week4_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta4 = get_post_meta( $post->ID, 'week4_audio', true );
-                    $week4_id = url_to_postid( $audioMeta4 );
+              <?php $audio_meta_4 = get_post_meta( $post->ID, 'week4_audio', true );
+                    $week4_id = url_to_postid( $audio_meta_4 );
                     $week4_file = wp_get_attachment_url( $week4_id );
                     $week4_length = filesize( get_attached_file( $week4_id ) );
                     $week4_duration = get_post_meta( $week4_id , '_duration', true );
@@ -782,7 +782,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week4_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week4_file; ?>" length="<?php echo $week4_length; ?>" type="audio/mpeg" />
 
@@ -798,8 +798,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week3_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta3 = get_post_meta( $post->ID, 'week3_audio', true );
-                    $week3_id = url_to_postid( $audioMeta3 );
+              <?php $audio_meta_3 = get_post_meta( $post->ID, 'week3_audio', true );
+                    $week3_id = url_to_postid( $audio_meta_3 );
                     $week3_file = wp_get_attachment_url( $week3_id );
                     $week3_length = filesize( get_attached_file( $week3_id ) );
                     $week3_duration = get_post_meta( $week3_id , '_duration', true );
@@ -818,7 +818,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week3_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week3_file; ?>" length="<?php echo $week3_length; ?>" type="audio/mpeg" />
 
@@ -834,8 +834,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week2_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta2 = get_post_meta( $post->ID, 'week2_audio', true );
-                    $week2_id = url_to_postid( $audioMeta2 );
+              <?php $audio_meta_2 = get_post_meta( $post->ID, 'week2_audio', true );
+                    $week2_id = url_to_postid( $audio_meta_2 );
                     $week2_file = wp_get_attachment_url( $week2_id );
                     $week2_length = filesize( get_attached_file( $week2_id ) );
                     $week2_duration = get_post_meta( $week2_id , '_duration', true );
@@ -854,7 +854,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week2_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week2_file; ?>" length="<?php echo $week2_length; ?>" type="audio/mpeg" />
 
@@ -870,8 +870,8 @@ $settings = get_option( 'lifepointe_podcast' );
             <?php endif; ?>
             <?php if ( get_post_meta( $post->ID, 'week1_audio', true ) ) : ?>
             <item>
-              <?php $audioMeta1 = get_post_meta( $post->ID, 'week1_audio', true );
-                    $week1_id = url_to_postid( $audioMeta1 );
+              <?php $audio_meta_1 = get_post_meta( $post->ID, 'week1_audio', true );
+                    $week1_id = url_to_postid( $audio_meta_1 );
                     $week1_file = wp_get_attachment_url( $week1_id );
                     $week1_length = filesize( get_attached_file( $week1_id ) );
                     $week1_duration = get_post_meta( $week1_id , '_duration', true );
@@ -890,7 +890,7 @@ $settings = get_option( 'lifepointe_podcast' );
 
               <itunes:summary><?php echo $week1_summary; ?></itunes:summary>
 
-              <itunes:image href="<?php if ( !empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
+              <itunes:image href="<?php if ( ! empty( $series_img[0] ) ) { echo $series_img[0]; } ?>" />
 
               <enclosure url="<?php echo $week1_file; ?>" length="<?php echo $week1_length; ?>" type="audio/mpeg" />
 

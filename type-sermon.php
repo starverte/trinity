@@ -7,88 +7,88 @@
  */
 
 if ( get_post_meta( $post->ID, 'week1_date', true ) ) {
-  $dateMeta1 = get_post_meta( $post->ID, 'week1_date', true );
-  $week1_date = date( 'M. j', $dateMeta1 );
+  $date_meta_1 = get_post_meta( $post->ID, 'week1_date', true );
+  $week1_date = date( 'M. j', $date_meta_1 );
 }
 if ( get_post_meta( $post->ID, 'week2_date', true ) ) {
-  $dateMeta2 = get_post_meta( $post->ID, 'week2_date', true );
-  $week2_date = date( 'M. j', $dateMeta2 );
+  $date_meta_2 = get_post_meta( $post->ID, 'week2_date', true );
+  $week2_date = date( 'M. j', $date_meta_2 );
 }
 if ( get_post_meta( $post->ID, 'week3_date', true ) ) {
-  $dateMeta3 = get_post_meta( $post->ID, 'week3_date', true );
-  $week3_date = date( 'M. j', $dateMeta3 );
+  $date_meta_3 = get_post_meta( $post->ID, 'week3_date', true );
+  $week3_date = date( 'M. j', $date_meta_3 );
 }
 if ( get_post_meta( $post->ID, 'week4_date', true ) ) {
-  $dateMeta4 = get_post_meta( $post->ID, 'week4_date', true );
-  $week4_date = date( 'M. j', $dateMeta4 );
+  $date_meta_4 = get_post_meta( $post->ID, 'week4_date', true );
+  $week4_date = date( 'M. j', $date_meta_4 );
 }
 if ( get_post_meta( $post->ID, 'week5_date', true ) ) {
-  $dateMeta5 = get_post_meta( $post->ID, 'week5_date', true );
-  $week5_date = date( 'M. j', $dateMeta5 );
+  $date_meta_5 = get_post_meta( $post->ID, 'week5_date', true );
+  $week5_date = date( 'M. j', $date_meta_5 );
 }
 if ( get_post_meta( $post->ID, 'week6_date', true ) ) {
-  $dateMeta6 = get_post_meta( $post->ID, 'week6_date', true );
-  $week6_date = date( 'M. j', $dateMeta6 );
+  $date_meta_6 = get_post_meta( $post->ID, 'week6_date', true );
+  $week6_date = date( 'M. j', $date_meta_6 );
 }
 if ( get_post_meta( $post->ID, 'week7_date', true ) ) {
-  $dateMeta7 = get_post_meta( $post->ID, 'week7_date', true );
-  $week7_date = date( 'M. j', $dateMeta7 );
+  $date_meta_7 = get_post_meta( $post->ID, 'week7_date', true );
+  $week7_date = date( 'M. j', $date_meta_7 );
 }
 if ( get_post_meta( $post->ID, 'week8_date', true ) ) {
-  $dateMeta8 = get_post_meta( $post->ID, 'week8_date', true );
-  $week8_date = date( 'M. j', $dateMeta8 );
+  $date_meta_8 = get_post_meta( $post->ID, 'week8_date', true );
+  $week8_date = date( 'M. j', $date_meta_8 );
 }
 if ( get_post_meta( $post->ID, 'week9_date', true ) ) {
-  $dateMeta9 = get_post_meta( $post->ID, 'week9_date', true );
-  $week9_date = date( 'M. j', $dateMeta9 );
+  $date_meta_9 = get_post_meta( $post->ID, 'week9_date', true );
+  $week9_date = date( 'M. j', $date_meta_9 );
 }
 if ( get_post_meta( $post->ID, 'week10_date', true ) ) {
-  $dateMeta10 = get_post_meta( $post->ID, 'week10_date', true );
-  $week10_date = date( 'M. j', $dateMeta10 );
+  $date_meta_10 = get_post_meta( $post->ID, 'week10_date', true );
+  $week10_date = date( 'M. j', $date_meta_10 );
 }
 if ( get_post_meta( $post->ID, 'week11_date', true ) ) {
-  $dateMeta11 = get_post_meta( $post->ID, 'week11_date', true );
-  $week11_date = date( 'M. j', $dateMeta11 );
+  $date_meta_11 = get_post_meta( $post->ID, 'week11_date', true );
+  $week11_date = date( 'M. j', $date_meta_11 );
 }
 if ( get_post_meta( $post->ID, 'week12_date', true ) ) {
-  $dateMeta12 = get_post_meta( $post->ID, 'week12_date', true );
-  $week12_date = date( 'M. j', $dateMeta12 );
+  $date_meta_12 = get_post_meta( $post->ID, 'week12_date', true );
+  $week12_date = date( 'M. j', $date_meta_12 );
 }
 if ( get_post_meta( $post->ID, 'week13_date', true ) ) {
-  $dateMeta13 = get_post_meta( $post->ID, 'week13_date', true );
-  $week13_date = date( 'M. j', $dateMeta13 );
+  $date_meta_13 = get_post_meta( $post->ID, 'week13_date', true );
+  $week13_date = date( 'M. j', $date_meta_13 );
 }
 if ( get_post_meta( $post->ID, 'week14_date', true ) ) {
-  $dateMeta14 = get_post_meta( $post->ID, 'week14_date', true );
-  $week14_date = date( 'M. j', $dateMeta14 );
+  $date_meta_14 = get_post_meta( $post->ID, 'week14_date', true );
+  $week14_date = date( 'M. j', $date_meta_14 );
 }
 if ( get_post_meta( $post->ID, 'week15_date', true ) ) {
-  $dateMeta15 = get_post_meta( $post->ID, 'week15_date', true );
-  $week15_date = date( 'M. j', $dateMeta15 );
+  $date_meta_15 = get_post_meta( $post->ID, 'week15_date', true );
+  $week15_date = date( 'M. j', $date_meta_15 );
 }
 if ( get_post_meta( $post->ID, 'week16_date', true ) ) {
-  $dateMeta16 = get_post_meta( $post->ID, 'week16_date', true );
-  $week16_date = date( 'M. j', $dateMeta16 );
+  $date_meta_16 = get_post_meta( $post->ID, 'week16_date', true );
+  $week16_date = date( 'M. j', $date_meta_16 );
 }
 if ( get_post_meta( $post->ID, 'week17_date', true ) ) {
-  $dateMeta17 = get_post_meta( $post->ID, 'week17_date', true );
-  $week17_date = date( 'M. j', $dateMeta17 );
+  $date_meta_17 = get_post_meta( $post->ID, 'week17_date', true );
+  $week17_date = date( 'M. j', $date_meta_17 );
 }
 if ( get_post_meta( $post->ID, 'week18_date', true ) ) {
-  $dateMeta18 = get_post_meta( $post->ID, 'week18_date', true );
-  $week18_date = date( 'M. j', $dateMeta18 );
+  $date_meta_18 = get_post_meta( $post->ID, 'week18_date', true );
+  $week18_date = date( 'M. j', $date_meta_18 );
 }
 if ( get_post_meta( $post->ID, 'week19_date', true ) ) {
-  $dateMeta19 = get_post_meta( $post->ID, 'week19_date', true );
-  $week19_date = date( 'M. j', $dateMeta19 );
+  $date_meta_19 = get_post_meta( $post->ID, 'week19_date', true );
+  $week19_date = date( 'M. j', $date_meta_19 );
 }
 if ( get_post_meta( $post->ID, 'week20_date', true ) ) {
-  $dateMeta20 = get_post_meta( $post->ID, 'week20_date', true );
-  $week20_date = date( 'M. j', $dateMeta20 );
+  $date_meta_20 = get_post_meta( $post->ID, 'week20_date', true );
+  $week20_date = date( 'M. j', $date_meta_20 );
 }
 if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
-  $dateMeta21 = get_post_meta( $post->ID, 'week21_date', true );
-  $week21_date = date( 'M. j', $dateMeta21 );
+  $date_meta_21 = get_post_meta( $post->ID, 'week21_date', true );
+  $week21_date = date( 'M. j', $date_meta_21 );
 }
 
 ?>
@@ -113,69 +113,69 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
         <?php if ( current_user_can( 'edit_posts' ) ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
 
         <div class="entry-meta">
-            <?php echo date( 'F j', $dateMeta1 ); ?>
+            <?php echo date( 'F j', $date_meta_1 ); ?>
             <?php if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta21 );
+                    echo date( 'F j, Y', $date_meta_21 );
                   } elseif ( get_post_meta( $post->ID, 'week20_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta20 );
+                    echo date( 'F j, Y', $date_meta_20 );
                   } elseif ( get_post_meta( $post->ID, 'week19_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta19 );
+                    echo date( 'F j, Y', $date_meta_19 );
                   } elseif ( get_post_meta( $post->ID, 'week18_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta18 );
+                    echo date( 'F j, Y', $date_meta_18 );
                   } elseif ( get_post_meta( $post->ID, 'week17_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta17 );
+                    echo date( 'F j, Y', $date_meta_17 );
                   } elseif ( get_post_meta( $post->ID, 'week16_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta16 );
+                    echo date( 'F j, Y', $date_meta_16 );
                   } elseif ( get_post_meta( $post->ID, 'week15_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta15 );
+                    echo date( 'F j, Y', $date_meta_15 );
                   } elseif ( get_post_meta( $post->ID, 'week14_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta14 );
+                    echo date( 'F j, Y', $date_meta_14 );
                   } elseif ( get_post_meta( $post->ID, 'week13_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta13 );
+                    echo date( 'F j, Y', $date_meta_13 );
                   } elseif ( get_post_meta( $post->ID, 'week12_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta12 );
+                    echo date( 'F j, Y', $date_meta_12 );
                   } elseif ( get_post_meta( $post->ID, 'week11_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta11 );
+                    echo date( 'F j, Y', $date_meta_11 );
                   } elseif ( get_post_meta( $post->ID, 'week10_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta10 );
+                    echo date( 'F j, Y', $date_meta_10 );
                   } elseif ( get_post_meta( $post->ID, 'week9_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta9 );
+                    echo date( 'F j, Y', $date_meta_9 );
                   } elseif ( get_post_meta( $post->ID, 'week8_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta8 );
+                    echo date( 'F j, Y', $date_meta_8 );
                   } elseif ( get_post_meta( $post->ID, 'week7_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta7 );
+                    echo date( 'F j, Y', $date_meta_7 );
                   } elseif ( get_post_meta( $post->ID, 'week6_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta6 );
+                    echo date( 'F j, Y', $date_meta_6 );
                   } elseif ( get_post_meta( $post->ID, 'week5_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta5 );
+                    echo date( 'F j, Y', $date_meta_5 );
                   } elseif ( get_post_meta( $post->ID, 'week4_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta4 );
+                    echo date( 'F j, Y', $date_meta_4 );
                   } elseif ( get_post_meta( $post->ID, 'week3_date', true ) ) {
                     echo ' through ';
-                    echo date( 'F j, Y', $dateMeta3 );
+                    echo date( 'F j, Y', $date_meta_3 );
                   } elseif ( get_post_meta( $post->ID, 'week2_date', true ) ) {
                     echo ' and ';
-                    echo date( 'F j, Y', $dateMeta2 );
+                    echo date( 'F j, Y', $date_meta_2 );
                   } elseif ( get_post_meta( $post->ID, 'week1_date', true ) ) {
-                    echo date( ', Y', $dateMeta1 );
+                    echo date( ', Y', $date_meta_1 );
                   } ?>
           <?php do_action( 'flint_entry_meta_above_sermon' ); ?>
         </div><!-- .entry-meta -->
@@ -207,11 +207,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
     <?php if ( get_post_meta( $post->ID, 'week1_audio', true ) ) : ?>
     <div class="clearfix"></div>
     <div id="week1" class="sermons">
-      <?php $audioMeta1 = get_post_meta( $post->ID, 'week1_audio', true );
-            $week1_audio_id = url_to_postid( $audioMeta1 );
+      <?php $audio_meta_1 = get_post_meta( $post->ID, 'week1_audio', true );
+            $week1_audio_id = url_to_postid( $audio_meta_1 );
             $week1_audio_file = wp_get_attachment_url( $week1_audio_id );
-            $pdfMeta1 = get_post_meta( $post->ID, 'week1_pdf', true );
-            $week1_pdf_id = url_to_postid( $pdfMeta1 );
+            $pdf_meta_1 = get_post_meta( $post->ID, 'week1_pdf', true );
+            $week1_pdf_id = url_to_postid( $pdf_meta_1 );
             $week1_pdf_file = wp_get_attachment_url( $week1_pdf_id );
             $week1_pdf_title = $week1_pdf_id->post_title; ?>
 
@@ -221,7 +221,7 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
       <div class="sermon-media col-sm-4">
         <a class="col-xs-3" title="Listen to <?php echo get_post_meta( $post->ID, 'week1_title', true ) ?>" href="<?php echo $week1_audio_file; ?>" target="_blank"><i class="glyphicon glyphicon-music"></i></a>
         <a class="col-xs-3" title="Download <?php echo get_post_meta( $post->ID, 'week1_title', true ) ?>" href="<?php echo get_stylesheet_directory_uri(); ?>/download.php?file=<?php echo $week1_audio_file; ?>"><i class="glyphicon glyphicon-download"></i></a>
-    <?php if ( !empty( get_post_meta( $post->ID, 'week1_vimeo_id', true ) ) ) { ?><a title="<?php echo get_post_meta( $post->ID, 'week1_vimeo_title', true ) ?>" class="col-xs-3" target="_blank" href="http://player.vimeo.com/video/<?php echo get_post_meta( $post->ID, 'week1_vimeo_id', true ) ?>"><i class="glyphicon glyphicon-play-circle"></i></a><?php } ?>
+    <?php if ( ! empty( get_post_meta( $post->ID, 'week1_vimeo_id', true ) ) ) { ?><a title="<?php echo get_post_meta( $post->ID, 'week1_vimeo_title', true ) ?>" class="col-xs-3" target="_blank" href="http://player.vimeo.com/video/<?php echo get_post_meta( $post->ID, 'week1_vimeo_id', true ) ?>"><i class="glyphicon glyphicon-play-circle"></i></a><?php } ?>
     <?php if ( get_post_meta( $post->ID, 'week1_pdf', true ) ) { ?> <a title="<?php echo get_the_title( $week1_pdf_id ); ?>" class="col-xs-3" href="<?php echo $week1_pdf_file; ?>"><i class="glyphicon glyphicon-file"></i></a><?php } ?>
         <div class="clearfix"></div>
       </div><!-- .sermon-media -->
@@ -231,11 +231,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week2_audio', true ) ) : ?>
     <div id="week2" class="sermons">
-      <?php $audioMeta2 = get_post_meta( $post->ID, 'week2_audio', true );
-            $week2_audio_id = url_to_postid( $audioMeta2 );
+      <?php $audio_meta_2 = get_post_meta( $post->ID, 'week2_audio', true );
+            $week2_audio_id = url_to_postid( $audio_meta_2 );
             $week2_audio_file = wp_get_attachment_url( $week2_audio_id );
-            $pdfMeta2 = get_post_meta( $post->ID, 'week2_pdf', true );
-            $week2_pdf_id = url_to_postid( $pdfMeta2 );
+            $pdf_meta_2 = get_post_meta( $post->ID, 'week2_pdf', true );
+            $week2_pdf_id = url_to_postid( $pdf_meta_2 );
             $week2_pdf_file = wp_get_attachment_url( $week2_pdf_id );
             $week2_pdf_title = $week2_pdf_id->post_title; ?>
 
@@ -255,11 +255,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week3_audio', true ) ) : ?>
     <div id="week3" class="sermons">
-      <?php $audioMeta3 = get_post_meta( $post->ID, 'week3_audio', true );
-            $week3_audio_id = url_to_postid( $audioMeta3 );
+      <?php $audio_meta_3 = get_post_meta( $post->ID, 'week3_audio', true );
+            $week3_audio_id = url_to_postid( $audio_meta_3 );
             $week3_audio_file = wp_get_attachment_url( $week3_audio_id );
-            $pdfMeta3 = get_post_meta( $post->ID, 'week3_pdf', true );
-            $week3_pdf_id = url_to_postid( $pdfMeta3 );
+            $pdf_meta_3 = get_post_meta( $post->ID, 'week3_pdf', true );
+            $week3_pdf_id = url_to_postid( $pdf_meta_3 );
             $week3_pdf_file = wp_get_attachment_url( $week3_pdf_id );
             $week3_pdf_title = $week3_pdf_id->post_title; ?>
 
@@ -279,11 +279,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week4_audio', true ) ) : ?>
     <div id="week4" class="sermons">
-      <?php $audioMeta4 = get_post_meta( $post->ID, 'week4_audio', true );
-            $week4_audio_id = url_to_postid( $audioMeta4 );
+      <?php $audio_meta_4 = get_post_meta( $post->ID, 'week4_audio', true );
+            $week4_audio_id = url_to_postid( $audio_meta_4 );
             $week4_audio_file = wp_get_attachment_url( $week4_audio_id );
-            $pdfMeta4 = get_post_meta( $post->ID, 'week4_pdf', true );
-            $week4_pdf_id = url_to_postid( $pdfMeta4 );
+            $pdf_meta_4 = get_post_meta( $post->ID, 'week4_pdf', true );
+            $week4_pdf_id = url_to_postid( $pdf_meta_4 );
             $week4_pdf_file = wp_get_attachment_url( $week4_pdf_id );
             $week4_pdf_title = $week4_pdf_id->post_title; ?>
 
@@ -303,11 +303,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week5_audio', true ) ) : ?>
     <div id="week5" class="sermons">
-      <?php $audioMeta5 = get_post_meta( $post->ID, 'week5_audio', true );
-            $week5_audio_id = url_to_postid( $audioMeta5 );
+      <?php $audio_meta_5 = get_post_meta( $post->ID, 'week5_audio', true );
+            $week5_audio_id = url_to_postid( $audio_meta_5 );
             $week5_audio_file = wp_get_attachment_url( $week5_audio_id );
-            $pdfMeta5 = get_post_meta( $post->ID, 'week5_pdf', true );
-            $week5_pdf_id = url_to_postid( $pdfMeta5 );
+            $pdf_meta_5 = get_post_meta( $post->ID, 'week5_pdf', true );
+            $week5_pdf_id = url_to_postid( $pdf_meta_5 );
             $week5_pdf_file = wp_get_attachment_url( $week5_pdf_id );
             $week5_pdf_title = $week5_pdf_id->post_title; ?>
 
@@ -327,11 +327,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week6_audio', true ) ) : ?>
     <div id="week6" class="sermons">
-      <?php $audioMeta6 = get_post_meta( $post->ID, 'week6_audio', true );
-            $week6_audio_id = url_to_postid( $audioMeta6 );
+      <?php $audio_meta_6 = get_post_meta( $post->ID, 'week6_audio', true );
+            $week6_audio_id = url_to_postid( $audio_meta_6 );
             $week6_audio_file = wp_get_attachment_url( $week6_audio_id );
-            $pdfMeta6 = get_post_meta( $post->ID, 'week6_pdf', true );
-            $week6_pdf_id = url_to_postid( $pdfMeta6 );
+            $pdf_meta_6 = get_post_meta( $post->ID, 'week6_pdf', true );
+            $week6_pdf_id = url_to_postid( $pdf_meta_6 );
             $week6_pdf_file = wp_get_attachment_url( $week6_pdf_id );
             $week6_pdf_title = $week6_pdf_id->post_title; ?>
 
@@ -351,11 +351,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week7_audio', true ) ) : ?>
     <div id="week7" class="sermons">
-      <?php $audioMeta7 = get_post_meta( $post->ID, 'week7_audio', true );
-            $week7_audio_id = url_to_postid( $audioMeta7 );
+      <?php $audio_meta_7 = get_post_meta( $post->ID, 'week7_audio', true );
+            $week7_audio_id = url_to_postid( $audio_meta_7 );
             $week7_audio_file = wp_get_attachment_url( $week7_audio_id );
-            $pdfMeta7 = get_post_meta( $post->ID, 'week7_pdf', true );
-            $week7_pdf_id = url_to_postid( $pdfMeta7 );
+            $pdf_meta_7 = get_post_meta( $post->ID, 'week7_pdf', true );
+            $week7_pdf_id = url_to_postid( $pdf_meta_7 );
             $week7_pdf_file = wp_get_attachment_url( $week7_pdf_id );
             $week7_pdf_title = $week7_pdf_id->post_title; ?>
 
@@ -375,11 +375,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week8_audio', true ) ) : ?>
     <div id="week8" class="sermons">
-      <?php $audioMeta8 = get_post_meta( $post->ID, 'week8_audio', true );
-            $week8_audio_id = url_to_postid( $audioMeta8 );
+      <?php $audio_meta_8 = get_post_meta( $post->ID, 'week8_audio', true );
+            $week8_audio_id = url_to_postid( $audio_meta_8 );
             $week8_audio_file = wp_get_attachment_url( $week8_audio_id );
-            $pdfMeta8 = get_post_meta( $post->ID, 'week8_pdf', true );
-            $week8_pdf_id = url_to_postid( $pdfMeta8 );
+            $pdf_meta_8 = get_post_meta( $post->ID, 'week8_pdf', true );
+            $week8_pdf_id = url_to_postid( $pdf_meta_8 );
             $week8_pdf_file = wp_get_attachment_url( $week8_pdf_id );
             $week8_pdf_title = $week8_pdf_id->post_title; ?>
 
@@ -399,11 +399,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week9_audio', true ) ) : ?>
     <div id="week9" class="sermons">
-      <?php $audioMeta9 = get_post_meta( $post->ID, 'week9_audio', true );
-            $week9_audio_id = url_to_postid( $audioMeta9 );
+      <?php $audio_meta_9 = get_post_meta( $post->ID, 'week9_audio', true );
+            $week9_audio_id = url_to_postid( $audio_meta_9 );
             $week9_audio_file = wp_get_attachment_url( $week9_audio_id );
-            $pdfMeta9 = get_post_meta( $post->ID, 'week9_pdf', true );
-            $week9_pdf_id = url_to_postid( $pdfMeta9 );
+            $pdf_meta_9 = get_post_meta( $post->ID, 'week9_pdf', true );
+            $week9_pdf_id = url_to_postid( $pdf_meta_9 );
             $week9_pdf_file = wp_get_attachment_url( $week9_pdf_id );
             $week9_pdf_title = $week9_pdf_id->post_title; ?>
 
@@ -423,11 +423,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week10_audio', true ) ) : ?>
     <div id="week10" class="sermons">
-      <?php $audioMeta10 = get_post_meta( $post->ID, 'week10_audio', true );
-            $week10_audio_id = url_to_postid( $audioMeta10 );
+      <?php $audio_meta_10 = get_post_meta( $post->ID, 'week10_audio', true );
+            $week10_audio_id = url_to_postid( $audio_meta_10 );
             $week10_audio_file = wp_get_attachment_url( $week10_audio_id );
-            $pdfMeta10 = get_post_meta( $post->ID, 'week10_pdf', true );
-            $week10_pdf_id = url_to_postid( $pdfMeta10 );
+            $pdf_meta_10 = get_post_meta( $post->ID, 'week10_pdf', true );
+            $week10_pdf_id = url_to_postid( $pdf_meta_10 );
             $week10_pdf_file = wp_get_attachment_url( $week10_pdf_id );
             $week10_pdf_title = $week10_pdf_id->post_title; ?>
 
@@ -447,11 +447,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week11_audio', true ) ) : ?>
     <div id="week11" class="sermons">
-      <?php $audioMeta11 = get_post_meta( $post->ID, 'week11_audio', true );
-            $week11_audio_id = url_to_postid( $audioMeta11 );
+      <?php $audio_meta_11 = get_post_meta( $post->ID, 'week11_audio', true );
+            $week11_audio_id = url_to_postid( $audio_meta_11 );
             $week11_audio_file = wp_get_attachment_url( $week11_audio_id );
-            $pdfMeta11 = get_post_meta( $post->ID, 'week11_pdf', true );
-            $week11_pdf_id = url_to_postid( $pdfMeta11 );
+            $pdf_meta_11 = get_post_meta( $post->ID, 'week11_pdf', true );
+            $week11_pdf_id = url_to_postid( $pdf_meta_11 );
             $week11_pdf_file = wp_get_attachment_url( $week11_pdf_id );
             $week11_pdf_title = $week11_pdf_id->post_title; ?>
 
@@ -471,11 +471,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week12_audio', true ) ) : ?>
     <div id="week12" class="sermons">
-      <?php $audioMeta12 = get_post_meta( $post->ID, 'week12_audio', true );
-            $week12_audio_id = url_to_postid( $audioMeta12 );
+      <?php $audio_meta_12 = get_post_meta( $post->ID, 'week12_audio', true );
+            $week12_audio_id = url_to_postid( $audio_meta_12 );
             $week12_audio_file = wp_get_attachment_url( $week12_audio_id );
-            $pdfMeta12 = get_post_meta( $post->ID, 'week12_pdf', true );
-            $week12_pdf_id = url_to_postid( $pdfMeta12 );
+            $pdf_meta_12 = get_post_meta( $post->ID, 'week12_pdf', true );
+            $week12_pdf_id = url_to_postid( $pdf_meta_12 );
             $week12_pdf_file = wp_get_attachment_url( $week12_pdf_id );
             $week12_pdf_title = $week12_pdf_id->post_title; ?>
 
@@ -495,11 +495,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week13_audio', true ) ) : ?>
     <div id="week13" class="sermons">
-      <?php $audioMeta13 = get_post_meta( $post->ID, 'week13_audio', true );
-            $week13_audio_id = url_to_postid( $audioMeta13 );
+      <?php $audio_meta_13 = get_post_meta( $post->ID, 'week13_audio', true );
+            $week13_audio_id = url_to_postid( $audio_meta_13 );
             $week13_audio_file = wp_get_attachment_url( $week13_audio_id );
-            $pdfMeta13 = get_post_meta( $post->ID, 'week13_pdf', true );
-            $week13_pdf_id = url_to_postid( $pdfMeta13 );
+            $pdf_meta_13 = get_post_meta( $post->ID, 'week13_pdf', true );
+            $week13_pdf_id = url_to_postid( $pdf_meta_13 );
             $week13_pdf_file = wp_get_attachment_url( $week13_pdf_id );
             $week13_pdf_title = $week13_pdf_id->post_title; ?>
 
@@ -519,11 +519,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week14_audio', true ) ) : ?>
     <div id="week14" class="sermons">
-      <?php $audioMeta14 = get_post_meta( $post->ID, 'week14_audio', true );
-            $week14_audio_id = url_to_postid( $audioMeta14 );
+      <?php $audio_meta_14 = get_post_meta( $post->ID, 'week14_audio', true );
+            $week14_audio_id = url_to_postid( $audio_meta_14 );
             $week14_audio_file = wp_get_attachment_url( $week14_audio_id );
-            $pdfMeta14 = get_post_meta( $post->ID, 'week14_pdf', true );
-            $week14_pdf_id = url_to_postid( $pdfMeta14 );
+            $pdf_meta_14 = get_post_meta( $post->ID, 'week14_pdf', true );
+            $week14_pdf_id = url_to_postid( $pdf_meta_14 );
             $week14_pdf_file = wp_get_attachment_url( $week14_pdf_id );
             $week14_pdf_title = $week14_pdf_id->post_title; ?>
 
@@ -543,11 +543,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week15_audio', true ) ) : ?>
     <div id="week15" class="sermons">
-      <?php $audioMeta15 = get_post_meta( $post->ID, 'week15_audio', true );
-            $week15_audio_id = url_to_postid( $audioMeta15 );
+      <?php $audio_meta_15 = get_post_meta( $post->ID, 'week15_audio', true );
+            $week15_audio_id = url_to_postid( $audio_meta_15 );
             $week15_audio_file = wp_get_attachment_url( $week15_audio_id );
-            $pdfMeta15 = get_post_meta( $post->ID, 'week15_pdf', true );
-            $week15_pdf_id = url_to_postid( $pdfMeta15 );
+            $pdf_meta_15 = get_post_meta( $post->ID, 'week15_pdf', true );
+            $week15_pdf_id = url_to_postid( $pdf_meta_15 );
             $week15_pdf_file = wp_get_attachment_url( $week15_pdf_id );
             $week15_pdf_title = $week15_pdf_id->post_title; ?>
 
@@ -567,11 +567,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week16_audio', true ) ) : ?>
     <div id="week16" class="sermons">
-      <?php $audioMeta16 = get_post_meta( $post->ID, 'week16_audio', true );
-            $week16_audio_id = url_to_postid( $audioMeta16 );
+      <?php $audio_meta_16 = get_post_meta( $post->ID, 'week16_audio', true );
+            $week16_audio_id = url_to_postid( $audio_meta_16 );
             $week16_audio_file = wp_get_attachment_url( $week16_audio_id );
-            $pdfMeta16 = get_post_meta( $post->ID, 'week16_pdf', true );
-            $week16_pdf_id = url_to_postid( $pdfMeta16 );
+            $pdf_meta_16 = get_post_meta( $post->ID, 'week16_pdf', true );
+            $week16_pdf_id = url_to_postid( $pdf_meta_16 );
             $week16_pdf_file = wp_get_attachment_url( $week16_pdf_id );
             $week16_pdf_title = $week16_pdf_id->post_title; ?>
 
@@ -591,11 +591,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week17_audio', true ) ) : ?>
     <div id="week17" class="sermons">
-      <?php $audioMeta17 = get_post_meta( $post->ID, 'week17_audio', true );
-            $week17_audio_id = url_to_postid( $audioMeta17 );
+      <?php $audio_meta_17 = get_post_meta( $post->ID, 'week17_audio', true );
+            $week17_audio_id = url_to_postid( $audio_meta_17 );
             $week17_audio_file = wp_get_attachment_url( $week17_audio_id );
-            $pdfMeta17 = get_post_meta( $post->ID, 'week17_pdf', true );
-            $week17_pdf_id = url_to_postid( $pdfMeta17 );
+            $pdf_meta_17 = get_post_meta( $post->ID, 'week17_pdf', true );
+            $week17_pdf_id = url_to_postid( $pdf_meta_17 );
             $week17_pdf_file = wp_get_attachment_url( $week17_pdf_id );
             $week17_pdf_title = $week17_pdf_id->post_title; ?>
 
@@ -615,11 +615,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week18_audio', true ) ) : ?>
     <div id="week18" class="sermons">
-      <?php $audioMeta18 = get_post_meta( $post->ID, 'week18_audio', true );
-            $week18_audio_id = url_to_postid( $audioMeta18 );
+      <?php $audio_meta_18 = get_post_meta( $post->ID, 'week18_audio', true );
+            $week18_audio_id = url_to_postid( $audio_meta_18 );
             $week18_audio_file = wp_get_attachment_url( $week18_audio_id );
-            $pdfMeta18 = get_post_meta( $post->ID, 'week18_pdf', true );
-            $week18_pdf_id = url_to_postid( $pdfMeta18 );
+            $pdf_meta_18 = get_post_meta( $post->ID, 'week18_pdf', true );
+            $week18_pdf_id = url_to_postid( $pdf_meta_18 );
             $week18_pdf_file = wp_get_attachment_url( $week18_pdf_id );
             $week18_pdf_title = $week18_pdf_id->post_title; ?>
 
@@ -639,11 +639,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week19_audio', true ) ) : ?>
     <div id="week19" class="sermons">
-      <?php $audioMeta19 = get_post_meta( $post->ID, 'week19_audio', true );
-            $week19_audio_id = url_to_postid( $audioMeta19 );
+      <?php $audio_meta_19 = get_post_meta( $post->ID, 'week19_audio', true );
+            $week19_audio_id = url_to_postid( $audio_meta_19 );
             $week19_audio_file = wp_get_attachment_url( $week19_audio_id );
-            $pdfMeta19 = get_post_meta( $post->ID, 'week19_pdf', true );
-            $week19_pdf_id = url_to_postid( $pdfMeta19 );
+            $pdf_meta_19 = get_post_meta( $post->ID, 'week19_pdf', true );
+            $week19_pdf_id = url_to_postid( $pdf_meta_19 );
             $week19_pdf_file = wp_get_attachment_url( $week19_pdf_id );
             $week19_pdf_title = $week19_pdf_id->post_title; ?>
 
@@ -663,11 +663,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week20_audio', true ) ) : ?>
     <div id="week20" class="sermons">
-      <?php $audioMeta20 = get_post_meta( $post->ID, 'week20_audio', true );
-            $week20_audio_id = url_to_postid( $audioMeta20 );
+      <?php $audio_meta_20 = get_post_meta( $post->ID, 'week20_audio', true );
+            $week20_audio_id = url_to_postid( $audio_meta_20 );
             $week20_audio_file = wp_get_attachment_url( $week20_audio_id );
-            $pdfMeta20 = get_post_meta( $post->ID, 'week20_pdf', true );
-            $week20_pdf_id = url_to_postid( $pdfMeta20 );
+            $pdf_meta_20 = get_post_meta( $post->ID, 'week20_pdf', true );
+            $week20_pdf_id = url_to_postid( $pdf_meta_20 );
             $week20_pdf_file = wp_get_attachment_url( $week20_pdf_id );
             $week20_pdf_title = $week20_pdf_id->post_title; ?>
 
@@ -687,11 +687,11 @@ if ( get_post_meta( $post->ID, 'week21_date', true ) ) {
 
     <?php if ( get_post_meta( $post->ID, 'week21_audio', true ) ) : ?>
     <div id="week21" class="sermons">
-      <?php $audioMeta21 = get_post_meta( $post->ID, 'week21_audio', true );
-            $week21_audio_id = url_to_postid( $audioMeta21 );
+      <?php $audio_meta_21 = get_post_meta( $post->ID, 'week21_audio', true );
+            $week21_audio_id = url_to_postid( $audio_meta_21 );
             $week21_audio_file = wp_get_attachment_url( $week21_audio_id );
-            $pdfMeta21 = get_post_meta( $post->ID, 'week21_pdf', true );
-            $week21_pdf_id = url_to_postid( $pdfMeta21 );
+            $pdf_meta_21 = get_post_meta( $post->ID, 'week21_pdf', true );
+            $week21_pdf_id = url_to_postid( $pdf_meta_21 );
             $week21_pdf_file = wp_get_attachment_url( $week21_pdf_id );
             $week21_pdf_title = $week21_pdf_id->post_title; ?>
 
