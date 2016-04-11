@@ -1,6 +1,6 @@
 <?php
 /**
-* Template Name: Japan 2
+* Template Name: Mission Trip (archive)
 *
 * @package Flint\Trinity
 * @since 0.5.1
