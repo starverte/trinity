@@ -88,4 +88,4 @@ if ( ! empty( $post_custom['item_list'][0] ) ) {
       </div><!-- #item-<?php echo $medium->ID; ?> -->
       <div class="clearfix"></div><?php
     }?>
-  </div>
+  </div><!-- .sermon-list -->
