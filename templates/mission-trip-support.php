@@ -8,6 +8,10 @@
 
 get_header();
 flint_get_sidebar( 'header' );
+$meta = get_post_meta( $post->ID );
+$banner = $meta['banner'][0];
+$raised_percent = $meta['funds_raised'][0] / $meta['funds_goal'][0];
+$trip_category = 'category_name=' . $meta['trip_category'][0];
 ?>
 
   <div id="primary" class="content-area">
@@ -15,7 +19,7 @@ flint_get_sidebar( 'header' );
     <?php echo steel_slideshow( 5098 ); ?>
 
     <div class="banner">
-      <p>LifePointe Church is sending a team to Tokyo, Japan<br>to serve alongside Janet Brown and the local Zao Church</p>
+      <p><?php echo $banner; ?></p>
       <a class="btn btn-link" href="#meet-the-team">Meet the Team</a> <a class="btn btn-link" href="#pledge-support">Pledge Support</a> <a class="btn btn-link" href="#follow">Follow Us</a>
     </div>
 
@@ -33,7 +37,11 @@ flint_get_sidebar( 'header' );
         <h2 class="col-xs-12" id="#pledge-support">Pledge Support</h2>
       </div>
 
-      <!-- INSERT PROGRESS BAR -->
+      <div class="progress">
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round($raised_percent); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
+          <?php echo round($raised_percent, 1); ?>% <span class="hidden-xs">funds </span>raised
+        </div>
+      </div>
 
       <div class="row">
         <!-- INSERT SUPPORT FORMS -->
@@ -45,18 +53,13 @@ flint_get_sidebar( 'header' );
 
         <div id="content" role="main" <?php flint_content_class(); ?>>
 
-        <?php if ( have_posts() ) : ?>
+        <?php $trip_posts = new WP_Query( $trip_category ); ?>
 
-          <?php while ( have_posts() ) : the_post(); ?>
+        <?php if ( $trip_posts->have_posts() ) : ?>
 
-            <?php
-              $type = get_post_type();
-              if ( 'post' === $type ) :
-                get_template_part( 'format', get_post_format() );
-              else :
-                get_template_part( 'type', $type );
-              endif;
-            ?>
+          <?php while ( $trip_posts->have_posts() ) : $trip_posts->the_post(); ?>
+
+            <?php get_template_part( 'format', get_post_format() ); ?>
 
           <?php endwhile; ?>
 
