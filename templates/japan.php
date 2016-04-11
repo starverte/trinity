@@ -10,7 +10,7 @@ session_start();
 
 $alert = '';
 
-$benefactors = array(
+$benefactors = array( 
   'team'     => 'the Japan team',
   'josiah'   => 'Josiah Burke',
   'matt'     => 'Matt Beall',
@@ -19,20 +19,20 @@ $benefactors = array(
   'wilaiwan' => 'Wilaiwan Northrop',
 );
 
-if (!empty($_POST['session'])) {
-  if ($_POST['session'] == $_SESSION['session']) {
+if ( !empty( $_POST['session'] ) ) {
+  if ( $_POST['session'] == $_SESSION['session'] ) {
 
-    $first_name = !empty($_POST['first_name']) ? sanitize_text_field($_POST['first_name']) : null;
-    $last_name  = !empty($_POST['last_name'])  ? sanitize_text_field($_POST['last_name'])  : '';
+    $first_name = !empty( $_POST['first_name'] ) ? sanitize_text_field( $_POST['first_name'] ) : null;
+    $last_name  = !empty( $_POST['last_name'] )  ? sanitize_text_field( $_POST['last_name'] )  : '';
 
-    if ( !empty($_POST['benefactor']) && array_key_exists( $_POST['benefactor'], $benefactors ) ) {
+    if ( !empty( $_POST['benefactor'] ) && array_key_exists( $_POST['benefactor'], $benefactors ) ) {
       $benefactor = $_POST['benefactor'];
     } else {
       $benefactor = 'team';
     }
 
-    if (!empty($_POST['paypal_account'])) {
-      if ($_POST['paypal_account'] == 'true') {
+    if ( !empty( $_POST['paypal_account'] ) ) {
+      if ( $_POST['paypal_account'] == 'true' ) {
         $paypal_account = true;
         $paypal_link = 'https://www.paypal-donations.com/pp-charity/web.us/charity_i.jsp?id=72286&s=3';
       }
@@ -46,86 +46,86 @@ if (!empty($_POST['session'])) {
       $paypal_link = 'https://www.paypal.com/cgi-bin/webscr?cmd=_s-xclick&hosted_button_id=H6KBD6DUY38LE';
     }
 
-    $amt_dec = !empty($_POST['amt_dec']) ? floatval($_POST['amt_dec']) : 0.00;
+    $amt_dec = !empty( $_POST['amt_dec'] ) ? floatval( $_POST['amt_dec'] ) : 0.00;
 
-    $notes = !empty($_POST['notes']) ? sanitize_text_field($_POST['notes']) : '';
+    $notes = !empty( $_POST['notes'] ) ? sanitize_text_field( $_POST['notes'] ) : '';
 
-    $prayer_support    = !empty($_POST['prayer_support'])    ? true : false;
-    $financial_support = !empty($_POST['financial_support']) ? true : false;
+    $prayer_support    = !empty( $_POST['prayer_support'] )    ? true : false;
+    $financial_support = !empty( $_POST['financial_support'] ) ? true : false;
 
-    if (!empty($first_name) && !empty($last_name)) {
+    if ( !empty( $first_name ) && !empty( $last_name ) ) {
 
-      if ($prayer_support) {
+      if ( $prayer_support ) {
         $recipient = 'missionsdirector@sharethelife.org';
 
         $subject   = 'Japan 2015: ';
-        $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
+        $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst( $benefactor );
 
-        $message  = $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
+        $message  = $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst( $benefactor );
         $message .= ' through prayer before, during, and after the trip';
 
-        if (0.00 < $amt_dec) {
-          $message   .= ' and with a one-time gift of $'.number_format($amt_dec,2);
+        if ( 0.00 < $amt_dec ) {
+          $message   .= ' and with a one-time gift of $'.number_format( $amt_dec,2 );
           $recipient .= ',donations@sharethelife.org';
         }
         else {
           $message .= '.';
         }
 
-        if (!empty($notes)) {
+        if ( !empty( $notes ) ) {
           $message .= "\r\n\r\nAdditional Notes:\r\n";
           $message .= $notes;
         }
 
         $headers = "From: wp@fortcollinscreative.com\r\nReply-To: missionsdirector@sharethelife.org\r\nX-Mailer: PHP/".phpversion();
-        mail($recipient, $subject, $message, $headers);
+        mail( $recipient, $subject, $message, $headers );
 
-        if (0.00 < $amt_dec) {
-          if ('team' != $benefactor) {
-            $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team and '. ucfirst($benefactor) . ' will be notified of your pledge to pray for ' . ucfirst($benefactor) . ' and your one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {alert("'.ucfirst($benefactor).' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form.");window.open("' . $paypal_link . '")},1);</script>';
+        if ( 0.00 < $amt_dec ) {
+          if ( 'team' != $benefactor ) {
+            $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team and '. ucfirst( $benefactor ) . ' will be notified of your pledge to pray for ' . ucfirst( $benefactor ) . ' and your one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout( function() {alert( "'.ucfirst( $benefactor ).' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form." );window.open( "' . $paypal_link . '" )},1 );</script>';
           }
           else {
-            $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team will be notified of your pledge to pray for the Japan team and your one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {alert("The Japan team will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form.");window.open("' . $paypal_link . '")},1);</script>';
+            $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team will be notified of your pledge to pray for the Japan team and your one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout( function() {alert( "The Japan team will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form." );window.open( "' . $paypal_link . '" )},1 );</script>';
           }
         }
         else {
-          if ('team' != $benefactor) {
-            $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team and '. ucfirst($benefactor) . ' will be notified of your pledge to pray for ' . ucfirst($benefactor) . '.</div>';
+          if ( 'team' != $benefactor ) {
+            $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team and '. ucfirst( $benefactor ) . ' will be notified of your pledge to pray for ' . ucfirst( $benefactor ) . '.</div>';
           }
           else {
             $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team will be notified of your pledge to pray for the Japan team.</div>';
           }
         }
       }
-      elseif (0.00 < $amt_dec) {
+      elseif ( 0.00 < $amt_dec ) {
         $recipient = 'missionsdirector@sharethelife.org,donations@sharethelife.org';
 
         $subject   = 'Japan 2015: ';
-        $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
+        $subject  .= $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst( $benefactor );
 
-        $message  = $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst($benefactor);
-        $message .= ' with a one-time gift of $'.number_format($amt_dec,2);
+        $message  = $first_name . ' ' . $last_name . ' pledged to support ' . ucfirst( $benefactor );
+        $message .= ' with a one-time gift of $'.number_format( $amt_dec,2 );
 
-        if (!empty($notes)) {
+        if ( !empty( $notes ) ) {
           $message .= "\r\n\r\nAdditional Notes:\r\n";
           $message .= $notes;
         }
 
         $headers = "From: wp@fortcollinscreative.com\r\nReply-To: missionsdirector@sharethelife.org\r\nX-Mailer: PHP/".phpversion();
-        mail($recipient, $subject, $message, $headers);
+        mail( $recipient, $subject, $message, $headers );
 
-        if ('team' != $benefactor) {
-          $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team and '. ucfirst($benefactor) . ' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {alert("'.ucfirst($benefactor).' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form.");window.open("' . $paypal_link . '")},1);</script>';
+        if ( 'team' != $benefactor ) {
+          $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team and '. ucfirst( $benefactor ) . ' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout( function() {alert( "'.ucfirst( $benefactor ).' will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form." );window.open( "' . $paypal_link . '" )},1 );</script>';
         }
         else {
-          $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout(function() {alert("The Japan team will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form.");window.open("' . $paypal_link . '")},1);</script>';
+          $alert = '<div class="alert alert-info"><strong>Thank you for your support!</strong><p>The Japan team will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. You will now be redirected to PayPal to complete the transaction. Please enter $' . $amt_dec . ' as the amount on the PayPal form.</p><br>If you are not redirected within a few seconds, <a href="' . $paypal_link . '" target="_blank">click here</a>.</div><script type="text/javascript" async>setTimeout( function() {alert( "The Japan team will be notified of your pledge to give a one-time gift of $' . $amt_dec . '. Please click OK to be redirected to PayPal and enter $' . $amt_dec . ' as the amount on the PayPal form." );window.open( "' . $paypal_link . '" )},1 );</script>';
         }
       }
     }
   }
   else {
-    unset($_SESSION['session']);
-    $_SESSION['session'] = bin2hex(openssl_random_pseudo_bytes(10));
+    unset( $_SESSION['session'] );
+    $_SESSION['session'] = bin2hex( openssl_random_pseudo_bytes( 10 ) );
     $first_name        = '';
     $last_name         = '';
     $benefactor        = 'team';
@@ -135,7 +135,7 @@ if (!empty($_POST['session'])) {
   }
 }
 else {
-  $_SESSION['session'] = bin2hex(openssl_random_pseudo_bytes(10));
+  $_SESSION['session'] = bin2hex( openssl_random_pseudo_bytes( 10 ) );
   $first_name        = '';
   $last_name         = '';
   $benefactor        = 'team';
@@ -145,7 +145,7 @@ else {
 }
 
 get_header(); ?>
-<?php flint_get_sidebar('header'); ?>
+<?php flint_get_sidebar( 'header' ); ?>
 
   <div id="primary" class="content-area">
 
@@ -273,12 +273,12 @@ get_header(); ?>
         }
 
         $raised  = $options['trinity_japan_raised'];
-        $raised_percent = floatval($raised) / 15000 * 100;
+        $raised_percent = floatval( $raised ) / 15000 * 100;
       ?>
 
       <div class="progress" id="jp-progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round($raised_percent); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
-          <?php echo round($raised_percent, 1); ?>% <span class="hidden-xs">funds </span>raised
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round( $raised_percent ); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
+          <?php echo round( $raised_percent, 1 ); ?>% <span class="hidden-xs">funds </span>raised
         </div>
       </div>
       <div class="row">
@@ -311,8 +311,8 @@ get_header(); ?>
               </div>
               <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
                 <select class="form-control" id="benefactor" name="benefactor" required>
-                <?php foreach($benefactors as $key => $value) { ?>
-                  <option value="<?php echo $key; ?>" <?php selected($benefactor, $key) ?>><?php echo $value; ?></option>
+                <?php foreach( $benefactors as $key => $value ) { ?>
+                  <option value="<?php echo $key; ?>" <?php selected( $benefactor, $key ) ?>><?php echo $value; ?></option>
                 <?php } ?>
                 </select>
               </div>
@@ -321,7 +321,7 @@ get_header(); ?>
               <div class="col-xs-12">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="prayer_support" id="prayer_support" value="true" <?php checked($prayer_support); ?>>
+                    <input type="checkbox" name="prayer_support" id="prayer_support" value="true" <?php checked( $prayer_support ); ?>>
                     <strong>through prayer before, during, and after the trip.</strong>
                   </label>
                 </div>
@@ -331,7 +331,7 @@ get_header(); ?>
               <div class="col-xs-12">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="financial_support" id="financial_support" value="true" <?php checked($financial_support); ?>>
+                    <input type="checkbox" name="financial_support" id="financial_support" value="true" <?php checked( $financial_support ); ?>>
                     <strong>with a one-time gift of:</strong>
                   </label>
                 </div>
@@ -390,7 +390,7 @@ get_header(); ?>
       <hr>
 
       <div class="row">
-        <?php flint_get_sidebar('left'); ?>
+        <?php flint_get_sidebar( 'left' ); ?>
 
         <div id="content" role="main" <?php flint_content_class(); ?>>
 
@@ -412,10 +412,10 @@ get_header(); ?>
                       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="entry-header">
                           <?php $type = get_post_type(); ?>
-                          <?php do_action('flint_open_entry_header_'.$type); ?>
+                          <?php do_action( 'flint_open_entry_header_'.$type ); ?>
 
                           <h2><?php
-                            if (is_single()) {
+                            if ( is_single() ) {
                               echo the_title();
                             } else {
                               echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>';
@@ -423,10 +423,10 @@ get_header(); ?>
                           ?></h2>
 
                           <div class="entry-meta">
-                            <?php do_action('flint_entry_meta_above_'.$type); ?>
+                            <?php do_action( 'flint_entry_meta_above_'.$type ); ?>
                           </div><!-- .entry-meta -->
 
-                          <?php do_action('flint_close_entry_header_'.$type); ?>
+                          <?php do_action( 'flint_close_entry_header_'.$type ); ?>
 
                         </header><!-- .entry-header -->
 
@@ -438,7 +438,7 @@ get_header(); ?>
                         <div class="entry-content">
                           <?php flint_the_content(); ?>
                           <?php
-                          flint_link_pages( array(
+                          flint_link_pages( array( 
                             'before' => '<ul class="pagination">',
                             'after'  => '</ul>',
                           ) ); ?>
@@ -448,7 +448,7 @@ get_header(); ?>
                         <div class="clearfix"></div>
 
                         <footer class="entry-meta clearfix">
-                          <?php do_action('flint_entry_meta_below_post'); ?>
+                          <?php do_action( 'flint_entry_meta_below_post' ); ?>
                         </footer><!-- .entry-meta -->
                       </article><!-- #post-<?php the_ID(); ?> -->
 
@@ -476,11 +476,11 @@ get_header(); ?>
 
         </div><!-- #content -->
 
-        <?php flint_get_sidebar('right'); ?>
+        <?php flint_get_sidebar( 'right' ); ?>
       </div>
     </div>
 
   </div><!-- #primary -->
 
-<?php flint_get_sidebar('footer'); ?>
+<?php flint_get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>

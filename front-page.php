@@ -11,41 +11,41 @@
  */
 
 get_header();
-flint_get_sidebar('header'); ?>
+flint_get_sidebar( 'header' ); ?>
 
   <div id="primary" class="content-area">
 
     <div class="container">
 
       <?php
-      if ( function_exists( 'flint_options' ) ) {
-        $options = flint_options();
-      } else {
-        $options = flint_get_options();
-      }
+        if ( function_exists( 'flint_options' ) ) {
+          $options = flint_options();
+        } else {
+          $options = flint_get_options();
+        }
       ?>
 
       <div class="row">
         <div class="col-xs-12 col-md-9">
           <?php
-          if ( function_exists( 'msx_card_deck_carousel' ) ) {
-            echo msx_card_deck_carousel(
+            if ( function_exists( 'msx_card_deck_carousel' ) ) {
+              echo msx_card_deck_carousel(
               $options['trinity_front_page_hero'],
               array( 'container_class' => 'msx-card-deck-hero', 'image_size' => 'trinity-hero-card' )
             );
-          } else {
-            echo steel_slideshow( $options['trinity_front_page_hero'], 'front-slides' );
-          }
+            } else {
+              echo steel_slideshow( $options['trinity_front_page_hero'], 'front-slides' );
+            }
           ?>
         </div>
 
         <div class="col-xs-12 col-md-3">
           <?php
-          if ( function_exists( 'msx_card_deck_display' ) ) {
-            echo msx_card_deck_display( $options['trinity_front_page_featured'], array( 'container_class' => 'msx-card-deck-featured' ) );
-          } else {
-            echo steel_slideshow( $options['trinity_front_page_featured'] );
-          }
+            if ( function_exists( 'msx_card_deck_display' ) ) {
+              echo msx_card_deck_display( $options['trinity_front_page_featured'], array( 'container_class' => 'msx-card-deck-featured' ) );
+            } else {
+              echo steel_slideshow( $options['trinity_front_page_featured'] );
+            }
           ?>
         </div>
       </div>
@@ -72,5 +72,5 @@ flint_get_sidebar('header'); ?>
 
   </div><!-- #primary -->
 
-<?php flint_get_sidebar('footer'); ?>
+<?php flint_get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>

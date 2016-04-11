@@ -6,7 +6,7 @@
 * @since 0.5.1
 */
 get_header();
-flint_get_sidebar('header');
+flint_get_sidebar( 'header' );
 ?>
 
   <div id="primary" class="content-area container">
@@ -20,13 +20,13 @@ flint_get_sidebar('header');
               <article class="col-xs-12" id="post-<?php the_ID(); ?>">
                 <header class="entry-header">
                   <?php $type = get_post_type(); ?>
-                  <?php do_action('flint_open_entry_header_'.$type); ?>
+                  <?php do_action( 'flint_open_entry_header_'.$type ); ?>
                   <h1 class="entry-title"><?php echo the_title(); ?></h1>
-                  <?php if ( current_user_can('edit_posts') ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
+                  <?php if ( current_user_can( 'edit_posts' ) ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
                   <div class="entry-meta">
-                  <?php do_action('flint_entry_meta_above_'.$type); ?>
+                  <?php do_action( 'flint_entry_meta_above_'.$type ); ?>
                   </div><!-- .entry-meta -->
-                  <?php do_action('flint_close_entry_header_'.$type); ?>
+                  <?php do_action( 'flint_close_entry_header_'.$type ); ?>
                 </header><!-- .entry-header -->
 
                 <?php if ( is_search() ) : ?>
@@ -37,14 +37,14 @@ flint_get_sidebar('header');
                   <div class="entry-content">
                     <?php flint_the_content(); ?>
                     <?php
-                    flint_link_pages( array(
+                    flint_link_pages( array( 
                       'before' => '<ul class="pagination">',
                       'after'  => '</ul>',
                     ) ); ?>
                   </div><!-- .entry-content -->
                 <?php endif; ?>
                 <footer class="entry-meta clearfix">
-                  <?php do_action('flint_entry_meta_below_post'); ?>
+                  <?php do_action( 'flint_entry_meta_below_post' ); ?>
                 </footer><!-- .entry-meta -->
               </article><!-- #post-<?php the_ID(); ?> -->
             </div><!-- .row -->
@@ -102,5 +102,5 @@ flint_get_sidebar('header');
 
 </div><!-- #page -->
 
-<?php flint_get_sidebar('footer'); ?>
+<?php flint_get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>

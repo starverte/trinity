@@ -7,12 +7,12 @@
  */
 
 get_header(); ?>
-<?php flint_get_sidebar('header'); ?>
+<?php flint_get_sidebar( 'header' ); ?>
 
   <section id="primary" class="content-area container">
 
     <?php
-      flint_get_sidebar('left');
+      flint_get_sidebar( 'left' );
 
       $content_class = 'site-content';
       if ( is_active_sidebar( 'left' ) | is_active_sidebar( 'right' ) ) {
@@ -43,8 +43,8 @@ get_header(); ?>
             /**
              * Template actions before title
              */
-            if  ( is_tax() ) { do_action('flint_open_' . single_term_title( '', false ) . '_title'); }
-            else             { do_action('flint_open_archive_title'); }
+            if  ( is_tax() ) { do_action( 'flint_open_' . single_term_title( '', false ) . '_title' ); }
+            else             { do_action( 'flint_open_archive_title' ); }
 
             /**
              * Title of archive page
@@ -56,8 +56,8 @@ get_header(); ?>
             /**
              * Template actions after title
              */
-            if  ( is_tax() ) { do_action('flint_close_' . single_term_title( '', false ) . '_title'); }
-            else             { do_action('flint_close_archive_title'); }
+            if  ( is_tax() ) { do_action( 'flint_close_' . single_term_title( '', false ) . '_title' ); }
+            else             { do_action( 'flint_close_archive_title' ); }
           ?>
         </h1>
         <?php
@@ -90,9 +90,9 @@ get_header(); ?>
 
     </div><!-- #content -->
 
-    <?php flint_get_sidebar('right'); ?>
+    <?php flint_get_sidebar( 'right' ); ?>
 
   </section><!-- #primary -->
 
-<?php flint_get_sidebar('footer'); ?>
+<?php flint_get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>

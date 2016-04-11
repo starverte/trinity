@@ -38,8 +38,8 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
       </div>
 
       <div class="progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round($raised_percent); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
-          <?php echo round($raised_percent, 1); ?>% <span class="hidden-xs">funds </span>raised
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round( $raised_percent ); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
+          <?php echo round( $raised_percent, 1 ); ?>% <span class="hidden-xs">funds </span>raised
         </div>
       </div>
 
@@ -211,12 +211,12 @@ BEGIN OLD TEMPLATE
         }
 
         $raised  = $options['trinity_japan_raised'];
-        $raised_percent = floatval($raised) / 15000 * 100;
+        $raised_percent = floatval( $raised ) / 15000 * 100;
       ?>
 
       <div class="progress" id="jp-progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round($raised_percent); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
-          <?php echo round($raised_percent, 1); ?>% <span class="hidden-xs">funds </span>raised
+        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round( $raised_percent ); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
+          <?php echo round( $raised_percent, 1 ); ?>% <span class="hidden-xs">funds </span>raised
         </div>
       </div>
       <div class="row">
@@ -249,8 +249,8 @@ BEGIN OLD TEMPLATE
               </div>
               <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
                 <select class="form-control" id="benefactor" name="benefactor" required>
-                <?php foreach($benefactors as $key => $value) { ?>
-                  <option value="<?php echo $key; ?>" <?php selected($benefactor, $key) ?>><?php echo $value; ?></option>
+                <?php foreach( $benefactors as $key => $value ) { ?>
+                  <option value="<?php echo $key; ?>" <?php selected( $benefactor, $key ) ?>><?php echo $value; ?></option>
                 <?php } ?>
                 </select>
               </div>
@@ -259,7 +259,7 @@ BEGIN OLD TEMPLATE
               <div class="col-xs-12">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="prayer_support" id="prayer_support" value="true" <?php checked($prayer_support); ?>>
+                    <input type="checkbox" name="prayer_support" id="prayer_support" value="true" <?php checked( $prayer_support ); ?>>
                     <strong>through prayer before, during, and after the trip.</strong>
                   </label>
                 </div>
@@ -269,7 +269,7 @@ BEGIN OLD TEMPLATE
               <div class="col-xs-12">
                 <div class="checkbox">
                   <label>
-                    <input type="checkbox" name="financial_support" id="financial_support" value="true" <?php checked($financial_support); ?>>
+                    <input type="checkbox" name="financial_support" id="financial_support" value="true" <?php checked( $financial_support ); ?>>
                     <strong>with a one-time gift of:</strong>
                   </label>
                 </div>
@@ -328,7 +328,7 @@ BEGIN OLD TEMPLATE
       <hr>
 
       <div class="row">
-        <?php flint_get_sidebar('left'); ?>
+        <?php flint_get_sidebar( 'left' ); ?>
 
         <div id="content" role="main" <?php flint_content_class(); ?>>
 
@@ -350,10 +350,10 @@ BEGIN OLD TEMPLATE
                       <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
                         <header class="entry-header">
                           <?php $type = get_post_type(); ?>
-                          <?php do_action('flint_open_entry_header_'.$type); ?>
+                          <?php do_action( 'flint_open_entry_header_'.$type ); ?>
 
                           <h2><?php
-                            if (is_single()) {
+                            if ( is_single() ) {
                               echo the_title();
                             } else {
                               echo '<a href="' . get_permalink() .'" rel="bookmark">' . get_the_title() . '</a>';
@@ -361,10 +361,10 @@ BEGIN OLD TEMPLATE
                           ?></h2>
 
                           <div class="entry-meta">
-                            <?php do_action('flint_entry_meta_above_'.$type); ?>
+                            <?php do_action( 'flint_entry_meta_above_'.$type ); ?>
                           </div><!-- .entry-meta -->
 
-                          <?php do_action('flint_close_entry_header_'.$type); ?>
+                          <?php do_action( 'flint_close_entry_header_'.$type ); ?>
 
                         </header><!-- .entry-header -->
 
@@ -376,7 +376,7 @@ BEGIN OLD TEMPLATE
                         <div class="entry-content">
                           <?php flint_the_content(); ?>
                           <?php
-                          flint_link_pages( array(
+                          flint_link_pages( array( 
                             'before' => '<ul class="pagination">',
                             'after'  => '</ul>',
                           ) ); ?>
@@ -386,7 +386,7 @@ BEGIN OLD TEMPLATE
                         <div class="clearfix"></div>
 
                         <footer class="entry-meta clearfix">
-                          <?php do_action('flint_entry_meta_below_post'); ?>
+                          <?php do_action( 'flint_entry_meta_below_post' ); ?>
                         </footer><!-- .entry-meta -->
                       </article><!-- #post-<?php the_ID(); ?> -->
 
@@ -414,11 +414,11 @@ BEGIN OLD TEMPLATE
 
         </div><!-- #content -->
 
-        <?php flint_get_sidebar('right'); ?>
+        <?php flint_get_sidebar( 'right' ); ?>
       </div>
     </div>
 
   </div><!-- #primary -->
 
-<?php flint_get_sidebar('footer'); ?>
+<?php flint_get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>

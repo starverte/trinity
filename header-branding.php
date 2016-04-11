@@ -16,11 +16,11 @@ if ( function_exists( 'flint_options' ) ) {
 ?>
 
   <div id="masthead" class="site-header" role="banner">
-    <?php if (current_theme_supports('custom-header')) { ?>
+    <?php if (current_theme_supports( 'custom-header' )) { ?>
       <div class="paper container">
         <?php $header_image = get_header_image(); ?>
           <a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="<?php echo esc_attr( get_bloginfo( 'name', 'display' ) ); ?>" rel="home" class="col-lg-3 col-md-3 col-sm-4 col-xs-6">
-            <!-- <img id="logo" src="<?php header_image(); ?>" alt="<?php echo get_bloginfo('name'); ?> Logo" /> -->
+            <!-- <img id="logo" src="<?php header_image(); ?>" alt="<?php echo get_bloginfo( 'name' ); ?> Logo" /> -->
             <img class="visible-xs visible-sm" id="logo-xs" src="//sharethelife.org/wp-content/uploads/LifePointeChurch_Blue.svg" alt="LifePointe Church Logo" />
             <img class="visible-md visible-lg" id="logo-md" src="//sharethelife.org/wp-content/uploads/LifePointeChurch_Negative.svg" alt="LifePointe Church Logo" />
           </a>

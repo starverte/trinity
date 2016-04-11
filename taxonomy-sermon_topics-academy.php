@@ -7,12 +7,12 @@
  */
 
 get_header(); ?>
-<?php flint_get_sidebar('header'); ?>
+<?php flint_get_sidebar( 'header' ); ?>
 
   <section id="primary" class="content-area container">
 
     <?php
-      flint_get_sidebar('left');
+      flint_get_sidebar( 'left' );
 
       $content_class = 'site-content';
       if ( is_active_sidebar( 'left' ) | is_active_sidebar( 'right' ) ) {
@@ -21,10 +21,10 @@ get_header(); ?>
         }
         else {
           if ( is_active_sidebar( 'left' ) ) {
-            $content_class .= ' col-lg-9 col-md-9 wa-left';
+        $content_class .= ' col-lg-9 col-md-9 wa-left';
           }
           elseif ( is_active_sidebar( 'right' ) ) {
-            $content_class .= ' col-lg-9 col-md-9 wa-right';
+        $content_class .= ' col-lg-9 col-md-9 wa-right';
           }
         }
       }
@@ -57,10 +57,10 @@ get_header(); ?>
 
     </div><!-- #content -->
 
-    <?php flint_get_sidebar('right'); ?>
+    <?php flint_get_sidebar( 'right' ); ?>
 
   </section><!-- #primary -->
 
-<?php flint_get_sidebar('footer'); ?>
+<?php flint_get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>
 

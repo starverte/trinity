@@ -20,16 +20,16 @@ if ( ! empty( $post_custom['item_list'][0] ) ) {
 
 ?>
 
-  <article id="sermon-<?php the_ID(); ?>" <?php post_class('row'); ?>>
+  <article id="sermon-<?php the_ID(); ?>" <?php post_class( 'row' ); ?>>
     <div class="col-lg-4 col-md-4 col-sm-4">
-      <?php flint_the_post_thumbnail('large'); ?>
+      <?php flint_the_post_thumbnail( 'large' ); ?>
     </div>
     <div class="col-lg-8 col-md-8 col-sm-8">
       <header class="entry-header">
-        <?php do_action('flint_open_entry_header_sermon'); ?>
+        <?php do_action( 'flint_open_entry_header_sermon' ); ?>
 
         <h1 class="entry-title"><?php
-          if (is_singular()) {
+          if ( is_singular() ) {
             echo the_title();
           } else {
             $permalink = get_permalink();
@@ -37,24 +37,24 @@ if ( ! empty( $post_custom['item_list'][0] ) ) {
             echo '<a href="' . $permalink .'" rel="bookmark">' . $title . '</a>';
           }
         ?></h1>
-        <?php if ( current_user_can('edit_posts') ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
+        <?php if ( current_user_can( 'edit_posts' ) ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
 
         <div class="entry-meta">
           <?php
             if ( 0 !== $item_list ) {
               if ( 1 < count( $items ) ) {
-                printf(
+                printf( 
                   '%s through %s',
-                  get_the_date( 'F j', reset($items) ),
-                  get_the_date( 'F j, Y', end($items) )
+                  get_the_date( 'F j', reset( $items ) ),
+                  get_the_date( 'F j, Y', end( $items ) )
                 );
               }
             }
           ?>
-          <?php do_action('flint_entry_meta_above_sermon'); ?>
+          <?php do_action( 'flint_entry_meta_above_sermon' ); ?>
         </div><!-- .entry-meta -->
 
-        <?php do_action('flint_close_entry_header_sermon'); ?>
+        <?php do_action( 'flint_close_entry_header_sermon' ); ?>
 
       </header><!-- .entry-header -->
 
@@ -64,7 +64,7 @@ if ( ! empty( $post_custom['item_list'][0] ) ) {
       </div><!-- .entry-summary -->
       <?php else : ?>
       <div class="entry-content">
-        <button class="btn btn-blue" data-toggle="collapse" data-target="#sermon-list-<?php the_ID(); ?>"><?php echo has_term('sermons', 'steel_broadcast_channel') ? 'Sermon List' : 'Sessions'; ?></button>
+        <button class="btn btn-blue" data-toggle="collapse" data-target="#sermon-list-<?php the_ID(); ?>"><?php echo has_term( 'sermons', 'steel_broadcast_channel' ) ? 'Sermon List' : 'Sessions'; ?></button>
         <div class="clearfix"></div>
         <p></p>
         <?php flint_the_content(); ?>
@@ -72,7 +72,7 @@ if ( ! empty( $post_custom['item_list'][0] ) ) {
       <?php endif; ?>
 
       <footer class="entry-meta clearfix">
-      <?php do_action('flint_entry_meta_below_sermon'); ?>
+      <?php do_action( 'flint_entry_meta_below_sermon' ); ?>
       </footer><!-- .entry-meta -->
     </div>
   </article><!-- #series-<?php the_ID(); ?> -->
