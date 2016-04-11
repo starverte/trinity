@@ -15,6 +15,8 @@ function trinity_after_setup_theme() {
     'footer2'   => __( 'Sitemap Right', 'trinity' ),
     'footer3'   => __( 'Social Links' , 'trinity' ),
   ) );
+
+  add_image_size( 'trinity-hero-card', 825, 465, true );
 }
 add_action( 'after_setup_theme', 'trinity_after_setup_theme', 20 );
 
@@ -65,7 +67,11 @@ function trinity_customize_register( $wp_customize ) {
     $defaults = flint_get_option_defaults();
   }
 
-  $slideshows = steel_get_slides('options');
+  if ( function_exists( 'msx_card_deck_list' ) ) {
+    $card_decks = msx_card_deck_list();
+  } else {
+    $card_decks = steel_get_slides();
+  }
 
   /**
    * Static Front Page section
@@ -74,39 +80,59 @@ function trinity_customize_register( $wp_customize ) {
     /**
      * Hero slider setting
      */
-    $wp_customize->add_setting('flint_options[trinity_front_page_hero]', array(
-      'default'           => $defaults['trinity_front_page_hero'],
-      'sanitize_callback' => 'steel_sanitize_get_slides',
-      'capability'        => 'edit_theme_options',
-      'type'              => 'option',
-      'transport'         => 'postMessage',
-    ));
+    if ( function_exists( 'msx_sanitize_card_deck_list' ) ) {
+      $wp_customize->add_setting('flint_options[trinity_front_page_hero]', array(
+        'default'           => $defaults['trinity_front_page_hero'],
+        'sanitize_callback' => 'msx_sanitize_card_deck_list',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+      ));
+    } else {
+      $wp_customize->add_setting('flint_options[trinity_front_page_hero]', array(
+        'default'           => $defaults['trinity_front_page_hero'],
+        'sanitize_callback' => 'steel_sanitize_get_slides',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+      ));
+    }
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_front_page_hero', array(
       'label'    => __('Hero slider', 'flint'),
       'section'  => 'static_front_page',
       'settings' => 'flint_options[trinity_front_page_hero]',
       'priority' => 20,
       'type'     => 'select',
-      'choices'  => $slideshows,
+      'choices'  => $card_decks,
     )));
 
     /**
      * Featured events setting
      */
-    $wp_customize->add_setting('flint_options[trinity_front_page_featured]', array(
-      'default'           => $defaults['trinity_front_page_featured'],
-      'sanitize_callback' => 'steel_sanitize_get_slides',
-      'capability'        => 'edit_theme_options',
-      'type'              => 'option',
-      'transport'         => 'postMessage',
-    ));
+    if ( function_exists( 'msx_sanitize_card_deck_list' ) ) {
+      $wp_customize->add_setting('flint_options[trinity_front_page_featured]', array(
+        'default'           => $defaults['trinity_front_page_featured'],
+        'sanitize_callback' => 'msx_sanitize_card_deck_list',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+      ));
+    } else {
+      $wp_customize->add_setting('flint_options[trinity_front_page_featured]', array(
+        'default'           => $defaults['trinity_front_page_featured'],
+        'sanitize_callback' => 'steel_sanitize_get_slides',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+      ));
+    }
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_front_page_featured', array(
       'label'    => __('Featured Events', 'flint'),
       'section'  => 'static_front_page',
       'settings' => 'flint_options[trinity_front_page_featured]',
       'priority' => 30,
       'type'     => 'select',
-      'choices'  => $slideshows,
+      'choices'  => $card_decks,
     )));
 
   /**
