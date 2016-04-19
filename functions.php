@@ -17,6 +17,7 @@ function trinity_after_setup_theme() {
   ) );
 
   add_image_size( 'trinity-hero-card', 825, 465, true );
+  add_image_size( 'trinity-mt-profile', 400, 400, true );
 }
 add_action( 'after_setup_theme', 'trinity_after_setup_theme', 20 );
 

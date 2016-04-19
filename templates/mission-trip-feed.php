@@ -93,7 +93,7 @@ flint_get_sidebar( 'header' );
           <?php while ( $mt_team->have_posts() ) : $mt_team->the_post(); ?>
             <div class="mt-profile col-xs-6 col-md-3 col-lg-2" id="profile-<?php the_ID(); ?>">
               <h3 class="profile-title"><?php echo the_title(); ?></h3>
-              <?php flint_the_post_thumbnail( 'full', array( 'class' => 'mt-profile-img' ) ); ?>
+              <?php flint_the_post_thumbnail( 'trinity-mt-profile', array( 'class' => 'mt-profile-img' ) ); ?>
             </div><!-- #profile-<?php the_ID(); ?> -->
           <?php endwhile; ?>
           <?php flint_content_nav( 'nav-below' ); ?>

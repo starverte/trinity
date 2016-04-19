@@ -53,7 +53,7 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
                 <h3 class="col-xs-12 profile-title"><?php echo the_title(); ?></h3>
 
                 <div class="mt-profile-left col-xs-5 col-sm-4">
-                  <?php flint_the_post_thumbnail( 'full', array( 'class' => 'mt-profile-img' ) ); ?>
+                  <?php flint_the_post_thumbnail( 'trinity-mt-profile', array( 'class' => 'mt-profile-img' ) ); ?>
                   <button class="btn btn-blue btn-block btn-support" data-support="support-<?php the_ID(); ?>">Pledge support</button>
                 </div>
 
