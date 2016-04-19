@@ -9,71 +9,224 @@
 get_header();
 flint_get_sidebar( 'header' );
 $meta = get_post_meta( $post->ID );
-$banner = $meta['banner'][0];
 $raised_percent = $meta['funds_raised'][0] / $meta['funds_goal'][0];
 $trip_category = 'category_name=' . $meta['trip_category'][0];
 ?>
 
   <div id="primary" class="content-area">
 
-    <?php echo steel_slideshow( 5098 ); ?>
+    <?php flint_the_post_thumbnail( 'full' ); ?>
 
     <div class="banner">
-      <p><?php echo $banner; ?></p>
+      <p><?php echo get_post_meta( get_the_ID(), 'mission_trip_banner', true ); ?></p>
       <a class="btn btn-link" href="#meet-the-team">Meet the Team</a> <a class="btn btn-link" href="#pledge-support">Pledge Support</a> <a class="btn btn-link" href="#follow">Follow Us</a>
     </div>
 
     <div class="container">
 
       <div class="row">
-        <h2 class="col-xs-12" id="#meet-the-team">Meet the Team</h2>
+        <h2 class="col-xs-12" id="meet-the-team">Meet the Team</h2>
       </div>
 
       <div class="row">
-        <!-- INSERT TEAM BIOS -->
+        <?php
+        $mt_team = new WP_Query(
+          array(
+            'order' => 'ASC',
+            'orderby' => 'title',
+            'post_type' => 'steel_profile',
+            'tax_query' => array(
+              array(
+                'taxonomy' => 'steel_team',
+                'field' => 'slug',
+                'terms' => get_post_meta( get_the_ID(), 'mission_trip_team', true ),
+              ),
+            ),
+          )
+        );
+        ?>
+      <?php if ( $mt_team->have_posts() ) : ?>
+          <?php while ( $mt_team->have_posts() ) : $mt_team->the_post(); ?>
+
+            <div class="mt-profile col-xs-12 col-md-6" id="profile-<?php the_ID(); ?>">
+              <div class="row">
+                <h3 class="col-xs-12 profile-title"><?php echo the_title(); ?></h3>
+
+                <div class="mt-profile-left col-xs-5 col-sm-4">
+                  <?php flint_the_post_thumbnail( 'full', array( 'class' => 'mt-profile-img' ) ); ?>
+                  <button class="btn btn-blue btn-block btn-support" data-support="support-<?php the_ID(); ?>">Pledge support</button>
+                </div>
+
+                <div class="mt-profile-content col-xs-7 col-sm-8">
+                  <?php the_content(); ?>
+                </div>
+              </div>
+            </div>
+
+          <?php endwhile; ?>
+          <?php flint_content_nav( 'nav-below' ); ?>
+        <?php else : ?>
+          <?php get_template_part( 'no-results', 'index' ); ?>
+        <?php endif; ?>
+        <?php wp_reset_query(); ?>
+
+
       </div>
 
       <div class="row">
-        <h2 class="col-xs-12" id="#pledge-support">Pledge Support</h2>
+        <h2 class="col-xs-12" id="pledge-support">Pledge Support</h2>
       </div>
 
-      <div class="progress">
+      <?php
+
+        $raised  = get_post_meta( get_the_ID(), 'mission_trip_raised', true );
+        $goal = get_post_meta( get_the_ID(), 'mission_trip_goal', true );
+        $raised_percent = floatval( $raised ) / floatval( $goal ) * 100;
+      ?>
+
+      <div class="progress" id="mt-progress">
         <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round( $raised_percent ); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
           <?php echo round( $raised_percent, 1 ); ?>% <span class="hidden-xs">funds </span>raised
         </div>
       </div>
 
       <div class="row">
-        <!-- INSERT SUPPORT FORMS -->
+        <h4 class="col-xs-12">Give through PayPal</h4>
+        <p class="col-xs-12">Please fill out the following form and complete the transaction via PayPal. You do not have to have a PayPal account. <strong>Approximately 2.5% of your donation will go to transaction fees.</strong> You can use <a href="https://www.paypal-donations.com/pp-charity/web.us/charity_i.jsp?id=72286&amp;s=3" target="_gift">PayPal Giving Fund</a> to send <strong>100% of your donation</strong> to LifePointe. Just send us an <a href="mailto:give@sharethelife.org?subject=Gift%20Designation">email</a> to let us know the designation.</p>
+        <form action="https://www.paypal.com/cgi-bin/webscr" class="form-horizontal col-xs-12" id="paypal_giving" method="post" name="paypal_giving">
+          <input name="business" type="hidden" value="UTZXJBMHW42LL">
+          <input name="cmd" type="hidden" value="_donations">
+          <input name="add" type="hidden" value="1">
+          <input name="item_name" type="hidden" value="<?php echo get_post_meta( get_the_ID(), 'mission_trip_country', true ); ?> Mission Trip">
+          <input name="currency_code" type="hidden" value="USD">
+          <div class="form-group">
+            <h4 class="col-xs-6 col-sm-4 col-md-5 col-lg-4"></h4>
+            <h4 class="col-xs-6 col-sm-4 col-md-5 col-lg-4">Donation Amount</h4>
+          </div>
+          <div class="form-group">
+            <?php
+            $benefactors = new WP_Query(
+              array(
+                'order' => 'ASC',
+                'orderby' => 'title',
+                'post_type' => 'steel_profile',
+                'tax_query' => array(
+                  array(
+                    'taxonomy' => 'steel_team',
+                    'field' => 'slug',
+                    'terms' => get_post_meta( get_the_ID(), 'mission_trip_team', true ),
+                  ),
+                ),
+              )
+            );
+            ?>
+            <label for="os0" class="col-xs-6 col-sm-4 col-md-5 col-lg-4">I would love to support</label>
+            <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
+              <input name="on0" type="hidden" value="Benefactor">
+              <select class="form-control " name="os0" required="">
+                <option value="<?php echo get_post_meta( get_the_ID(), 'mission_trip_country', true ); ?> team">
+                  the <?php echo get_post_meta( get_the_ID(), 'mission_trip_country', true ); ?> team
+                </option>
+                <?php if ( $benefactors->have_posts() ) : ?>
+                  <?php while ( $benefactors->have_posts() ) : $benefactors->the_post(); ?>
+                    <option id="support-<?php the_ID(); ?>" value="<?php the_title(); ?>">
+                      <?php the_title(); ?>
+                    </option>
+                  <?php endwhile; ?>
+                <?php endif; // $benefactors->have_posts(). ?>
+                <?php wp_reset_query(); ?>
+              </select>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-xs-6 col-sm-4 col-md-5 col-lg-4" for="total">with a one-time gift of</label>
+            <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
+              <div class="input-group">
+                <span class="input-group-addon">$</span><input class="form-control disabled" id="amount" name="amount" type="number" placeholder="150.00">
+              </div>
+            </div>
+          </div>
+          <div class="form-group">
+            <label class="col-sm-12" for="notes">Additional Notes</label>
+            <div class="col-sm-12">
+              <textarea class="form-control" id="notes" name="notes" rows="3"></textarea>
+            </div>
+          </div>
+          <div class="form-group">
+            <div class="col-sm-6">
+              <button class="btn btn-blue btn-block" type="submit">Submit</button>
+            </div>
+            <div class="col-sm-6">
+              <button class="btn btn-default btn-block" type="reset">Cancel</button>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="row">
+        <h2 class="col-xs-12" id="follow">Follow Us</h2>
       </div>
 
       <div class="row">
 
-        <?php flint_get_sidebar( 'left' ); ?>
+        <div class="col-xs-12" id="content" role="main">
+          <?php
+          $mt_posts = new WP_Query(
+            array(
+              'category_name' => get_post_meta( get_the_ID(), 'mission_trip_category', true ),
+            )
+          );
+          ?>
+          <?php if ( $mt_posts->have_posts() ) : ?>
+            <?php while ( $mt_posts->have_posts() ) : $mt_posts->the_post(); ?>
+              <div class="row">
+                <article id="post-<?php the_ID(); ?>" <?php flint_post_class(); ?>>
+                  <header class="entry-header">
+                    <?php do_action( 'flint_open_entry_header_' . $type ); ?>
 
-        <div id="content" role="main" <?php flint_content_class(); ?>>
+                    <h1 class="entry-title"><?php
+                      if ( is_single() ) {
+                        echo the_title();
+                      } else {
+                        echo '<a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a>';
+                      } ?></h1>
+                    <?php edit_post_link( __( 'Edit Post', 'flint' ), '', '', 0, 'btn btn-default btn-sm btn-edit hidden-xs' ); ?>
 
-        <?php $trip_posts = new WP_Query( $trip_category ); ?>
+                    <div class="entry-meta">
+                      <?php do_action( 'flint_entry_meta_above_' . $type ); ?>
+                    </div><!-- .entry-meta -->
 
-        <?php if ( $trip_posts->have_posts() ) : ?>
+                    <?php do_action( 'flint_close_entry_header_' . $type ); ?>
 
-          <?php while ( $trip_posts->have_posts() ) : $trip_posts->the_post(); ?>
+                  </header><!-- .entry-header -->
 
-            <?php get_template_part( 'format', get_post_format() ); ?>
+                  <?php if ( is_search() ) : ?>
+                  <div class="entry-summary">
+                    <?php the_excerpt(); ?>
+                  </div><!-- .entry-summary -->
+                  <?php else : ?>
+                  <div class="entry-content">
+                    <?php flint_the_content(); ?>
+                    <?php
+                    flint_link_pages( array(
+                      'before' => '<ul class="pagination">',
+                      'after'  => '</ul>',
+                    ) ); ?>
+                  </div><!-- .entry-content -->
+                  <?php endif; ?>
 
-          <?php endwhile; ?>
-
-          <?php flint_content_nav( 'nav-below' ); ?>
-
-        <?php else : ?>
-
-          <?php get_template_part( 'no-results', 'index' ); ?>
-
-        <?php endif; ?>
-
+                  <footer class="entry-meta clearfix">
+                    <?php do_action( 'flint_entry_meta_below_post' ); ?>
+                  </footer><!-- .entry-meta -->
+                </article><!-- #post-<?php the_ID(); ?> -->
+              </div><!-- .row -->
+            <?php endwhile; ?>
+            <?php flint_content_nav( 'nav-below' ); ?>
+          <?php else : ?>
+            <p><em>Nothing here yet. Check back soon.</em></p>
+          <?php endif; ?>
+          <?php wp_reset_query(); ?>
         </div><!-- #content -->
-
-        <?php flint_get_sidebar( 'right' ); ?>
 
       </div><!-- .row -->
 
@@ -82,343 +235,6 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
   </div><!-- #primary -->
 
 </div><!-- #page -->
-
-<?php flint_get_sidebar( 'footer' ); ?>
-<?php get_footer(); ?>
-
-
-<!--
-==================
-BEGIN OLD TEMPLATE
-==================
--->
-  <div id="primary" class="content-area">
-
-    <div class="container">
-      <div class="row">
-        <h2 class="col-xs-12" id="meet-the-team">Meet the Team</h2>
-      </div>
-      <div class="row">
-        <div class="jp-profile col-xs-12 col-md-6">
-          <div class="row">
-            <h3 class="col-xs-12">Matt Beall</h3>
-            <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_matt_profile.jpg" alt="Matt Beall">
-              <button class="btn btn-blue btn-block btn-support" data-support="matt">Pledge support</button>
-            </div>
-            <div class="jp-profile-content col-xs-7 col-sm-8">
-              <p>Matt is a recent graduate from CSU, and the Founder and President of Star Verte LLC, a graphic design and website development firm. He loves others through service, and sees this trip as an opportunity for spiritual growth and extending God's love to Japan.</p>
-              <p><strong>Prayer requests</strong>
-                <ul>
-                  <li>Self-discipline and spiritual growth</li>
-                  <li>All barriers to going on the trip be removed</li>
-                  <li>No problems arise with Star Verte LLC before or during the trip</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="jp-profile col-xs-12 col-md-6">
-          <div class="row">
-            <h3 class="col-xs-12">Josiah Burke</h3>
-            <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_josiah_profile.jpg" alt="Josiah Burke">
-              <button class="btn btn-blue btn-block btn-support" data-support="josiah">Pledge support</button>
-            </div>
-            <div class="jp-profile-content col-xs-7 col-sm-8">
-              <p>Josiah is a 20 year old college student studying Criminal Justice. He is going to Japan, following Jesus' commission to make disciples in all nations. Josiah hopes to gain a new perspective on humanity in general and discover if God is calling him to lifelong missions.</p>
-              <p><strong>Prayer requests</strong>
-                <ul>
-                  <li>Raise necessary funds</li>
-                  <li>Finish spring semester well, allowing more time to prepare for trip</li>
-                  <li>Be a good steward for Christ</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="jp-profile col-xs-12 col-md-6">
-          <div class="row">
-            <h3 class="col-xs-12">Wilaiwan Northrop</h3>
-            <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_wilaiwan_profile.jpg" alt="Wilaiwan Northrop">
-              <button class="btn btn-blue btn-block btn-support" data-support="wilaiwan">Pledge support</button>
-            </div>
-            <div class="jp-profile-content col-xs-7 col-sm-8">
-              <p>Wilaiwan accepted Jesus Christ as her Savior in sixth grade, and loves teaching children about the gospel and serving the Lord. Her objective for Japan is to be obedient to God's calling, and learn to trust and depend on God.</p>
-              <p><strong>Prayer requests</strong>
-                <ul>
-                  <li>Wisdom and favor from God to serve Him best</li>
-                  <li>God's will be done in her life</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="jp-profile col-xs-12 col-md-6">
-          <div class="row">
-            <h3 class="col-xs-12">Whitney Paxton</h3>
-            <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_whitney_profile.jpg" alt="Whitney Paxton">
-              <button class="btn btn-blue btn-block btn-support" data-support="whitney">Pledge support</button>
-            </div>
-            <div class="jp-profile-content col-xs-7 col-sm-8">
-              <p>Whitney is majoring in Humanities with an emphasis in Asian Studies at the University of Colorado in Boulder. The Japanese have one of the most beautiful countries and cultures. She wants to spread God's love, and let them know the hope and joy that comes from Jesus.</p>
-              <p><strong>Prayer requests</strong>
-                <ul>
-                  <li>Be joyful and open to new experiences</li>
-                  <li>Be brave and given the words from the Holy Spirit to share her faith</li>
-                  <li>The Japanese will see God through her and the team</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-        <div class="jp-profile col-xs-12 col-md-6">
-          <div class="row">
-            <h3 class="col-xs-12">Megan Spiegel</h3>
-            <div class="jp-profile-left col-xs-5 col-sm-4">
-              <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_megan_profile.jpg" alt="Megan Spiegel">
-              <button class="btn btn-blue btn-block btn-support" data-support="megan">Pledge support</button>
-            </div>
-            <div class="jp-profile-content col-xs-7 col-sm-8">
-              <p>Megan married her husband, Josh, in 2007 and they have a daughter AdiLynn, who is a precious part of their family. They enjoy camping, snowboarding, hunting, fishing, playing games and photography. Megan loves and is certain God will change her life, and strengthen her relationship with Him through this trip.</p>
-              <p><strong>Prayer requests</strong>
-                <ul>
-                  <li>Josh and AdiLynn</li>
-                  <li>Humility, energy, and safety</li>
-                  <li>God's presence and guidance</li>
-                  <li>Inspiration from the Holy Spirit to explain the gospel clearly</li>
-                  <li>Opportunities for the gospel to be heard</li>
-                </ul>
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="row">
-        <h2 class="col-xs-12" id="pledge-support">Pledge Support</h2>
-      </div>
-
-      <?php
-        if ( function_exists( 'flint_options' ) ) {
-          $options = flint_options();
-        } else {
-          $options = flint_get_options();
-        }
-
-        $raised  = $options['trinity_japan_raised'];
-        $raised_percent = floatval( $raised ) / 15000 * 100;
-      ?>
-
-      <div class="progress" id="jp-progress">
-        <div class="progress-bar progress-bar-danger" role="progressbar" aria-valuenow="<?php echo round( $raised_percent ); ?>" aria-valuemin="0" aria-valuemax="100" style="width: <?php echo $raised_percent; ?>%;">
-          <?php echo round( $raised_percent, 1 ); ?>% <span class="hidden-xs">funds </span>raised
-        </div>
-      </div>
-      <div class="row">
-        <small class="col-xs-12 text-right">Last updated: <?php echo $options['trinity_japan_raised_updated']; ?></small>
-      </div>
-      <div class="row">
-        <div class="col-xs-12">
-          <p><strong>This form is still under development. It requires JavaScript and will not work if pop-ups are blocked</strong>. If you have any problems, please <a href="http://sharethelife.org/im-new/contact-us/">let us know</a> with as much detail as possible.</p>
-          <div id="form_alert"><?php echo $alert; ?></div>
-          <form class="form-horizontal" id="paypal_giving" method="post" action="<?php echo get_permalink(); ?>#pledge-support" onsubmit="return steel_validate()">
-            <div class="form-group form-validate" data-target="#first_name" data-required="true" data-type="text" data-title="First Name">
-              <div class="col-xs-12">
-                <label class="control-label" for="first_name">First Name</label>
-              </div>
-              <div class="col-xs-12">
-                <input type="text" class="form-control" id="first_name" name="first_name" placeholder="First Name" value="<?php echo $first_name; ?>" required>
-              </div>
-            </div>
-            <div class="form-group form-validate" data-target="#last_name" data-required="true" data-type="text" data-title="Last Name">
-              <div class="col-xs-12">
-                <label class="control-label" for="last_name">Last Name</label>
-              </div>
-              <div class="col-xs-12">
-                <input type="text" class="form-control" id="last_name" name="last_name" placeholder="Last Name" value="<?php echo $last_name; ?>" required>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-                <label class="control-label" for="benefactor">I would love to support</label>
-              </div>
-              <div class="col-xs-12 col-sm-4 col-md-3 col-lg-2">
-                <select class="form-control" id="benefactor" name="benefactor" required>
-                <?php foreach ( $benefactors as $key => $value ) { ?>
-                  <option value="<?php echo $key; ?>" <?php selected( $benefactor, $key ) ?>><?php echo $value; ?></option>
-                <?php } ?>
-                </select>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-12">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="prayer_support" id="prayer_support" value="true" <?php checked( $prayer_support ); ?>>
-                    <strong>through prayer before, during, and after the trip.</strong>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group">
-              <div class="col-xs-12">
-                <div class="checkbox">
-                  <label>
-                    <input type="checkbox" name="financial_support" id="financial_support" value="true" <?php checked( $financial_support ); ?>>
-                    <strong>with a one-time gift of:</strong>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group" id="amt_dec_group">
-              <div class="col-xs-offset-1 col-xs-3">
-                <div class="input-group">
-                  <span class="input-group-addon">$</span>
-                  <input type="number" class="form-control" id="amt_dec" name="amt_dec" value="<?php echo $amt_dec; ?>" placeholder="150.00">
-                </div>
-              </div>
-            </div>
-
-            <div class="form-group">
-              <div class="col-xs-offset-1 col-xs-11">
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="paypal_account" id="paypal_account_true" value="true" required>
-                    <strong>I have a PayPal account</strong> or will create one<br>
-                    <small>100% of your donation will go to LifePointe Church</small>
-                  </label>
-                </div>
-              </div>
-              <div class="col-xs-offset-1 col-xs-11">
-                <div class="radio">
-                  <label>
-                    <input type="radio" name="paypal_account" id="paypal_account_false" value="false" required>
-                    <strong>I do not have a PayPal account</strong><br>
-                    <small>Approximately 2.5% of your donation will go to transaction fees</small>
-                  </label>
-                </div>
-              </div>
-            </div>
-            <div class="form-group" data-target="#notes" data-parent="other">
-              <div class="col-xs-12">
-                <label class="control-label" for="notes">Additional Notes</label>
-              </div>
-              <div class="col-xs-12">
-                <textarea class="form-control" name="notes" id="notes" rows="3"><?php echo $notes; ?></textarea>
-              </div>
-            </div>
-            <input type="hidden" name="session" id="session" value="<?php echo $_SESSION['session']; ?>">
-            <div class="form-group">
-              <div class="col-xs-6">
-                <button type="submit" class="btn btn-blue btn-block steel-tooltip" data-toggle="tooltip" data-placement="top" title="Please verify that you have entered all required information correctly.">Submit Pledge</a>
-              </div>
-              <div class="col-xs-6">
-                <button type="reset" class="btn btn-default btn-block">Cancel</button>
-              </div>
-            </div>
-          </form>
-        </div>
-      </div>
-
-      <hr>
-
-      <div class="row">
-        <?php flint_get_sidebar( 'left' ); ?>
-
-        <div id="content" role="main" <?php flint_content_class(); ?>>
-
-          <div class="col-xs-12">
-
-            <h2 id="follow">Follow Us</h2>
-
-            <?php $japan_posts = new WP_Query( 'category_name=jp15' ); ?>
-
-            <?php if ( $japan_posts->have_posts() ) : ?>
-
-              <div class="row">
-
-                <?php while ( $japan_posts->have_posts() ) : $japan_posts->the_post(); ?>
-
-                  <div class="col-md-4">
-
-                      <?php flint_post_thumbnail(); ?>
-                      <article id="post-<?php the_ID(); ?>" <?php post_class(); ?>>
-                        <header class="entry-header">
-                          <?php $type = get_post_type(); ?>
-                          <?php do_action( 'flint_open_entry_header_' . $type ); ?>
-
-                          <h2><?php
-                            if ( is_single() ) {
-                              echo the_title();
-                            } else {
-                              echo '<a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a>';
-                            }
-                          ?></h2>
-
-                          <div class="entry-meta">
-                            <?php do_action( 'flint_entry_meta_above_' . $type ); ?>
-                          </div><!-- .entry-meta -->
-
-                          <?php do_action( 'flint_close_entry_header_' . $type ); ?>
-
-                        </header><!-- .entry-header -->
-
-                        <?php if ( is_search() ) : ?>
-                        <div class="entry-summary">
-                          <?php the_excerpt(); ?>
-                        </div><!-- .entry-summary -->
-                        <?php else : ?>
-                        <div class="entry-content">
-                          <?php flint_the_content(); ?>
-                          <?php
-                          flint_link_pages( array(
-                            'before' => '<ul class="pagination">',
-                            'after'  => '</ul>',
-                          ) ); ?>
-                        </div><!-- .entry-content -->
-                        <?php endif; ?>
-
-                        <div class="clearfix"></div>
-
-                        <footer class="entry-meta clearfix">
-                          <?php do_action( 'flint_entry_meta_below_post' ); ?>
-                        </footer><!-- .entry-meta -->
-                      </article><!-- #post-<?php the_ID(); ?> -->
-
-                    </div><!-- .col-md-4 -->
-
-                <?php endwhile; ?>
-
-                <?php flint_content_nav( 'nav-below' ); ?>
-
-                <?php wp_reset_postdata(); ?>
-
-              </div><!-- .row -->
-
-            <?php else : ?>
-
-              <div class="row">
-
-                <?php get_template_part( 'no-results', 'archive' ); ?>
-
-              </div><!-- .row -->
-
-            <?php endif; ?>
-
-          </div>
-
-        </div><!-- #content -->
-
-        <?php flint_get_sidebar( 'right' ); ?>
-      </div>
-    </div>
-
-  </div><!-- #primary -->
 
 <?php flint_get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>
