@@ -26,7 +26,7 @@ flint_get_sidebar( 'header' );
             <div class="row">
               <article id="post-<?php the_ID(); ?>" <?php flint_post_class(); ?>>
                 <header class="entry-header">
-                  <?php do_action( 'flint_open_entry_header_' . $type ); ?>
+                  <?php do_action( 'flint_open_entry_header_post' ); ?>
 
                   <h1 class="entry-title"><?php
                     if ( is_single() ) {
@@ -37,10 +37,10 @@ flint_get_sidebar( 'header' );
                   <?php edit_post_link( __( 'Edit Post', 'flint' ), '', '', 0, 'btn btn-default btn-sm btn-edit hidden-xs' ); ?>
 
                   <div class="entry-meta">
-                    <?php do_action( 'flint_entry_meta_above_' . $type ); ?>
+                    <?php do_action( 'flint_entry_meta_above_post' ); ?>
                   </div><!-- .entry-meta -->
 
-                  <?php do_action( 'flint_close_entry_header_' . $type ); ?>
+                  <?php do_action( 'flint_close_entry_header_post' ); ?>
 
                 </header><!-- .entry-header -->
 
