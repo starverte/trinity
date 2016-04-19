@@ -54,7 +54,7 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
 
                 <div class="mt-profile-left col-xs-5 col-sm-4">
                   <?php flint_the_post_thumbnail( 'trinity-mt-profile', array( 'class' => 'mt-profile-img' ) ); ?>
-                  <button class="btn btn-blue btn-block btn-support" data-support="support-<?php the_ID(); ?>">Pledge support</button>
+                  <button class="btn btn-blue btn-block btn-support" data-support="<?php the_title(); ?>">Pledge support</button>
                 </div>
 
                 <div class="mt-profile-content col-xs-7 col-sm-8">
@@ -123,7 +123,7 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
             <label for="os0" class="col-xs-6 col-sm-4 col-md-5 col-lg-4">I would love to support</label>
             <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
               <input name="on0" type="hidden" value="Benefactor">
-              <select class="form-control " name="os0" required="">
+              <select class="form-control" id="os0" name="os0" required="">
                 <option value="<?php echo get_post_meta( get_the_ID(), 'mission_trip_country', true ); ?> team">
                   the <?php echo get_post_meta( get_the_ID(), 'mission_trip_country', true ); ?> team
                 </option>

@@ -4,7 +4,7 @@ jQuery(".btn-support").click(function() {
   }, 1000);
 
   var benefactor = jQuery(this).data('support');
-  jQuery('#benefactor option').filter(function() {
+  jQuery('#os0 option').filter(function() {
     return (benefactor === jQuery(this).val());
   }).prop('selected', true);
 });
