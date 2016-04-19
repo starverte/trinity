@@ -44,6 +44,18 @@ function trinity_enqueue_scripts() {
     wp_enqueue_script( 'japan-form', get_stylesheet_directory_uri() . '/js/japan.js', array( 'jquery' ), '0.2.1', true );
     wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array( 'jquery' ), '0.2.1', true );
   }
+
+  /**
+   * If using Mission Trip page template, loads Javascript
+   */
+  if (
+    is_page_template( 'templates/mission-trip-archive.php' ) ||
+    is_page_template( 'templates/mission-trip-feed.php' ) ||
+    is_page_template( 'templates/mission-trip-support.php' )
+  ) {
+    wp_enqueue_script( 'mt-form', get_stylesheet_directory_uri() . '/js/mission-trip.js', array( 'jquery' ), '0.7.0', true );
+    wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array( 'jquery' ), '0.2.1', true );
+  }
 }
 add_action( 'wp_enqueue_scripts', 'trinity_enqueue_scripts' );
 
