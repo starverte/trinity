@@ -516,3 +516,6 @@ fieldset[disabled] .btn-gray.active {
   font-size: 24px;
   line-height: 32px;
 }
+.page-template-mission-trip-archive article {
+  min-height: 500px;
+}

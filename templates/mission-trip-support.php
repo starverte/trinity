@@ -53,8 +53,8 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
                 <h3 class="col-xs-12 profile-title"><?php echo the_title(); ?></h3>
 
                 <div class="mt-profile-left col-xs-5 col-sm-4">
-                  <?php flint_the_post_thumbnail( 'full', array( 'class' => 'mt-profile-img' ) ); ?>
-                  <button class="btn btn-blue btn-block btn-support" data-support="support-<?php the_ID(); ?>">Pledge support</button>
+                  <?php flint_the_post_thumbnail( 'trinity-mt-profile', array( 'class' => 'mt-profile-img' ) ); ?>
+                  <button class="btn btn-blue btn-block btn-support" data-support="<?php the_title(); ?>">Pledge support</button>
                 </div>
 
                 <div class="mt-profile-content col-xs-7 col-sm-8">
@@ -123,7 +123,7 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
             <label for="os0" class="col-xs-6 col-sm-4 col-md-5 col-lg-4">I would love to support</label>
             <div class="col-xs-6 col-sm-4 col-md-5 col-lg-4">
               <input name="on0" type="hidden" value="Benefactor">
-              <select class="form-control " name="os0" required="">
+              <select class="form-control" id="os0" name="os0" required="">
                 <option value="<?php echo get_post_meta( get_the_ID(), 'mission_trip_country', true ); ?> team">
                   the <?php echo get_post_meta( get_the_ID(), 'mission_trip_country', true ); ?> team
                 </option>
@@ -182,7 +182,7 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
               <div class="row">
                 <article id="post-<?php the_ID(); ?>" <?php flint_post_class(); ?>>
                   <header class="entry-header">
-                    <?php do_action( 'flint_open_entry_header_' . $type ); ?>
+                    <?php do_action( 'flint_open_entry_header_post' ); ?>
 
                     <h1 class="entry-title"><?php
                       if ( is_single() ) {
@@ -193,10 +193,10 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
                     <?php edit_post_link( __( 'Edit Post', 'flint' ), '', '', 0, 'btn btn-default btn-sm btn-edit hidden-xs' ); ?>
 
                     <div class="entry-meta">
-                      <?php do_action( 'flint_entry_meta_above_' . $type ); ?>
+                      <?php do_action( 'flint_entry_meta_above_post' ); ?>
                     </div><!-- .entry-meta -->
 
-                    <?php do_action( 'flint_close_entry_header_' . $type ); ?>
+                    <?php do_action( 'flint_close_entry_header_post' ); ?>
 
                   </header><!-- .entry-header -->
 

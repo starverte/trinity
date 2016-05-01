@@ -17,6 +17,7 @@ function trinity_after_setup_theme() {
   ) );
 
   add_image_size( 'trinity-hero-card', 825, 465, true );
+  add_image_size( 'trinity-mt-profile', 400, 400, true );
 }
 add_action( 'after_setup_theme', 'trinity_after_setup_theme', 20 );
 
@@ -41,6 +42,14 @@ function trinity_enqueue_scripts() {
    */
   if ( is_page_template( 'templates/japan.php' ) ) {
     wp_enqueue_script( 'japan-form', get_stylesheet_directory_uri() . '/js/japan.js', array( 'jquery' ), '0.2.1', true );
+    wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array( 'jquery' ), '0.2.1', true );
+  }
+
+  /**
+   * If using Mission Trip page template, loads Javascript
+   */
+  if ( is_page_template( 'templates/mission-trip-support.php' ) ) {
+    wp_enqueue_script( 'mt-form', get_stylesheet_directory_uri() . '/js/mission-trip.js', array( 'jquery' ), '0.7.0', true );
     wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array( 'jquery' ), '0.2.1', true );
   }
 }

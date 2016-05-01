@@ -2,102 +2,117 @@
 /**
  * Template Name: Mission Trip (archive)
  *
- * @package Flint\Trinity
- * @since 0.5.1
+ * @package Flint/Trinity
+ * @since 0.7
  */
 
 get_header();
 flint_get_sidebar( 'header' );
+$trip_category = 'category_name=' . $meta['trip_category'][0];
 ?>
 
-  <div id="primary" class="content-area container">
-    <div class="row">
-      <div class="col-xs-12 col-sm-8 col-md-9 col-lg-10" id="content" role="main">
-        <img src="//sharethelife.org/wp-content/uploads/jp15_banner_online_japan.png" alt="Japan 2015">
-        <?php $japan_posts = new WP_Query( 'category_name=jp15' ); ?>
-        <?php if ( $japan_posts->have_posts() ) : ?>
-          <?php while ( $japan_posts->have_posts() ) : $japan_posts->the_post(); ?>
-            <div class="row">
-              <article class="col-xs-12" id="post-<?php the_ID(); ?>">
-                <header class="entry-header">
-                  <?php $type = get_post_type(); ?>
-                  <?php do_action( 'flint_open_entry_header_' . $type ); ?>
-                  <h1 class="entry-title"><?php echo the_title(); ?></h1>
-                  <?php if ( current_user_can( 'edit_posts' ) ) { ?><a class="btn btn-default btn-sm btn-edit hidden-xs" href="<?php echo get_edit_post_link(); ?>">Edit</a><?php } ?>
-                  <div class="entry-meta">
-                  <?php do_action( 'flint_entry_meta_above_' . $type ); ?>
-                  </div><!-- .entry-meta -->
-                  <?php do_action( 'flint_close_entry_header_' . $type ); ?>
-                </header><!-- .entry-header -->
+  <div id="primary" class="content-area">
 
-                <?php if ( is_search() ) : ?>
-                  <div class="entry-summary">
-                    <?php the_excerpt(); ?>
-                  </div><!-- .entry-summary -->
-                <?php else : ?>
-                  <div class="entry-content">
-                    <?php flint_the_content(); ?>
-                    <?php
-                    flint_link_pages( array(
-                      'before' => '<ul class="pagination">',
-                      'after'  => '</ul>',
-                    ) ); ?>
-                  </div><!-- .entry-content -->
-                <?php endif; ?>
-                <footer class="entry-meta clearfix">
-                  <?php do_action( 'flint_entry_meta_below_post' ); ?>
-                </footer><!-- .entry-meta -->
-              </article><!-- #post-<?php the_ID(); ?> -->
-            </div><!-- .row -->
+    <?php flint_the_post_thumbnail( 'full' ); ?>
+
+    <div class="banner">
+      <p><?php echo get_post_meta( get_the_ID(), 'mission_trip_banner', true ); ?></p>
+      <a class="btn btn-link" href="#meet-the-team">Meet the Team</a>
+      <a class="btn btn-link" href="#follow">Trip Log</a>
+    </div>
+
+    <div class="container">
+
+      <div class="row">
+        <h2 class="col-xs-12" id="meet-the-team">Meet the Team</h2>
+      </div>
+
+      <div class="row">
+        <?php
+        $mt_team = new WP_Query(
+          array(
+            'order' => 'ASC',
+            'orderby' => 'title',
+            'post_type' => 'steel_profile',
+            'tax_query' => array(
+              array(
+                'taxonomy' => 'steel_team',
+                'field' => 'slug',
+                'terms' => get_post_meta( get_the_ID(), 'mission_trip_team', true ),
+              ),
+            ),
+          )
+        );
+        ?>
+      <?php if ( $mt_team->have_posts() ) : ?>
+          <?php while ( $mt_team->have_posts() ) : $mt_team->the_post(); ?>
+
+            <div class="mt-profile col-xs-12 col-sm-6 col-md-3 col-lg-2" id="profile-<?php the_ID(); ?>">
+                <h3 class="profile-title"><?php echo the_title(); ?></h3>
+                <?php flint_the_post_thumbnail( 'trinity-mt-profile', array( 'class' => 'mt-profile-img' ) ); ?>
+            </div>
+
           <?php endwhile; ?>
           <?php flint_content_nav( 'nav-below' ); ?>
         <?php else : ?>
           <?php get_template_part( 'no-results', 'index' ); ?>
         <?php endif; ?>
-      </div><!-- #content -->
-
-      <?php
-        if ( function_exists( 'flint_options' ) ) {
-          $options = flint_options();
-        } else {
-          $options = flint_get_options();
-        }
-      ?>
-
-      <h2 class="col-xs-12 col-sm-4 col-md-3 col-lg-2" id="events">Up Next</h2>
-
-      <div class="jp-profile col-xs-12 col-sm-4 col-md-3 col-lg-2">
-        <?php echo $options['trinity_japan_up_next']; ?>
+        <?php wp_reset_query(); ?>
       </div>
 
-      <h2 class="col-xs-12 col-sm-4 col-md-3 col-lg-2" id="meet-the-team">Meet the Team</h2>
-
-      <div class="jp-profile col-xs-6 col-md-3 col-lg-2">
-        <h3>Matt Beall</h3>
-        <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_matt_profile.jpg" alt="Matt Beall">
+      <div class="row">
+        <h2 class="col-xs-12" id="follow">Trip Log</h2>
       </div>
 
-      <div class="jp-profile col-xs-6 col-md-3 col-lg-2">
-        <h3>Josiah Burk</h3>
-        <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_josiah_profile.jpg" alt="Josiah Burk">
-      </div>
+      <div class="row">
 
-      <div class="jp-profile col-xs-6 col-md-3 col-lg-2">
-        <h3>Wilaiwan Northrop</h3>
-        <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_wilaiwan_profile.jpg" alt="Wilaiwan Northrop">
-      </div>
+        <div class="col-xs-12" id="content" role="main">
+          <?php
+          $mt_posts = new WP_Query(
+            array(
+              'category_name' => get_post_meta( get_the_ID(), 'mission_trip_category', true ),
+            )
+          );
+          ?>
+          <?php if ( $mt_posts->have_posts() ) : ?>
+            <div class="row">
+            <?php while ( $mt_posts->have_posts() ) : $mt_posts->the_post(); ?>
+                <article id="post-<?php the_ID(); ?>" <?php post_class( 'col-xs-12 col-sm-6 col-md-4' ); ?>>
+                  <header class="entry-header">
+                    <?php do_action( 'flint_open_entry_header_post' ); ?>
 
-      <div class="jp-profile col-xs-6 col-md-3 col-lg-2">
-        <h3>Whitney Paxton</h3>
-        <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_whitney_profile.jpg" alt="Whitney Paxton">
-      </div>
+                    <h1 class="entry-title"><?php echo '<a href="' . get_permalink() . '" rel="bookmark">' . get_the_title() . '</a>'; ?></h1>
 
-      <div class="jp-profile col-xs-6 col-md-3 col-lg-2">
-        <h3>Megan Spiegel</h3>
-        <img class="jp-profile-img" src="//sharethelife.org/wp-content/uploads/jp15_megan_profile.jpg" alt="Megan Spiegel">
-      </div>
+                    <div class="entry-meta">
+                      <?php do_action( 'flint_entry_meta_above_post' ); ?>
+                    </div><!-- .entry-meta -->
 
-    </div><!-- .row -->
+                    <?php do_action( 'flint_close_entry_header_post' ); ?>
+
+                  </header><!-- .entry-header -->
+
+                  <?php flint_the_post_thumbnail( 'full' ); ?>
+
+                  <div class="entry-summary">
+                    <?php the_excerpt(); ?>
+                  </div><!-- .entry-summary -->
+
+                  <footer class="entry-meta clearfix">
+                    <?php do_action( 'flint_entry_meta_below_post' ); ?>
+                  </footer><!-- .entry-meta -->
+                </article><!-- #post-<?php the_ID(); ?> -->
+            <?php endwhile; ?>
+            <?php flint_content_nav( 'nav-below' ); ?>
+          </div><!-- .row -->
+          <?php else : ?>
+            <?php get_template_part( 'no-results' ); ?>
+          <?php endif; ?>
+          <?php wp_reset_query(); ?>
+        </div><!-- #content -->
+
+      </div><!-- .row -->
+
+    </div><!-- .container -->
 
   </div><!-- #primary -->
 
