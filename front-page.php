@@ -30,9 +30,12 @@ flint_get_sidebar( 'header' ); ?>
           <?php
             if ( function_exists( 'msx_card_deck_carousel' ) ) {
               echo msx_card_deck_carousel(
-              $options['trinity_front_page_hero'],
-              array( 'container_class' => 'msx-card-deck-hero', 'image_size' => 'trinity-hero-card' )
-            );
+                $options['trinity_front_page_hero'],
+                array(
+                  'container_class' => 'carousel slide msx-card-deck-hero',
+                  'image_size' => 'trinity-hero-card',
+                )
+              );
             } else {
               echo steel_slideshow( $options['trinity_front_page_hero'], 'front-slides' );
             }
