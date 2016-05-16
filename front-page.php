@@ -33,7 +33,7 @@ flint_get_sidebar( 'header' ); ?>
                 $options['trinity_front_page_hero'],
                 array(
                   'container_class' => 'carousel slide msx-card-deck-hero',
-                  'image_size' => 'trinity-hero-card'
+                  'image_size' => 'trinity-hero-card',
                 )
               );
             } else {
