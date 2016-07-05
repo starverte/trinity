@@ -46,8 +46,8 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
         );
         ?>
       <?php if ( $mt_team->have_posts() ) : ?>
+          <?php $clearfix = false; ?>
           <?php while ( $mt_team->have_posts() ) : $mt_team->the_post(); ?>
-
             <div class="mt-profile col-xs-12 col-md-6" id="profile-<?php the_ID(); ?>">
               <div class="row">
                 <h3 class="col-xs-12 profile-title"><?php echo the_title(); ?></h3>
@@ -62,6 +62,11 @@ $trip_category = 'category_name=' . $meta['trip_category'][0];
                 </div>
               </div>
             </div>
+            
+            <?php if ( $clearfix ) : ?>
+            <div class="clearfix"></div>
+            <?php endif; // EndIf $clearfix. ?>
+            <?php $clearfix = ! $clearfix; ?>
 
           <?php endwhile; ?>
           <?php flint_content_nav( 'nav-below' ); ?>
