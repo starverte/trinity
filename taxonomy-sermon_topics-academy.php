@@ -7,28 +7,25 @@
  */
 
 get_header(); ?>
-<?php flint_get_sidebar('header'); ?>
+<?php flint_get_sidebar( 'header' ); ?>
 
   <section id="primary" class="content-area container">
 
     <?php
-      flint_get_sidebar('left');
+      flint_get_sidebar( 'left' );
 
       $content_class = 'site-content';
       if ( is_active_sidebar( 'left' ) | is_active_sidebar( 'right' ) ) {
         if ( is_active_sidebar( 'left' ) && is_active_sidebar( 'right' ) ) {
           $content_class .= ' col-lg-6 col-md-6 wa-both';
-        }
-        else {
+        } else {
           if ( is_active_sidebar( 'left' ) ) {
-            $content_class .= ' col-lg-9 col-md-9 wa-left';
-          }
-          elseif ( is_active_sidebar( 'right' ) ) {
-            $content_class .= ' col-lg-9 col-md-9 wa-right';
+				$content_class .= ' col-lg-9 col-md-9 wa-left';
+          } elseif ( is_active_sidebar( 'right' ) ) {
+				$content_class .= ' col-lg-9 col-md-9 wa-right';
           }
         }
-      }
-      else {
+      } else {
         $content_class .= ' col-lg-12 col-md-12';
       }
     ?>
@@ -57,10 +54,9 @@ get_header(); ?>
 
     </div><!-- #content -->
 
-    <?php flint_get_sidebar('right'); ?>
+    <?php flint_get_sidebar( 'right' ); ?>
 
   </section><!-- #primary -->
 
-<?php flint_get_sidebar('footer'); ?>
+<?php flint_get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>
-

@@ -1,0 +1,24 @@
+{
+  "name": "trinity",
+  "version": "0.6.0",
+  "description": "Child theme of Flint. Theme developed for use with nonprofit organizations, particularly churches.",
+  "main": "style.css",
+  "scripts": {
+    "test": "grunt test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/starverte/trinity.git"
+  },
+  "author": "Star Verte LLC",
+  "license": "GPL-3.0",
+  "bugs": {
+    "url": "https://github.com/starverte/trinity/issues"
+  },
+  "homepage": "https://github.com/starverte/trinity#readme",
+  "devDependencies": {
+    "grunt": "^1.0.1",
+    "grunt-shell": "^1.3.1",
+    "snyk": "^1.19.1"
+  }
+}

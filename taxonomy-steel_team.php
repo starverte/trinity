@@ -7,28 +7,25 @@
  */
 
 get_header(); ?>
-<?php flint_get_sidebar('header'); ?>
+<?php flint_get_sidebar( 'header' ); ?>
 
   <section id="primary" class="content-area container">
 
     <?php
-      flint_get_sidebar('left');
+      flint_get_sidebar( 'left' );
 
       $content_class = 'site-content';
       if ( is_active_sidebar( 'left' ) | is_active_sidebar( 'right' ) ) {
         if ( is_active_sidebar( 'left' ) && is_active_sidebar( 'right' ) ) {
           $content_class .= ' col-lg-6 col-md-6 wa-both';
-        }
-        else {
+        } else {
           if ( is_active_sidebar( 'left' ) ) {
-            $content_class .= ' col-lg-9 col-md-9 wa-left';
-          }
-          elseif ( is_active_sidebar( 'right' ) ) {
-            $content_class .= ' col-lg-9 col-md-9 wa-right';
+				$content_class .= ' col-lg-9 col-md-9 wa-left';
+          } elseif ( is_active_sidebar( 'right' ) ) {
+				$content_class .= ' col-lg-9 col-md-9 wa-right';
           }
         }
-      }
-      else {
+      } else {
         $content_class .= ' col-lg-12 col-md-12';
       }
     ?>
@@ -43,21 +40,29 @@ get_header(); ?>
             /**
              * Template actions before title
              */
-            if  ( is_tax() ) { do_action('flint_open_' . single_term_title( '', false ) . '_title'); }
-            else             { do_action('flint_open_archive_title'); }
+            if ( is_tax() ) {
+              do_action( 'flint_open_' . single_term_title( '', false ) . '_title' );
+            } else {
+              do_action( 'flint_open_archive_title' );
+            }
 
             /**
              * Title of archive page
              */
-            if ( is_tax() ) { printf( __( '%s', 'flint' ), '<span>' . single_term_title( '', false ) . '</span>' ); }
-
-            else { _e( '<span>' . 'Archives' . '</span>', 'flint' ); }
+            if ( is_tax() ) {
+              printf( __( '%s', 'flint' ), '<span>' . single_term_title( '', false ) . '</span>' );
+            } else {
+              _e( '<span>Archives</span>', 'flint' );
+            }
 
             /**
              * Template actions after title
              */
-            if  ( is_tax() ) { do_action('flint_close_' . single_term_title( '', false ) . '_title'); }
-            else             { do_action('flint_close_archive_title'); }
+            if ( is_tax() ) {
+              do_action( 'flint_close_' . single_term_title( '', false ) . '_title' );
+            } else {
+              do_action( 'flint_close_archive_title' );
+            }
           ?>
         </h1>
         <?php
@@ -76,7 +81,7 @@ get_header(); ?>
         query_posts( $args ); ?>
       <?php while ( have_posts() ) : the_post(); ?>
 
-        <?php get_template_part( 'templates/full', 'content' ); ?>
+        <?php get_template_part( 'type', 'steel_profile' ); ?>
 
       <?php endwhile; ?>
 
@@ -90,9 +95,9 @@ get_header(); ?>
 
     </div><!-- #content -->
 
-    <?php flint_get_sidebar('right'); ?>
+    <?php flint_get_sidebar( 'right' ); ?>
 
   </section><!-- #primary -->
 
-<?php flint_get_sidebar('footer'); ?>
+<?php flint_get_sidebar( 'footer' ); ?>
 <?php get_footer(); ?>

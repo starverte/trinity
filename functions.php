@@ -15,6 +15,9 @@ function trinity_after_setup_theme() {
     'footer2'   => __( 'Sitemap Right', 'trinity' ),
     'footer3'   => __( 'Social Links' , 'trinity' ),
   ) );
+
+  add_image_size( 'trinity-hero-card', 825, 465, true );
+  add_image_size( 'trinity-mt-profile', 400, 400, true );
 }
 add_action( 'after_setup_theme', 'trinity_after_setup_theme', 20 );
 
@@ -22,28 +25,43 @@ add_action( 'after_setup_theme', 'trinity_after_setup_theme', 20 );
  * Enqueue scripts
  */
 function trinity_enqueue_scripts() {
-  if (is_front_page()) {
-    wp_enqueue_script( 'front-display', get_stylesheet_directory_uri() . '/js/front-page.js', array('jquery'), '0.3.0', true );
+  if ( is_front_page() ) {
+    wp_enqueue_script( 'front-display', get_stylesheet_directory_uri() . '/js/front-page.js', array( 'jquery' ), '0.3.0', true );
   }
 
   /**
    * If using Give page template, loads Javascript
    */
-  if (is_page_template('templates/give.php')) {
-    wp_enqueue_script( 'give-form', get_stylesheet_directory_uri() . '/js/give.js', array('jquery'), '0.2.1', true );
-    wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array('jquery'), '0.2.1', true );
+  if ( is_page_template( 'templates/give.php' ) ) {
+    wp_enqueue_script( 'give-form', get_stylesheet_directory_uri() . '/js/give.js', array( 'jquery' ), '0.2.1', true );
+    wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array( 'jquery' ), '0.2.1', true );
   }
 
   /**
    * If using Japan page template, loads Javascript
    */
-  if (is_page_template('templates/japan.php')) {
-    wp_enqueue_script( 'japan-form', get_stylesheet_directory_uri() . '/js/japan.js', array('jquery'), '0.2.1', true );
-    wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array('jquery'), '0.2.1', true );
+  if ( is_page_template( 'templates/japan.php' ) ) {
+    wp_enqueue_script( 'japan-form', get_stylesheet_directory_uri() . '/js/japan.js', array( 'jquery' ), '0.2.1', true );
+    wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array( 'jquery' ), '0.2.1', true );
+  }
+
+  /**
+   * If using Mission Trip page template, loads Javascript
+   */
+  if ( is_page_template( 'templates/mission-trip-support.php' ) ) {
+    wp_enqueue_script( 'mt-form', get_stylesheet_directory_uri() . '/js/mission-trip.js', array( 'jquery' ), '0.7.0', true );
+    wp_enqueue_script( 'validation', get_stylesheet_directory_uri() . '/js/validation.js', array( 'jquery' ), '0.2.1', true );
   }
 }
 add_action( 'wp_enqueue_scripts', 'trinity_enqueue_scripts' );
 
+/**
+ * Get option defaults
+ *
+ * @since 0.4.4
+ *
+ * @param array $flint_defaults The option defaults for the parent theme.
+ */
 function trinity_option_defaults( $flint_defaults ) {
   $defaults = array(
     'trinity_front_page_featured'  => 0,
@@ -55,8 +73,15 @@ function trinity_option_defaults( $flint_defaults ) {
 
   return wp_parse_args( $flint_defaults, $defaults );
 }
-add_filter('flint_option_defaults','trinity_option_defaults');
+add_filter( 'flint_option_defaults','trinity_option_defaults' );
 
+/**
+ * Register customization options for Trinity
+ *
+ * @since 0.4.4
+ *
+ * @param object $wp_customize An instance of the WP_Customize_Manager class.
+ */
 function trinity_customize_register( $wp_customize ) {
 
   if ( function_exists( 'flint_options_defaults' ) ) {
@@ -65,7 +90,11 @@ function trinity_customize_register( $wp_customize ) {
     $defaults = flint_get_option_defaults();
   }
 
-  $slideshows = steel_get_slides('options');
+  if ( function_exists( 'msx_card_deck_list' ) ) {
+    $card_decks = msx_card_deck_list();
+  } else {
+    $card_decks = steel_get_slides();
+  }
 
   /**
    * Static Front Page section
@@ -74,39 +103,59 @@ function trinity_customize_register( $wp_customize ) {
     /**
      * Hero slider setting
      */
-    $wp_customize->add_setting('flint_options[trinity_front_page_hero]', array(
-      'default'           => $defaults['trinity_front_page_hero'],
-      'sanitize_callback' => 'steel_sanitize_get_slides',
-      'capability'        => 'edit_theme_options',
-      'type'              => 'option',
-      'transport'         => 'postMessage',
-    ));
+    if ( function_exists( 'msx_sanitize_card_deck_list' ) ) {
+      $wp_customize->add_setting('flint_options[trinity_front_page_hero]', array(
+        'default'           => $defaults['trinity_front_page_hero'],
+        'sanitize_callback' => 'msx_sanitize_card_deck_list',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+      ));
+    } else {
+      $wp_customize->add_setting('flint_options[trinity_front_page_hero]', array(
+        'default'           => $defaults['trinity_front_page_hero'],
+        'sanitize_callback' => 'steel_sanitize_get_slides',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+      ));
+    }
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_front_page_hero', array(
-      'label'    => __('Hero slider', 'flint'),
+      'label'    => __( 'Hero slider', 'flint' ),
       'section'  => 'static_front_page',
       'settings' => 'flint_options[trinity_front_page_hero]',
       'priority' => 20,
       'type'     => 'select',
-      'choices'  => $slideshows,
+      'choices'  => $card_decks,
     )));
 
     /**
      * Featured events setting
      */
-    $wp_customize->add_setting('flint_options[trinity_front_page_featured]', array(
-      'default'           => $defaults['trinity_front_page_featured'],
-      'sanitize_callback' => 'steel_sanitize_get_slides',
-      'capability'        => 'edit_theme_options',
-      'type'              => 'option',
-      'transport'         => 'postMessage',
-    ));
+    if ( function_exists( 'msx_sanitize_card_deck_list' ) ) {
+      $wp_customize->add_setting('flint_options[trinity_front_page_featured]', array(
+        'default'           => $defaults['trinity_front_page_featured'],
+        'sanitize_callback' => 'msx_sanitize_card_deck_list',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+      ));
+    } else {
+      $wp_customize->add_setting('flint_options[trinity_front_page_featured]', array(
+        'default'           => $defaults['trinity_front_page_featured'],
+        'sanitize_callback' => 'steel_sanitize_get_slides',
+        'capability'        => 'edit_theme_options',
+        'type'              => 'option',
+        'transport'         => 'postMessage',
+      ));
+    }
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_front_page_featured', array(
-      'label'    => __('Featured Events', 'flint'),
+      'label'    => __( 'Featured Events', 'flint' ),
       'section'  => 'static_front_page',
       'settings' => 'flint_options[trinity_front_page_featured]',
       'priority' => 30,
       'type'     => 'select',
-      'choices'  => $slideshows,
+      'choices'  => $card_decks,
     )));
 
   /**
@@ -128,7 +177,7 @@ function trinity_customize_register( $wp_customize ) {
       'transport'         => 'postMessage',
     ));
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_japan_raised', array(
-      'label'    => __('Amount Raised', 'flint'),
+      'label'    => __( 'Amount Raised', 'flint' ),
       'section'  => 'trinity_section_japan',
       'settings' => 'flint_options[trinity_japan_raised]',
       'priority' => 30,
@@ -145,7 +194,7 @@ function trinity_customize_register( $wp_customize ) {
       'transport'         => 'postMessage',
     ));
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_japan_raised_updated', array(
-      'label'    => __('Last updated', 'flint'),
+      'label'    => __( 'Last updated', 'flint' ),
       'section'  => 'trinity_section_japan',
       'settings' => 'flint_options[trinity_japan_raised_updated]',
       'priority' => 40,
@@ -162,7 +211,7 @@ function trinity_customize_register( $wp_customize ) {
       'transport'         => 'postMessage',
     ));
     $wp_customize->add_control( new WP_Customize_Control($wp_customize, 'trinity_japan_up_next', array(
-      'label'    => __('Up Next', 'flint'),
+      'label'    => __( 'Up Next', 'flint' ),
       'section'  => 'trinity_section_japan',
       'settings' => 'flint_options[trinity_japan_up_next]',
       'priority' => 40,
